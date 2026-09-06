@@ -9,7 +9,7 @@ export function PrivacyPage() {
     <div className="max-w-none">
       <h1 className="font-heading text-2xl font-semibold">Polityka prywatności aplikacji „Zanim zaczniemy — ćwiczenia"</h1>
       <p className="mt-2 text-sm text-ink/60">
-        Obowiązuje od: <Uzup>[DATA URUCHOMIENIA]</Uzup> · Wersja 1.0
+        Obowiązuje od: 2026-09-06 · Wersja 1.0
       </p>
 
       <div className="mt-6 space-y-6 text-sm leading-relaxed">
@@ -147,13 +147,14 @@ export function PrivacyPage() {
                 <tr className="border-b border-line">
                   <th className="py-2 pr-4 align-top font-medium">Okres przechowywania</th>
                   <td className="py-2">
-                    zgodnie z polityką dostawcy hostingu, zwykle do <Uzup>[DO UZUPEŁNIENIA]</Uzup> dni
+                    zgodnie z polityką dostawcy hostingu, obecnie do 30 dni (plan Hobby) <Uzup>[DO POTWIERDZENIA przy zmianie planu]</Uzup>
                   </td>
                 </tr>
                 <tr>
                   <th className="py-2 pr-4 align-top font-medium">Odbiorca</th>
                   <td className="py-2">
-                    dostawca hostingu: <Uzup>[NAZWA DOSTAWCY]</Uzup>, na podstawie umowy powierzenia przetwarzania danych
+                    dostawca hostingu: <strong>Vercel Inc.</strong> (340 S Lemon Ave #4133, Walnut, CA 91789, USA), na podstawie Data
+                    Processing Addendum dostawcy
                   </td>
                 </tr>
               </tbody>
@@ -192,7 +193,10 @@ export function PrivacyPage() {
             <li>nie sprzedaje i nie udostępnia danych podmiotom trzecim w celach marketingowych</li>
             <li>nie stosuje profilowania ani zautomatyzowanego podejmowania decyzji wywołujących skutki prawne</li>
             <li>
-              nie przekazuje danych poza Europejski Obszar Gospodarczy <Uzup>[DO POTWIERDZENIA po wyborze hostingu]</Uzup>
+              nie przekazuje Twoich treści (wpisów w Aplikacji) nigdzie — bo nigdy nie opuszczają Twojego urządzenia. Techniczne logi
+              połączeń opisane w pkt 5 mogą być przetwarzane przez dostawcę hostingu (Vercel Inc., USA) poza Europejskim Obszarem
+              Gospodarczym, na podstawie Data Processing Addendum dostawcy zawierającego standardowe klauzule umowne (SCC){" "}
+              <Uzup>[DO WERYFIKACJI PRZEZ PRAWNIKA]</Uzup>
             </li>
             <li>nie wysyła powiadomień push, newsletterów ani informacji handlowych z poziomu Aplikacji</li>
             <li>
@@ -262,12 +266,12 @@ export function PrivacyPage() {
 
         <section className="rounded-2xl border border-accent/40 bg-panel p-5 text-xs leading-relaxed text-ink/70">
           <p>
-            <strong>Do uzupełnienia przed publikacją:</strong> adres e-mail, nazwa dostawcy hostingu, okres retencji logów, potwierdzenie
-            lokalizacji serwerów w EOG, data wejścia w życie.
+            <strong>Do uzupełnienia przed publikacją:</strong> adres e-mail kontaktowy.
           </p>
           <p className="mt-2">
             <strong>Do weryfikacji przez prawnika lub inspektora ochrony danych:</strong> całość dokumentu, w szczególności pkt 2
-            (twierdzenie o braku przetwarzania treści użytkownika) oraz pkt 5 (umowa powierzenia z hostingodawcą).
+            (twierdzenie o braku przetwarzania treści użytkownika), pkt 5 (umowa powierzenia z Vercel Inc.) oraz pkt 7 (podstawa transferu
+            danych poza EOG — Data Processing Addendum / SCC).
           </p>
         </section>
       </div>

@@ -9,7 +9,7 @@ export function TermsPage() {
     <div className="max-w-none">
       <h1 className="font-heading text-2xl font-semibold">Regulamin aplikacji „Zanim zaczniemy — ćwiczenia"</h1>
       <p className="mt-2 text-sm text-ink/60">
-        Obowiązuje od: <Uzup>[DATA URUCHOMIENIA]</Uzup> · Wersja 1.0
+        Obowiązuje od: 2026-09-06 · Wersja 1.0
       </p>
 
       <div className="mt-6 space-y-6 text-sm leading-relaxed">
@@ -18,7 +18,8 @@ export function TermsPage() {
           <ol className="mt-2 list-decimal space-y-2 pl-5">
             <li>
               Niniejszy Regulamin określa zasady korzystania z aplikacji internetowej „Zanim zaczniemy — ćwiczenia", dostępnej pod
-              adresem <Uzup>[ADRES DOMENY]</Uzup>, zwanej dalej <strong>Aplikacją</strong>.
+              adresem <strong>zanim-zaczniemy-cwiczenia.vercel.app</strong> <Uzup>[DO AKTUALIZACJI po ew. podpięciu własnej domeny]</Uzup>,
+              zwanej dalej <strong>Aplikacją</strong>.
             </li>
             <li>
               Regulamin został sporządzony na podstawie art. 8 ust. 1 pkt 1 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą
@@ -306,15 +307,14 @@ export function TermsPage() {
               Postanowienia Regulaminu nie ograniczają praw konsumentów wynikających z bezwzględnie obowiązujących przepisów prawa. W
               razie sprzeczności pierwszeństwo mają te przepisy.
             </li>
-            <li>
-              Regulamin wchodzi w życie z dniem <Uzup>[DATA]</Uzup>.
-            </li>
+            <li>Regulamin wchodzi w życie z dniem 2026-09-06.</li>
           </ol>
         </section>
 
         <section className="rounded-2xl border border-accent/40 bg-panel p-5 text-xs leading-relaxed text-ink/70">
           <p>
-            <strong>Do uzupełnienia przed publikacją:</strong> adres domeny, adres e-mail, data wejścia w życie.
+            <strong>Do uzupełnienia przed publikacją:</strong> adres e-mail kontaktowy. Adres domeny zaktualizuj, jeśli podepniesz własną
+            domenę zamiast <code>vercel.app</code>.
           </p>
           <p className="mt-2">
             <strong>Do weryfikacji przez prawnika:</strong> całość dokumentu, ze szczególnym uwzględnieniem § 2 (charakter usługi), § 11
