@@ -38,7 +38,7 @@ export function PrivacyPage() {
             <br />
             tel.: 693 169 828
             <br />
-            e-mail: <Uzup>[DO UZUPEŁNIENIA]</Uzup>
+            e-mail: k.walioszczyk@gmail.com
           </p>
           <p className="mt-2">
             W sprawach dotyczących ochrony danych można kontaktować się na powyższe dane. Administrator nie wyznaczył inspektora ochrony
@@ -266,9 +266,6 @@ export function PrivacyPage() {
 
         <section className="rounded-2xl border border-accent/40 bg-panel p-5 text-xs leading-relaxed text-ink/70">
           <p>
-            <strong>Do uzupełnienia przed publikacją:</strong> adres e-mail kontaktowy.
-          </p>
-          <p className="mt-2">
             <strong>Do weryfikacji przez prawnika lub inspektora ochrony danych:</strong> całość dokumentu, w szczególności pkt 2
             (twierdzenie o braku przetwarzania treści użytkownika), pkt 5 (umowa powierzenia z Vercel Inc.) oraz pkt 7 (podstawa transferu
             danych poza EOG — Data Processing Addendum / SCC).

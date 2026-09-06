@@ -36,7 +36,7 @@ export function TermsPage() {
                 <br />
                 tel.: 693 169 828
                 <br />
-                e-mail: <Uzup>[DO UZUPEŁNIENIA]</Uzup>
+                e-mail: k.walioszczyk@gmail.com
               </p>
               <p className="mt-2">
                 zwana dalej <strong>Usługodawcą</strong>.
@@ -230,7 +230,7 @@ export function TermsPage() {
               Reklamacje dotyczące działania Aplikacji Użytkownik może zgłaszać:
               <ol className="mt-2 list-[lower-alpha] space-y-1.5 pl-5">
                 <li>
-                  na adres e-mail: <Uzup>[DO UZUPEŁNIENIA]</Uzup>,
+                  na adres e-mail: k.walioszczyk@gmail.com,
                 </li>
                 <li>telefonicznie: 693 169 828,</li>
                 <li>pisemnie na adres: ul. Wyszyńskiego 5, 98-338 Pajęczno.</li>
@@ -313,8 +313,7 @@ export function TermsPage() {
 
         <section className="rounded-2xl border border-accent/40 bg-panel p-5 text-xs leading-relaxed text-ink/70">
           <p>
-            <strong>Do uzupełnienia przed publikacją:</strong> adres e-mail kontaktowy. Adres domeny zaktualizuj, jeśli podepniesz własną
-            domenę zamiast <code>vercel.app</code>.
+            <strong>Do uzupełnienia:</strong> adres domeny, jeśli podepniesz własną zamiast <code>vercel.app</code>.
           </p>
           <p className="mt-2">
             <strong>Do weryfikacji przez prawnika:</strong> całość dokumentu, ze szczególnym uwzględnieniem § 2 (charakter usługi), § 11
