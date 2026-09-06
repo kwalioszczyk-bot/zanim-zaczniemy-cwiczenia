@@ -128,20 +128,17 @@ Jeśli dodajesz nowy typ karty pracy, pamiętaj żeby rozszerzyć też `policzAk
 
 ## Czcionki
 
-Interfejs jest przygotowany pod czcionki **Carlito** (nagłówki) i **Caladea** (treść) — obie na
-licencji OFL, ten sam metryczny zamiennik odpowiednio Calibri i Cambria. Pliki czcionek **nie są
-dołączone do repozytorium** (świadoma decyzja, żeby nie pobierać niczego bez wyraźnej zgody).
+Interfejs używa czcionek **Carlito** (nagłówki) i **Caladea** (treść) — obie na licencji OFL,
+metryczne zamienniki odpowiednio Calibri i Cambria. Pliki `.woff2` są dołączone do repozytorium
+w `public/fonts/` (pobrane z oficjalnego Google Fonts) i hostowane lokalnie — żadnych zapytań do
+zewnętrznego CDN w czasie działania aplikacji.
 
-Żeby je dodać:
+Każdy krój ma po dwa pliki na wariant (`-latin` i `-latinext`), bo polskie znaki diakrytyczne
+(ą, ć, ę, ł, ń, ó, ś, ź, ż) leżą w innym zakresie unicode niż podstawowy alfabet łaciński —
+`src/fonts.css` ładuje odpowiedni plik w zależności od tego, jaki znak akurat się renderuje.
 
-1. pobierz pliki `.woff2` Carlito i Caladea (np. z oficjalnych repozytoriów Google Fonts),
-2. umieść je w `public/fonts/` pod nazwami, których oczekuje `src/fonts.css`:
-   `Carlito-Regular.woff2`, `Carlito-Bold.woff2`, `Carlito-Italic.woff2`,
-   `Caladea-Regular.woff2`, `Caladea-Bold.woff2`, `Caladea-Italic.woff2`.
-
-Dopóki plików nie ma, aplikacja działa normalnie — przeglądarka po cichu spada na krój systemowy
-(`font-display: swap` + zdefiniowany fallback), więc brak plików nie psuje wyglądu, tylko nie
-jest nim docelowym.
+Jeśli kiedyś zechcesz podmienić czcionki na inne, wystarczy podmienić pliki w `public/fonts/` i
+dopasować nazwy/zakresy w `src/fonts.css` — reszta aplikacji się nie zmienia.
 
 ## Struktura repozytorium
 
