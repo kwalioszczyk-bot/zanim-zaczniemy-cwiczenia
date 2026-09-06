@@ -1,0 +1,16 @@
+{
+  "name": "Zanim zaczniemy — ćwiczenia",
+  "short_name": "Zanim zaczniemy",
+  "description": "Prywatna przestrzeń pracy własnej do Treningu Umiejętności Rodzicielskich.",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f4ef",
+  "theme_color": "#f7f4ef",
+  "lang": "pl",
+  "icons": [
+    { "src": "./logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any" },
+    { "src": "./logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "program": "Trening Umiejętności Rodzicielskich",
+    "autor": "Katarzyna Walioszczyk-Urbaniak, pedagog, psycholog",
+    "wersja": "1.0",
+    "jezyk": "pl"
+  },
+
+  "moduly": [
+    { "nr": 1, "tytul": "Dlaczego jest tak trudno, skoro tak bardzo się staram", "temat": "pułapka przymusu" },
+    { "nr": 2, "tytul": "Uwaga jest walutą, którą płacisz codziennie", "temat": "specjalny czas" },
+    { "nr": 3, "tytul": "Pochwała, która naprawdę dociera", "temat": "pochwała opisowa" },
+    { "nr": 4, "tytul": "Zachowanie zawsze czemuś służy", "temat": "analiza ABC" },
+    { "nr": 5, "tytul": "Jak mówić, żeby dziecko usłyszało za pierwszym razem", "temat": "skuteczne polecenia" },
+    { "nr": 6, "tytul": "Rutyna — czyli jak przestać być tym, kto ciągle każe", "temat": "struktura dnia" },
+    { "nr": 7, "tytul": "Nie każdą bitwę trzeba stoczyć", "temat": "ignorowanie planowe" },
+    { "nr": 8, "tytul": "Granice bez krzywdy", "temat": "konsekwencje" },
+    { "nr": 9, "tytul": "Kiedy dziecko traci kontrolę", "temat": "koregulacja" },
+    { "nr": 10, "tytul": "A kto zaopiekuje się Tobą", "temat": "samoregulacja rodzica" },
+    { "nr": 11, "tytul": "Kiedy dorośli mówią różnymi głosami", "temat": "spójność rodzicielska" },
+    { "nr": 12, "tytul": "Co dalej, kiedy skończymy", "temat": "utrzymanie zmiany" }
+  ],
+
+  "kartyPracy": [
+    {
+      "id": "kp-01",
+      "modul": 1,
+      "tytul": "Moja pętla",
+      "wstep": "Nie zmieniaj jeszcze niczego. Opisz jedną sytuację z ostatnich dni tak dokładnie, jak potrafisz. Sama obserwacja już zaczyna zmieniać to, co się dzieje.",
+      "typ": "pojedyncza",
+      "pola": [
+        { "klucz": "sytuacja", "etykieta": "Kiedy i gdzie to było?", "typ": "tekst", "placeholder": "np. wtorek, 19:30, przed kąpielą" },
+        { "klucz": "moje_slowa", "etykieta": "Co powiedziałam / powiedziałem?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "dziecko", "etykieta": "Co zrobiło dziecko?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "dalej", "etykieta": "Co zrobiłam / zrobiłem dalej?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "koniec", "etykieta": "Jak to się skończyło?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "zysk_dziecko", "etykieta": "Co dziecko zyskało w tej chwili?", "typ": "tekst" },
+        { "klucz": "zysk_ja", "etykieta": "Co ja zyskałam / zyskałem w tej chwili?", "typ": "tekst" }
+      ],
+      "podpowiedz": "Najczęściej dziecko zyskuje odroczenie albo uwagę, a rodzic — ciszę. Oboje płacą jutro."
+    },
+    {
+      "id": "kp-02",
+      "modul": 2,
+      "tytul": "Dzienniczek specjalnego czasu",
+      "wstep": "Dziesięć minut dziennie, jedno dziecko, bez ekranu. Ono wybiera zabawę, Ty opisujesz to, co widzisz.",
+      "typ": "tydzien",
+      "poleDnia": [
+        { "klucz": "minuty", "etykieta": "Ile minut?", "typ": "liczba", "min": 0, "max": 60 },
+        { "klucz": "zabawa", "etykieta": "W co graliśmy?", "typ": "tekst" },
+        { "klucz": "ocena", "etykieta": "Jak było? (0–10)", "typ": "skala", "min": 0, "max": 10 },
+        { "klucz": "zauwazylem", "etykieta": "Co zauważyłam / zauważyłem u dziecka?", "typ": "tekstDlugi", "wiersze": 2 }
+      ],
+      "podpowiedz": "Jeśli łapiesz się na zadawaniu pytań — to normalne. Pytanie też jest przejmowaniem kontroli."
+    },
+    {
+      "id": "kp-03",
+      "modul": 2,
+      "tytul": "Lista kontrolna: co robię w specjalnym czasie",
+      "wstep": "Wypełnij po jednej sesji zabawy. Nie chodzi o ocenę, tylko o zobaczenie własnych nawyków.",
+      "typ": "licznik",
+      "liczniki": [
+        { "klucz": "opisy", "etykieta": "Opisałam / opisałem, co dziecko robi", "kierunek": "rosnie" },
+        { "klucz": "nasladowania", "etykieta": "Naśladowałam / naśladowałem zabawę", "kierunek": "rosnie" },
+        { "klucz": "entuzjazm", "etykieta": "Okazałam / okazałem entuzjazm", "kierunek": "rosnie" },
+        { "klucz": "pytania", "etykieta": "Zadałam / zadałem pytanie", "kierunek": "maleje" },
+        { "klucz": "polecenia", "etykieta": "Wydałam / wydałem polecenie", "kierunek": "maleje" },
+        { "klucz": "krytyka", "etykieta": "Poprawiłam / poprawiłem dziecko", "kierunek": "maleje" }
+      ],
+      "podpowiedz": "Cel: pierwsze trzy rosną, ostatnie trzy maleją. Nie muszą zniknąć — mają zejść z drogi."
+    },
+    {
+      "id": "kp-04",
+      "modul": 3,
+      "tytul": "Dziennik pochwał",
+      "wstep": "Pięć pochwał opisowych dziennie. Zapisuj dokładnie te słowa, których użyłaś — zapisywanie zmienia dobre chęci w nawyk.",
+      "typ": "tydzien",
+      "poleDnia": [
+        { "klucz": "co_zrobilo", "etykieta": "Co dziecko zrobiło?", "typ": "tekst" },
+        { "klucz": "moje_slowa", "etykieta": "Moje dokładne słowa", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "reakcja", "etykieta": "Jak zareagowało?", "typ": "tekst" }
+      ],
+      "licznikDzienny": { "klucz": "liczba_pochwal", "etykieta": "Ile pochwał dziś?", "cel": 5 },
+      "podpowiedz": "Trzy elementy: co konkretnie zrobiło, kiedy, jaki to miało skutek."
+    },
+    {
+      "id": "kp-05",
+      "modul": 3,
+      "tytul": "Polowanie na dobre",
+      "wstep": "Wypisz dziesięć rzeczy, które Twoje dziecko robi i które NIE są problemem. Nie muszą być wybitne.",
+      "typ": "lista",
+      "liczbaPol": 10,
+      "placeholder": "np. zawiązał buty, nie kopnął brata, zjadła kolację",
+      "podpowiedz": "Chwalimy poprawę, nie ideał. „Przestał krzyczeć po 30 sekundach zamiast po 5 minutach\" to sukces."
+    },
+    {
+      "id": "kp-06",
+      "modul": 4,
+      "tytul": "Karta ABC",
+      "wstep": "Zanim zapytasz, co zrobić z zachowaniem, sprawdź, co było przedtem i co stało się potem.",
+      "typ": "powtarzalna",
+      "maksWpisow": 5,
+      "pola": [
+        { "klucz": "kiedy", "etykieta": "Godzina i miejsce", "typ": "tekst" },
+        { "klucz": "stan", "etykieta": "Stan dziecka przed (głód, zmęczenie, bodźce)", "typ": "wieloWybor", "opcje": ["głodne", "zmęczone", "przebodźcowane", "chore", "po zmianie w domu", "nic szczególnego"] },
+        { "klucz": "a", "etykieta": "A — co działo się bezpośrednio przed?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "b", "etykieta": "B — co dokładnie zrobiło dziecko?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "c", "etykieta": "C — co stało się po? Kto jak zareagował?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "funkcja", "etykieta": "Moja hipoteza — czemu to służyło?", "typ": "wybor", "opcje": ["uwaga", "zdobycie czegoś", "ucieczka od wymagania", "regulacja ciała", "nie wiem jeszcze"] }
+      ],
+      "podpowiedz": "Ta sama awantura u dwojga dzieci może wymagać zupełnie różnych działań."
+    },
+    {
+      "id": "kp-07",
+      "modul": 5,
+      "tytul": "Karta poleceń",
+      "wstep": "Wybierz JEDNĄ codzienną sytuację i przez tydzień stosuj w niej pełną procedurę. Jedna sytuacja przez siedem dni działa lepiej niż siedem sytuacji przez jeden dzień.",
+      "typ": "tydzien",
+      "polaStale": [
+        { "klucz": "sytuacja", "etykieta": "Moja sytuacja na ten tydzień", "typ": "tekst", "placeholder": "np. wyjście do przedszkola" }
+      ],
+      "poleDnia": [
+        { "klucz": "polecen", "etykieta": "Ile poleceń wydałam?", "typ": "liczba" },
+        { "klucz": "za_pierwszym", "etykieta": "Ile wykonanych za pierwszym razem?", "typ": "liczba" },
+        { "klucz": "pochwal", "etykieta": "Ile razy pochwaliłam po wykonaniu?", "typ": "liczba" },
+        { "klucz": "pieс_sekund", "etykieta": "Odczekałam pełne 5 sekund?", "typ": "tak_nie" }
+      ],
+      "podpowiedz": "Blisko — imię — wzrok — jedno polecenie — twierdząco — pięć sekund ciszy — pochwała."
+    },
+    {
+      "id": "kp-08",
+      "modul": 6,
+      "tytul": "Mapa gorących punktów",
+      "wstep": "Zaznacz, w których momentach dnia jest u Was najtrudniej. Zwykle okazuje się, że nie „cały dzień\", tylko cztery konkretne momenty.",
+      "typ": "skalaWielokrotna",
+      "pozycje": [
+        "poranek i wychodzenie z domu",
+        "powrót do domu",
+        "posiłki",
+        "odrabianie lekcji",
+        "ekrany i ich kończenie",
+        "kąpiel",
+        "kładzenie spać",
+        "zakupy i miejsca publiczne",
+        "rozstania (przedszkole, szkoła)",
+        "czas z rodzeństwem"
+      ],
+      "skala": { "min": 0, "max": 10, "opisMin": "spokojnie", "opisMax": "bardzo trudno" },
+      "podpowiedz": "Wybierz JEDEN punkt o najwyższej ocenie. Tylko nad nim pracuj w tym tygodniu."
+    },
+    {
+      "id": "kp-09",
+      "modul": 6,
+      "tytul": "Nasza rutyna",
+      "wstep": "Trzy do pięciu kroków, stała kolejność, stała pora. Dla młodszego dziecka dorysuj obrazki i powieś w widocznym miejscu.",
+      "typ": "rutyna",
+      "polaStale": [
+        { "klucz": "moment", "etykieta": "Który moment dnia?", "typ": "tekst" },
+        { "klucz": "pora", "etykieta": "O której zaczynamy?", "typ": "godzina" },
+        { "klucz": "uprzedzenie", "etykieta": "Jak uprzedzam o przejściu?", "typ": "tekst", "placeholder": "np. minutnik, „za 5 minut\"" }
+      ],
+      "kroki": { "min": 3, "maks": 5, "etykieta": "Krok" },
+      "ocenaDzienna": { "klucz": "jak_poszlo", "etykieta": "Jak poszło dziś? (0–10)", "min": 0, "max": 10, "dni": 7 },
+      "podpowiedz": "Wtedy nie Ty każesz — tak mówi plan. To zdejmuje z Ciebie rolę nadzorcy."
+    },
+    {
+      "id": "kp-10",
+      "modul": 7,
+      "tytul": "Trzy kolory — wybór bitew",
+      "wstep": "Podziel zachowania swojego dziecka na trzy grupy. To nie jest odpuszczanie wychowania, tylko oszczędzanie amunicji.",
+      "typ": "trzyKolumny",
+      "kolumny": [
+        { "klucz": "zielone", "etykieta": "ZIELONE — irytujące, ale nieszkodliwe", "opis": "odpuszczam lub ignoruję", "kolor": "#6f8f6a" },
+        { "klucz": "zolte", "etykieta": "ŻÓŁTE — warte pracy", "opis": "maksymalnie 1–2 naraz", "kolor": "#c9a227", "limit": 2 },
+        { "klucz": "czerwone", "etykieta": "CZERWONE — nienegocjowalne", "opis": "reaguję zawsze i tak samo", "kolor": "#a85c50" }
+      ],
+      "podpowiedz": "Jeśli w kolumnie ŻÓŁTEJ jest więcej niż dwie pozycje — przenieś resztę do zielonej na ten miesiąc."
+    },
+    {
+      "id": "kp-11",
+      "modul": 7,
+      "tytul": "Karta ignorowania",
+      "wstep": "Wybierz jedno zachowanie zielone lub żółte i konsekwentnie je ignoruj przez dwa tygodnie. Zapisuj liczbę wystąpień.",
+      "typ": "wykresDwaTygodnie",
+      "polaStale": [
+        { "klucz": "zachowanie", "etykieta": "Zachowanie, nad którym pracuję", "typ": "tekst" }
+      ],
+      "poleDnia": [
+        { "klucz": "liczba", "etykieta": "Ile razy dziś?", "typ": "liczba" },
+        { "klucz": "wytrzymalam", "etykieta": "Wytrzymałam do końca?", "typ": "tak_nie" }
+      ],
+      "ostrzezenie": "Przez pierwsze 2–4 dni zachowanie prawdopodobnie się NASILI. To znaczy, że działa. To jest ten moment, w którym nie wolno ustąpić.",
+      "podpowiedz": "Nigdy nie ignorujemy: agresji, niszczenia, zachowań niebezpiecznych i prawdziwego lęku dziecka."
+    },
+    {
+      "id": "kp-12",
+      "modul": 8,
+      "tytul": "Kodeks domowy",
+      "wstep": "Trzy do pięciu zasad w formie twierdzącej, każda z przypisaną konsekwencją logiczną. Ustalcie je razem z dzieckiem i podpiszcie.",
+      "typ": "zasady",
+      "maksZasad": 5,
+      "polaZasady": [
+        { "klucz": "zasada", "etykieta": "U nas w domu...", "typ": "tekst", "placeholder": "mówimy do siebie spokojnie" },
+        { "klucz": "konsekwencja", "etykieta": "Jeśli tak się nie stanie, to...", "typ": "tekst" },
+        { "klucz": "rodzaj", "etykieta": "Rodzaj konsekwencji", "typ": "wybor", "opcje": ["naturalna", "logiczna", "przerwa"] }
+      ],
+      "podpisy": true,
+      "podpowiedz": "Dobra konsekwencja: natychmiastowa, krótka, powiązana, zapowiedziana, bez wykładu, ZAWSZE taka sama."
+    },
+    {
+      "id": "kp-13",
+      "modul": 9,
+      "tytul": "Karta emocji — cztery kroki",
+      "wstep": "Opisz jedną sytuację, w której dziecko miało silne emocje. Nawet jeśli nie poszła idealnie — szczególnie jeśli nie poszła idealnie.",
+      "typ": "powtarzalna",
+      "maksWpisow": 3,
+      "pola": [
+        { "klucz": "sytuacja", "etykieta": "Co się działo?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "typ_reakcji", "etykieta": "To była dysregulacja czy zachowanie instrumentalne?", "typ": "wybor", "opcje": ["dysregulacja — straciło kontrolę", "instrumentalne — miało kontrolę", "nie jestem pewna"] },
+        { "klucz": "krok1", "etykieta": "1. Zauważyłam — co powiedziałam?", "typ": "tekst" },
+        { "klucz": "krok2", "etykieta": "2. Nazwałam emocję — jak?", "typ": "tekst" },
+        { "klucz": "krok3", "etykieta": "3. Zaakceptowałam emocję, nie zachowanie", "typ": "tekst", "placeholder": "np. „Możesz być zły. Nie możesz bić.\"" },
+        { "klucz": "krok4", "etykieta": "4. Rozwiązanie — dopiero po wyciszeniu", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "pomoglo", "etykieta": "Co pomogło, a co nie?", "typ": "tekstDlugi", "wiersze": 2 }
+      ],
+      "podpowiedz": "W dysregulacji nie uczymy, nie tłumaczymy, nie negocjujemy i nie karzemy. Jesteśmy."
+    },
+    {
+      "id": "kp-14",
+      "modul": 9,
+      "tytul": "Termometr emocji dziecka",
+      "wstep": "Narzędzie do zrobienia razem z dzieckiem. Pomaga mu rozpoznać, co dzieje się w ciele, zanim będzie za późno.",
+      "typ": "termometr",
+      "poziomy": [
+        { "poziom": "0–3", "kolor": "#7ba05b", "pola": ["Jak to nazywam", "Co czuję w ciele", "Co mi pomaga"] },
+        { "poziom": "4–6", "kolor": "#e0a83c", "pola": ["Jak to nazywam", "Co czuję w ciele", "Co mi pomaga"] },
+        { "poziom": "7–8", "kolor": "#d9793f", "pola": ["Jak to nazywam", "Co czuję w ciele", "Co mi pomaga"] },
+        { "poziom": "9–10", "kolor": "#b04a3f", "pola": ["Jak to nazywam", "Co czuję w ciele", "Czego potrzebuję od dorosłego"] }
+      ],
+      "doWydruku": true,
+      "podpowiedz": "Wypełniajcie w spokojnym momencie, nigdy w trakcie złości."
+    },
+    {
+      "id": "kp-15",
+      "modul": 10,
+      "tytul": "Mój plan awaryjny",
+      "wstep": "W momencie wzburzenia nikt nie wymyśla planów — korzysta się z gotowych. Wypełnij i powieś na lodówce.",
+      "typ": "planAwaryjny",
+      "sekcje": [
+        { "klucz": "cialo", "etykieta": "Moje sygnały z ciała", "typ": "wieloWyborZDopisem", "opcje": ["zaciśnięta szczęka", "gorąco na karku", "płytki oddech", "napięte ramiona", "ścisk w żołądku", "drżenie rąk"] },
+        { "klucz": "mysli", "etykieta": "Moje sygnały w myślach", "typ": "wieloWyborZDopisem", "opcje": ["„znowu to samo\"", "„ma mnie za nic\"", "„nie wytrzymam\"", "„robi mi na złość\"", "„jestem beznadziejną matką / beznadziejnym ojcem\""] },
+        { "klucz": "zachowanie", "etykieta": "Moje sygnały w zachowaniu", "typ": "wieloWyborZDopisem", "opcje": ["głos idzie w górę", "sarkazm", "trzaskanie", "milknę i sztywnieję"] },
+        { "klucz": "zdanie", "etykieta": "Moje zdanie ratunkowe", "typ": "tekst", "placeholder": "np. „To minie. On się dopiero uczy.\"" },
+        { "klucz": "naprawa", "etykieta": "Jak naprawiam po fakcie", "typ": "tekstDlugi", "wiersze": 2, "placeholder": "np. „Krzyknęłam. Przepraszam. Zasada nadal obowiązuje.\"" },
+        { "klucz": "wsparcie", "etykieta": "Do kogo dzwonię, gdy jest bardzo źle", "typ": "tekst" }
+      ],
+      "stalyKrok": ["STOP — 10 sekund nic nie robię", "Oddech — wdech na 4, wydech na 6, trzy razy", "Odsunięcie — „Muszę się uspokoić, wrócę za chwilę\"", "Moje zdanie ratunkowe", "Naprawa, jeśli trzeba"],
+      "doWydruku": true,
+      "podpowiedz": "Modelowanie naprawy po własnym błędzie to jedna z najcenniejszych rzeczy, jakich uczysz dziecko."
+    },
+    {
+      "id": "kp-16",
+      "modul": 10,
+      "tytul": "Moje zasoby — krótki przegląd",
+      "wstep": "Nie da się dawać dziecku regulacji, której samemu się nie ma. Ta karta jest tylko dla Ciebie.",
+      "typ": "przeglad",
+      "pytania": [
+        { "klucz": "sen", "etykieta": "Ile realnie śpię?", "typ": "skala", "min": 0, "max": 10, "opisMin": "bardzo mało", "opisMax": "wystarczająco" },
+        { "klucz": "wsparcie", "etykieta": "Czy mam kogoś, z kim mogę o tym pogadać?", "typ": "skala", "min": 0, "max": 10 },
+        { "klucz": "dla_siebie", "etykieta": "Co robię dla siebie, co nie jest obowiązkiem wobec nikogo?", "typ": "tekstDlugi", "wiersze": 3 },
+        { "klucz": "kiedy_ostatnio", "etykieta": "Kiedy ostatnio ktoś zapytał, jak JA się mam?", "typ": "tekst" }
+      ],
+      "komunikatWspierajacy": "Jeśli od dłuższego czasu jest Ci ciężko — nic nie cieszy, sen się rozsypał, rano trudno wstać — to nie jest lenistwo ani brak charakteru. To może być depresja albo wypalenie rodzicielskie. Jedno i drugie się leczy.",
+      "podpowiedz": "Szukanie pomocy dla siebie to nie odbieranie czasu dziecku. To inwestycja w nie."
+    },
+    {
+      "id": "kp-17",
+      "modul": 11,
+      "tytul": "Rozmowa rodzicielska",
+      "wstep": "Piętnaście minut w tygodniu, bez dzieci. Struktura po to, żeby nie zamieniła się w wyliczankę pretensji.",
+      "typ": "powtarzalna",
+      "maksWpisow": 8,
+      "pola": [
+        { "klucz": "data", "etykieta": "Data", "typ": "data" },
+        { "klucz": "dobrze", "etykieta": "Co w tym tygodniu poszło dobrze?", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "problem", "etykieta": "Jeden problem — nie pięć", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "decyzja", "etykieta": "Nasza decyzja", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "kto_co", "etykieta": "Kto co robi?", "typ": "tekst" }
+      ],
+      "podpowiedz": "Spójność jest ważniejsza niż zgoda co do szczegółu. Zasady negocjujemy między sobą, nie przy dziecku."
+    },
+    {
+      "id": "kp-18",
+      "modul": 12,
+      "tytul": "Mój plan podtrzymania",
+      "wstep": "Regres przyjdzie — przy chorobie, przeprowadzce, początku roku szkolnego. To nie znaczy, że nic się nie nauczyliście. Ta karta jest po to, żeby wiedzieć, co wtedy zrobić.",
+      "typ": "planPodtrzymania",
+      "sekcje": [
+        { "klucz": "codziennie", "etykieta": "Trzy rzeczy, które robię codziennie niezależnie od wszystkiego", "typ": "lista", "liczbaPol": 3 },
+        { "klucz": "sygnaly", "etykieta": "Moje trzy wczesne sygnały, że wracamy do starych wzorców", "typ": "lista", "liczbaPol": 3 },
+        { "klucz": "pierwszy_krok", "etykieta": "Co robię, gdy zauważę regres — konkretny pierwszy krok", "typ": "tekstDlugi", "wiersze": 2 },
+        { "klucz": "wsparcie", "etykieta": "Kto jest moim wsparciem", "typ": "tekst" },
+        { "klucz": "profesjonalna", "etykieta": "Kiedy szukam pomocy profesjonalnej", "typ": "tekstDlugi", "wiersze": 2 }
+      ],
+      "doWydruku": true,
+      "podpowiedz": "Gdybym miała wybrać trzy rzeczy z całego programu: dziesięć minut dziennie, pięć pochwał opisowych, naprawa po własnym błędzie."
+    }
+  ],
+
+  "quizy": [
+    {
+      "modul": 1,
+      "pytania": [
+        { "p": "Dziecko protestuje przy wyłączaniu tabletu. Po trzech prośbach rodzic mówi: „Dobrze, jeszcze pięć minut\". Czego nauczyło się dziecko?", "opcje": ["Że rodzic jest wyrozumiały", "Że wystarczająco głośny protest przynosi efekt", "Że limity są elastyczne", "Nic — to jednorazowa sytuacja"], "poprawna": 1, "wyjasnienie": "Ustąpienie na szczycie protestu wzmacnia dokładnie to zachowanie, które chcieliśmy przerwać. Rodzic też dostaje nagrodę — ciszę. Dlatego mechanizm się utrwala." },
+        { "p": "Czym jest pułapka przymusu?", "opcje": ["Wadą charakteru dziecka", "Wzajemnym wzmacnianiem się zachowań rodzica i dziecka w krótkich cyklach", "Zaburzeniem wymagającym diagnozy", "Skutkiem zbyt łagodnego wychowania"], "poprawna": 1, "wyjasnienie": "To wyuczony wzorzec, w który wpada się jak w koleinę. Skoro się wyuczył, może się też oduczyć." },
+        { "p": "Co jest pierwszym zadaniem w tygodniu po tym module?", "opcje": ["Wprowadzić nowe zasady", "Zacząć konsekwentnie karać", "Tylko obserwować, bez zmian", "Porozmawiać z dzieckiem o jego zachowaniu"], "poprawna": 2, "wyjasnienie": "Obserwacja przed interwencją to nie strata czasu. Wzoru, którego się nie widzi, nie da się zmienić." },
+        { "p": "Kto ponosi winę za powstanie pułapki przymusu?", "opcje": ["Rodzic", "Dziecko", "Oboje po równo", "Nikt — to mechanizm, w który się wpada"], "poprawna": 3, "wyjasnienie": "Nikt tego nie zaprojektował. Ale zmienić choreografię może realnie tylko dorosły." }
+      ]
+    },
+    {
+      "modul": 2,
+      "pytania": [
+        { "p": "Dlaczego uwaga negatywna wzmacnia zachowanie?", "opcje": ["Bo dziecko lubi być karcone", "Bo dla dziecka to nadal intensywny kontakt z rodzicem", "Bo dziecko nie rozumie, że robi źle", "Nie wzmacnia — to mit"], "poprawna": 1, "wyjasnienie": "Dziecko woli być zauważone za coś złego niż niezauważone wcale." },
+        { "p": "Co robi rodzic w specjalnym czasie?", "opcje": ["Uczy dziecko nowej gry", "Zadaje pytania, żeby okazać zainteresowanie", "Opisuje to, co widzi, i podąża za dzieckiem", "Proponuje ciekawsze rozwiązania"], "poprawna": 2, "wyjasnienie": "Opisuje, naśladuje, odzwierciedla, entuzjazmuje się. Nie pyta, nie poucza, nie przejmuje kierownictwa." },
+        { "p": "Czy specjalny czas można odebrać za karę?", "opcje": ["Tak, to skuteczna motywacja", "Tak, jeśli zachowanie było poważne", "Nie — nie jest nagrodą ani karą", "Tylko w ostateczności"], "poprawna": 2, "wyjasnienie": "To fundament relacji, a nie waluta. Odbieranie go zamienia go w kolejne narzędzie kontroli." },
+        { "p": "Dlaczego pytanie w trakcie zabawy jest problemem?", "opcje": ["Rozprasza dziecko", "To ukryta forma przejmowania kontroli", "Dziecko nie umie odpowiedzieć", "Nie jest problemem"], "poprawna": 1, "wyjasnienie": "Przez cały dzień dorośli mówią dziecku, co ma robić. Te dziesięć minut to jedyny moment, gdy jest odwrotnie." }
+      ]
+    },
+    {
+      "modul": 3,
+      "pytania": [
+        { "p": "Która pochwała jest opisowa?", "opcje": ["„Brawo!\"", "„Grzeczna dziewczynka\"", "„Poczekałaś na swoją kolej, chociaż to było trudne\"", "„Jesteś taka mądra\""], "poprawna": 2, "wyjasnienie": "Zawiera to, co dziecko zrobiło, moment i skutek. Pierwsza wersja to gest, druga to lustro." },
+        { "p": "Dlaczego lepiej chwalić wysiłek niż zdolności?", "opcje": ["Bo zdolności są mniej ważne", "Bo dziecko przy porażce nie wyciągnie wniosku, że straciło wartość", "Bo to bardziej sprawiedliwe", "Bo tak jest uprzejmiej"], "poprawna": 1, "wyjasnienie": "„Jesteś zdolny\" mówi: masz coś, czego nie kontrolujesz. „Długo nad tym siedziałeś\" mówi: to zależy od ciebie." },
+        { "p": "Co pokazują badania na temat pochwały?", "opcje": ["Że jest miłym dodatkiem", "Że działa tylko u małych dzieci", "Że to jeden z najsilniejszych komponentów skutecznych programów rodzicielskich", "Że nadmiar pochwał szkodzi"], "poprawna": 2, "wyjasnienie": "W dużej analizie z 26 badanych technik wygrały trzy — na czele wzmocnienie pozytywne, a w szczególności pochwała." },
+        { "p": "Dziecko przestało krzyczeć po 30 sekundach zamiast po 5 minutach. Co robisz?", "opcje": ["Nic — to nadal krzyk", "Chwalisz poprawę", "Przypominasz, że w ogóle nie powinno krzyczeć", "Czekasz, aż przestanie całkiem"], "poprawna": 1, "wyjasnienie": "Jeśli będziesz czekać na wersję doskonałą, nie doczekasz się nigdy — a dziecko nie dostanie informacji, że idzie w dobrą stronę." }
+      ]
+    },
+    {
+      "modul": 4,
+      "pytania": [
+        { "p": "Co oznacza „A\" w schemacie ABC?", "opcje": ["Agresję", "To, co działo się bezpośrednio przed zachowaniem", "Analizę", "Akceptację"], "poprawna": 1, "wyjasnienie": "A to poprzednik — sytuacja, pora, stan dziecka, wymaganie, które padło." },
+        { "p": "Dziecko drze kartkę przy zadaniach z matematyki, a rodzic wtedy odpuszcza lekcje. Jaka jest prawdopodobna funkcja?", "opcje": ["Uwaga", "Ucieczka od trudnego zadania", "Zdobycie przedmiotu", "Regulacja sensoryczna"], "poprawna": 1, "wyjasnienie": "Zachowanie skutecznie kończy wymaganie. Ignorowanie tu nie pomoże — trzeba obniżyć trudność zadania." },
+        { "p": "Co warto sprawdzić, ZANIM zaczniemy pracować nad zachowaniem?", "opcje": ["Czy dziecko rozumie zasady", "Czy jest głodne, zmęczone, przebodźcowane, czy nie zaczyna chorować", "Czy inne dzieci też tak robią", "Czy zasługuje na nagrodę"], "poprawna": 1, "wyjasnienie": "To nie szukanie wymówek, tylko szukanie prawdy. Ukryte „A\" tłumaczy zaskakująco wiele sytuacji." },
+        { "p": "Dlaczego rozpoznanie funkcji zachowania ma znaczenie?", "opcje": ["Bo pozwala ocenić, czy dziecko robi to celowo", "Bo ten sam objaw przy różnej przyczynie wymaga różnych działań", "Bo trzeba wiedzieć, kogo winić", "Nie ma znaczenia praktycznego"], "poprawna": 1, "wyjasnienie": "Dokładnie jak w medycynie — ta sama gorączka, inna przyczyna, inne leczenie." }
+      ]
+    },
+    {
+      "modul": 5,
+      "pytania": [
+        { "p": "Ile sekund odczekać po wydaniu polecenia?", "opcje": ["Natychmiast powtórzyć", "2 sekundy", "5 sekund w ciszy", "Minutę"], "poprawna": 2, "wyjasnienie": "Dziecko potrzebuje tych sekund, żeby przetworzyć polecenie i oderwać się od zajęcia. Powtarzając po dwóch, przerywamy proces, który już się zaczął." },
+        { "p": "Które polecenie jest skuteczne?", "opcje": ["„Może byśmy się wykąpali, dobrze?\"", "„Nie biegaj!\"", "„Odłóż buty do szafki.\"", "„Ubierz się, umyj zęby i weź plecak.\""], "poprawna": 2, "wyjasnienie": "Jedno, konkretne, obserwowalne, w formie twierdzącej." },
+        { "p": "Dlaczego nie zadawać polecenia w formie pytania?", "opcje": ["Bo brzmi niepoważnie", "Bo dajesz prawo do odpowiedzi „nie\"", "Bo dziecko nie rozumie pytań", "To nie ma znaczenia"], "poprawna": 1, "wyjasnienie": "A potem złościmy się, że dziecko z tego prawa skorzystało." },
+        { "p": "Jaka jest właściwa kolejność w technice „kiedy — to\"?", "opcje": ["Najpierw przyjemność, potem obowiązek", "Najpierw obowiązek, potem przyjemność", "Kolejność nie ma znaczenia", "Zależy od wieku dziecka"], "poprawna": 1, "wyjasnienie": "„Włączę bajkę, a potem posprzątasz\" to obietnica, której dziecko nie ma powodu dotrzymać — już dostało swoje." }
+      ]
+    },
+    {
+      "modul": 6,
+      "pytania": [
+        { "p": "Po co rutyna?", "opcje": ["Żeby dziecko się nauczyło dyscypliny", "Żeby zdjąć z rodzica rolę tego, kto ciągle każe", "Żeby dzień był bardziej produktywny", "Żeby dziecko miało mniej wolności"], "poprawna": 1, "wyjasnienie": "Wtedy nie Ty każesz — tak jest ustalone. Trudno tęsknić za kimś, kto ma z tobą tylko sprawy do załatwienia." },
+        { "p": "Nad iloma gorącymi punktami pracujemy naraz?", "opcje": ["Wszystkimi", "Trzema", "Jednym", "Zależy od determinacji"], "poprawna": 2, "wyjasnienie": "Cztery momenty da się zaprojektować. Całego dnia nie." },
+        { "p": "Dlaczego uprzedzać o kończeniu zabawy?", "opcje": ["To uprzejmość", "Dzieci mają problem nie z kończeniem, ale z NAGŁYM kończeniem", "Żeby dziecko zdążyło się pożegnać z zabawką", "Żeby uniknąć płaczu"], "poprawna": 1, "wyjasnienie": "„Za pięć minut kończymy\" to nie grzeczność, tylko neurologia przejść." },
+        { "p": "Jaki jest problem z ekranem jako narzędziem uspokajania?", "opcje": ["Szkodzi wzrokowi", "Uczy jednej strategii radzenia sobie z emocjami — odcięcia się", "Jest zbyt drogi", "Nie ma problemu, jeśli treści są wartościowe"], "poprawna": 1, "wyjasnienie": "A potem dziwimy się, że nastolatek nie umie znieść nudy ani przykrości." }
+      ]
+    },
+    {
+      "modul": 7,
+      "pytania": [
+        { "p": "Czego NIGDY nie ignorujemy?", "opcje": ["Marudzenia", "Przerywania rozmowy", "Agresji, niszczenia i prawdziwego lęku dziecka", "Grymaszenia przy jedzeniu"], "poprawna": 2, "wyjasnienie": "Dziecko przestraszone nie manipuluje. Dziecko przestraszone potrzebuje." },
+        { "p": "Co dzieje się na początku ignorowania planowego?", "opcje": ["Zachowanie od razu maleje", "Zachowanie najpierw się NASILA", "Nic się nie zmienia przez miesiąc", "Dziecko obraża się na rodzica"], "poprawna": 1, "wyjasnienie": "To wybuch wygaszania — dziecko sprawdza, czy stara strategia jeszcze działa. To znaczy, że technika działa." },
+        { "p": "Ile zachowań „żółtych\" można prowadzić jednocześnie?", "opcje": ["Wszystkie, które przeszkadzają", "Maksymalnie jedno–dwa", "Pięć", "Nie ma limitu przy konsekwencji"], "poprawna": 1, "wyjasnienie": "Podział na trzy kolory to oszczędzanie amunicji na to, co naprawdę ważne." },
+        { "p": "Rodzic ignoruje, ale wzdycha i przewraca oczami. Czy to ignorowanie?", "opcje": ["Tak, przecież nic nie mówi", "Nie — westchnienie też jest uwagą", "Zależy od wieku dziecka", "Tak, o ile nie patrzy"], "poprawna": 1, "wyjasnienie": "Twarz neutralna, wzrok odwrócony, żadnego komentarza — również niewerbalnego." }
+      ]
+    },
+    {
+      "modul": 8,
+      "pytania": [
+        { "p": "Czego najbardziej potrzebuje skuteczna konsekwencja?", "opcje": ["Dotkliwości", "Przewidywalności", "Zaskoczenia", "Długiego wyjaśnienia"], "poprawna": 1, "wyjasnienie": "Dziecko, które wie, co się stanie, jest spokojniejsze niż dziecko, które wie, że stanie się coś strasznego, ale nie wie co." },
+        { "p": "Ile trwa przerwa (time-out) u dziecka czteroletniego?", "opcje": ["Do momentu przeprosin", "Około 4 minut, liczone od wyciszenia", "15 minut", "Tyle, ile rodzic uzna"], "poprawna": 1, "wyjasnienie": "Minuta na rok życia, maksymalnie pięć, licząc od chwili wyciszenia." },
+        { "p": "Dlaczego nie prowadzić wykładu w trakcie konsekwencji?", "opcje": ["Bo to strata czasu", "Bo dziecko wtedy się broni, a nie uczy", "Bo psuje autorytet", "Bo dziecko i tak nie słyszy"], "poprawna": 1, "wyjasnienie": "Wykład to potrzeba rodzica, nie lekcja dziecka. Maksymalnie dziesięć słów; rozmowa później." },
+        { "p": "U dziecka z doświadczeniem straty lub zaniedbania izolacyjna przerwa może:", "opcje": ["Działać najlepiej ze wszystkich metod", "Uruchamiać prawdziwy lęk — lepsza jest przerwa z rodzicem", "Nie mieć żadnego wpływu", "Być stosowana dłużej"], "poprawna": 1, "wyjasnienie": "Granica nie musi być zimna, żeby była granicą. Time-in: siedzisz obok, milczysz, jesteś." }
+      ]
+    },
+    {
+      "modul": 9,
+      "pytania": [
+        { "p": "Po czym poznać dysregulację, a nie zachowanie instrumentalne?", "opcje": ["Dziecko patrzy na rodzica i sprawdza reakcję", "Kończy się natychmiast, gdy dostanie swoje", "Nie reaguje na logikę i kończy się wyczerpaniem", "Trwa krótko"], "poprawna": 2, "wyjasnienie": "W dysregulacji ta część mózgu, która przyjmuje argumenty, jest offline." },
+        { "p": "Co robić w trakcie napadu emocjonalnego?", "opcje": ["Tłumaczyć spokojnie zasady", "Postawić konsekwencję", "Być obecnym i pilnować bezpieczeństwa", "Wyjść z pokoju"], "poprawna": 2, "wyjasnienie": "Nie uczymy, nie tłumaczymy, nie negocjujemy, nie karzemy. Rozmowa dopiero potem." },
+        { "p": "Które zdanie jest zgodne z czterema krokami?", "opcje": ["„Nie ma co płakać\"", "„To nic takiego\"", "„Możesz być zły. Nie możesz bić.\"", "„Duzi chłopcy nie płaczą\""], "poprawna": 2, "wyjasnienie": "Akceptujemy emocję, nie zachowanie. To jedno z najważniejszych zdań w całym programie." },
+        { "p": "Dlaczego trzylatek nie potrafi się sam uspokoić?", "opcje": ["Bo nie chce", "Bo struktury odpowiedzialne za hamowanie impulsów dopiero dojrzewają", "Bo jest źle wychowany", "Bo rodzice na to pozwalają"], "poprawna": 1, "wyjasnienie": "Robi to przy Tobie i dzięki Tobie. Twój spokój jest narzędziem, które dziecko na razie pożycza." }
+      ]
+    },
+    {
+      "modul": 10,
+      "pytania": [
+        { "p": "Jaka myśl najsilniej zapowiada ostrą reakcję rodzica?", "opcje": ["„Jestem zmęczona\"", "„On robi mi to na złość\"", "„Muszę być konsekwentna\"", "„To minie\""], "poprawna": 1, "wyjasnienie": "Wroga atrybucja uruchamia reakcję obronną. A dzieci prawie nigdy nie planują w ten sposób." },
+        { "p": "Dlaczego wydech ma być dłuższy niż wdech?", "opcje": ["Żeby się skupić", "Bo przedłużony wydech aktywuje układ przywspółczulny", "Bo tak uczy joga", "To nie ma znaczenia"], "poprawna": 1, "wyjasnienie": "To fizjologiczny hamulec, nie ezoteryka. Wdech na 4, wydech na 6, trzy razy." },
+        { "p": "Co zrobić po tym, jak się krzyknęło?", "opcje": ["Udawać, że nic się nie stało", "Wycofać zasadę, żeby wynagrodzić dziecku", "Naprawić: przeprosić i utrzymać zasadę", "Wytłumaczyć, że dziecko sprowokowało"], "poprawna": 2, "wyjasnienie": "Dziecko uczy się wtedy najważniejszej rzeczy o relacjach: że da się je naprawić." },
+        { "p": "Rodzic od miesięcy nie ma z niczego radości, sen się rozsypał. To:", "opcje": ["Naturalne przy małym dziecku", "Brak charakteru", "Możliwe objawy depresji lub wypalenia — warto poszukać pomocy", "Powód do wstydu"], "poprawna": 2, "wyjasnienie": "Jedno i drugie się leczy. Szukanie pomocy dla siebie to inwestycja w dziecko." }
+      ]
+    },
+    {
+      "modul": 11,
+      "pytania": [
+        { "p": "Czego uczy się dziecko, gdy rodzice mają sprzeczne zasady?", "opcje": ["Elastyczności", "Dyplomacji — do kogo pójść po to, czego chce", "Samodzielności", "Niczego szczególnego"], "poprawna": 1, "wyjasnienie": "Przestaje uczyć się zasad, a zaczyna uczyć się nawigowania między dorosłymi." },
+        { "p": "Co jest ważniejsze?", "opcje": ["Pełna zgoda co do każdej zasady", "Spójność w stosowaniu ustalonej wersji", "Żeby jedno z rodziców było surowsze", "Żeby zasady były jak najbardziej szczegółowe"], "poprawna": 1, "wyjasnienie": "Lepsza zasada, do której jedno ma zastrzeżenia, ale która obowiązuje zawsze, niż dwie doskonałe stosowane naprzemiennie." },
+        { "p": "Dlaczego unikać zdania „poczekaj, aż wróci tata\"?", "opcje": ["Bo brzmi groźnie", "Bo odbiera powagę własnym słowom i zamienia drugiego rodzica w karę", "Bo dziecko i tak zapomni", "Bo tata może się spóźnić"], "poprawna": 1, "wyjasnienie": "Dwie szkody naraz." },
+        { "p": "Rodzice po rozstaniu — co jest realistycznym celem?", "opcje": ["Pełna zgodność wszystkich zasad", "Minimum wspólnych zasad: bezpieczeństwo, sen, ekrany", "Każde robi po swojemu bez ustaleń", "Dziecko decyduje samo"], "poprawna": 1, "wyjasnienie": "I nie rozliczamy dziecka z tego, co dzieje się u drugiego rodzica." }
+      ]
+    },
+    {
+      "modul": 12,
+      "pytania": [
+        { "p": "Co oznacza regres po zakończeniu programu?", "opcje": ["Że nic się nie nauczyliście", "Że metoda była zła", "Że jesteście rodziną, a nie maszyną — systemy pod obciążeniem wracają do starych wzorców", "Że trzeba zacząć wszystko od nowa"], "poprawna": 2, "wyjasnienie": "Różnica polega na tym, że teraz wiesz, co robić — i wiesz, że to działało." },
+        { "p": "Co pokazują badania o trwałości efektów?", "opcje": ["Że dobre techniki działają same z siebie latami", "Że żadna technika nie gwarantuje trwałości bez świadomego wracania do niej", "Że efekt znika po miesiącu", "Że trwałość zależy od wieku dziecka"], "poprawna": 1, "wyjasnienie": "Utrzymanie zmiany wymaga powtarzania tego, co się już ma — nie szukania lepszej metody." },
+        { "p": "Które trzy rzeczy warto zatrzymać na zawsze?", "opcje": ["Time-out, ignorowanie, konsekwencje", "Dziesięć minut dziennie, pięć pochwał opisowych, naprawa po własnym błędzie", "Rutyny, zasady, kodeks domowy", "Obserwację, analizę, planowanie"], "poprawna": 1, "wyjasnienie": "Cała reszta to narzędzia, po które sięgasz w razie potrzeby. Te trzy to codzienność." },
+        { "p": "Czego potrzebuje dziecko od rodzica?", "opcje": ["Żeby był doskonały", "Żeby nigdy nie krzyczał", "Żeby był obecny, przewidywalny i wracał po gorszym dniu", "Żeby zawsze wiedział, co robić"], "poprawna": 2, "wyjasnienie": "Nie ma rodzica, który nigdy nie miał dość. Są tylko rodzice, którzy wracają." }
+      ]
+    }
+  ],
+
+  "zabawy": [
+    { "tytul": "Lustro", "wiek": "2–5", "czas": "5 min", "materialy": "brak", "modul": 2, "jak": "Dziecko robi dowolny ruch, Ty powtarzasz dokładnie to samo. Potem zamiana ról.", "poco": "Ćwiczy podążanie za dzieckiem i daje mu doświadczenie bycia naśladowanym — czyli ważnym." },
+    { "tytul": "Sprawozdawca", "wiek": "2–6", "czas": "10 min", "materialy": "ulubione zabawki", "modul": 2, "jak": "Dziecko się bawi, Ty komentujesz jak sprawozdawca sportowy: „Stawiasz czerwony klocek na niebieskim. Teraz sięgasz po zielony.\"", "poco": "Trening opisywania zamiast pytania. Zaskakująco trudne dla dorosłych." },
+    { "tytul": "Kto zauważy więcej", "wiek": "4–10", "czas": "10 min", "materialy": "brak", "modul": 3, "jak": "Przez cały wieczór każde z Was wyłapuje i mówi na głos, co drugie zrobiło dobrego. Liczycie punkty.", "poco": "Uczy zauważania pozytywów — także dziecko uczy się chwalić." },
+    { "tytul": "Skarbonka dobrych chwil", "wiek": "4–12", "czas": "2 min dziennie", "materialy": "słoik, karteczki", "modul": 3, "jak": "Codziennie każdy wrzuca karteczkę z jedną dobrą rzeczą z dnia. W niedzielę czytacie na głos.", "poco": "Buduje wspólną pamięć o tym, co się udało. Działa też na rodzica." },
+    { "tytul": "Detektyw uczuć", "wiek": "4–9", "czas": "10 min", "materialy": "zdjęcia z gazet lub karty emocji", "modul": 9, "jak": "Oglądacie twarze i zgadujecie, co ta osoba czuje i dlaczego. Nie ma złych odpowiedzi.", "poco": "Rozwija słownik emocji — a nazwana emocja jest łatwiejsza do zniesienia." },
+    { "tytul": "Burza w słoiku", "wiek": "3–8", "czas": "5 min", "materialy": "słoik, woda, brokat", "modul": 9, "jak": "Wstrząśnijcie słoikiem: „tak wygląda złość\". Potem patrzycie w ciszy, aż brokat opadnie.", "poco": "Pokazuje dziecku, że emocja mija sama, jeśli dać jej czas. Świetne do użycia PO wyciszeniu." },
+    { "tytul": "Oddech smoka", "wiek": "3–8", "czas": "3 min", "materialy": "brak", "modul": 9, "jak": "Wdech nosem — smok nabiera powietrza. Długi wydech ustami — smok wypuszcza dym. Trzy razy.", "poco": "Wydłużony wydech realnie obniża pobudzenie. Ćwiczcie, gdy jest spokojnie, żeby zadziałało w kryzysie." },
+    { "tytul": "Robot i pilot", "wiek": "4–8", "czas": "10 min", "materialy": "brak", "modul": 5, "jak": "Dziecko jest robotem, Ty wydajesz JEDNO proste polecenie naraz. Potem zamiana — dziecko steruje Tobą.", "poco": "Ćwiczy formułowanie poleceń pojedynczych i konkretnych, w formie zabawy." },
+    { "tytul": "Pięć sekund", "wiek": "5–10", "czas": "5 min", "materialy": "minutnik", "modul": 5, "jak": "Ty prosisz o coś prostego i milczysz przez pięć sekund. Dziecko ma zdążyć. Punkty za wykonanie bez powtarzania.", "poco": "Trening dla obojga: dziecko ćwiczy reagowanie, Ty ćwiczysz milczenie." },
+    { "tytul": "Plan dnia z obrazków", "wiek": "2–6", "czas": "20 min raz", "materialy": "kartki, kredki lub zdjęcia", "modul": 6, "jak": "Rysujecie razem kroki porannej rutyny i wieszacie na wysokości oczu dziecka.", "poco": "Przewidywalność obniża napięcie. I to plan mówi, co dalej, a nie Ty." },
+    { "tytul": "Wyścig z minutnikiem", "wiek": "4–9", "czas": "5 min", "materialy": "minutnik", "modul": 6, "jak": "„Zdążysz schować klocki, zanim zadzwoni?\" Bez kary za niezdążenie — tylko wspólna zabawa.", "poco": "Zamienia przejście w grę. Złość idzie na minutnik, nie na Ciebie." },
+    { "tytul": "Trzy kolory naszego domu", "wiek": "6–12", "czas": "20 min", "materialy": "kartki w trzech kolorach", "modul": 7, "jak": "Razem z dzieckiem dzielicie domowe zasady na zielone, żółte i czerwone. Dziecko też ma głos.", "poco": "Dziecko, które współtworzyło zasady, rzadziej z nimi walczy." },
+    { "tytul": "Kodeks rodzinny", "wiek": "5–14", "czas": "30 min", "materialy": "duży arkusz, pisaki", "modul": 8, "jak": "Wypisujecie 3–5 zasad w formie twierdzącej. Wszyscy podpisują — dorośli też.", "poco": "Zasada, którą się podpisało, jest umową, a nie wyrokiem." },
+    { "tytul": "Naprawa", "wiek": "4–12", "czas": "10 min", "materialy": "brak", "modul": 8, "jak": "Zamiast kary — wspólne wymyślenie, jak naprawić szkodę. „Co możesz zrobić, żeby było lepiej?\"", "poco": "Uczy odpowiedzialności zamiast strachu. Konsekwencja logiczna w najczystszej postaci." },
+    { "tytul": "Termometr złości", "wiek": "5–10", "czas": "20 min raz", "materialy": "kartka, kredki", "modul": 9, "jak": "Rysujecie skalę 0–10 i przy każdym poziomie zapisujecie, co dziecko czuje w ciele i co mu pomaga.", "poco": "Daje dziecku język do mówienia o narastaniu emocji, zanim wybuchnie." },
+    { "tytul": "Kącik wyciszenia", "wiek": "3–10", "czas": "30 min raz", "materialy": "koc, poduszki, książki", "modul": 9, "jak": "Urządzacie razem miejsce, do którego dziecko może pójść samo. Nie jest to miejsce kary.", "poco": "Różnica jest zasadnicza: kącik wybiera dziecko, przerwę zarządza rodzic." },
+    { "tytul": "Butelka spokoju dla rodzica", "wiek": "dorosły", "czas": "3 min", "materialy": "brak", "modul": 10, "jak": "Zanim wejdziesz do domu po pracy — trzy oddechy 4/6 w samochodzie albo na klatce.", "poco": "Prewencja jest tańsza niż reakcja. Też u dorosłych." },
+    { "tytul": "Zdanie na lodówkę", "wiek": "dorosły", "czas": "5 min", "materialy": "kartka", "modul": 10, "jak": "Wypisz swoje zdanie ratunkowe i powieś tam, gdzie na pewno je zobaczysz w trudnym momencie.", "poco": "W momencie wzburzenia nikt nie wymyśla planów — korzysta się z gotowych." },
+    { "tytul": "Rada rodzinna", "wiek": "6–16", "czas": "15 min tygodniowo", "materialy": "brak", "modul": 11, "jak": "Stała pora. Każdy mówi: co było dobre, co trudne, o co prosi. Bez przerywania.", "poco": "Uczy negocjowania zamiast wymuszania i daje dziecku realny głos." },
+    { "tytul": "Dwa pytania na dobranoc", "wiek": "3–12", "czas": "5 min", "materialy": "brak", "modul": 12, "jak": "Codziennie: „Co było dziś najfajniejsze?\" i „Co było najtrudniejsze?\". Ty też odpowiadasz.", "poco": "Buduje nawyk rozmowy o emocjach, który przetrwa do nastoletniości." },
+    { "tytul": "Kapsuła czasu", "wiek": "5–14", "czas": "30 min", "materialy": "pudełko, kartki", "modul": 12, "jak": "Każdy pisze, co chce zapamiętać z tego roku. Zaklejacie i otwieracie za rok.", "poco": "Pokazuje zmianę, której na co dzień nie widać." },
+    { "tytul": "Berek z zasadą", "wiek": "4–9", "czas": "15 min", "materialy": "brak", "modul": 5, "jak": "Zwykły berek, ale przed startem wspólnie ustalacie jedną zasadę, której wszyscy przestrzegają.", "poco": "Ćwiczy trzymanie się umowy w sytuacji pobudzenia — czyli dokładnie tam, gdzie to najtrudniejsze." },
+    { "tytul": "Co się zmieniło", "wiek": "4–10", "czas": "10 min", "materialy": "przedmioty na stole", "modul": 4, "jak": "Dziecko zamyka oczy, Ty zmieniasz jeden szczegół. Zadanie: zauważyć co.", "poco": "Trening uważności na szczegół — ta sama umiejętność, której używasz przy analizie ABC." },
+    { "tytul": "Dobre pytanie wieczoru", "wiek": "6–16", "czas": "5 min", "materialy": "słoik z pytaniami", "modul": 12, "jak": "Losujecie przy kolacji jedno pytanie: „Z czego jesteś dziś dumny?\", „Co cię dziś zaskoczyło?\".", "poco": "Utrzymuje kanał komunikacji otwarty także wtedy, gdy nic trudnego się nie dzieje." }
+  ],
+
+  "pytaniaOdpowiedzi": [
+    { "kategoria": "Specjalny czas", "pytanie": "Nie mam dziesięciu minut dziennie. Serio nie mam.", "odpowiedz": "To bardzo częsta odpowiedź i traktuję ją poważnie. Dwie rzeczy. Po pierwsze — te dziesięć minut zwykle wraca w postaci krótszych wieczornych awantur, więc bilans czasowy bywa dodatni już po dwóch tygodniach. Po drugie — jeśli naprawdę się nie da, zacznij od trzech minut, cztery razy w tygodniu. Regularność liczy się bardziej niż długość." },
+    { "kategoria": "Specjalny czas", "pytanie": "Mam troje dzieci. Co z pozostałymi?", "odpowiedz": "Zacznij od jednego — zwykle tego, z którym jest najtrudniej, bo tam efekt będzie największy. Pozostałym powiedz wprost, że każde będzie miało swoją kolej i kiedy. Dzieci znoszą czekanie znacznie lepiej niż nieprzewidywalność." },
+    { "kategoria": "Pochwała", "pytanie": "Boję się, że przechwalone dziecko wyrośnie na zarozumiałe.", "odpowiedz": "To obawa o pochwałę oceniającą cechę — „jesteś najlepszy\", „jesteś genialna\". Pochwała opisowa działa inaczej: mówi, co dziecko zrobiło i jaki to miało skutek. Ona nie nadmuchuje ego, tylko buduje obraz siebie oparty na konkretach." },
+    { "kategoria": "Pochwała", "pytanie": "Chwalę, a dziecko odpowiada „nieprawda\" albo się złości.", "odpowiedz": "To się zdarza u dzieci, które mają niski obraz siebie — pochwała nie pasuje im do tego, co o sobie myślą. Wtedy pomaga jeszcze większa konkretność i mniejsza intensywność. Zamiast „jesteś świetna\" — „zawiązałaś oba buty sama\". Trudniej się z tym kłócić." },
+    { "kategoria": "Polecenia", "pytanie": "Odczekuję pięć sekund i nic się nie dzieje.", "odpowiedz": "Sprawdź trzy rzeczy: czy byłaś blisko i miałaś kontakt wzrokowy, czy polecenie było pojedyncze i konkretne, i czy zabrzmiało jak stwierdzenie, a nie pytanie. Jeśli wszystko się zgadza, a dziecko nadal nie reaguje — powtórz raz, spokojnie, tym samym tonem, i dopiero wtedy przejdź do konsekwencji." },
+    { "kategoria": "Ignorowanie", "pytanie": "Ignoruję, a robi się gorzej. Chyba to nie działa.", "odpowiedz": "Prawdopodobnie działa. Po wprowadzeniu ignorowania zachowanie prawie zawsze najpierw się nasila — dziecko sprawdza, czy stara strategia jeszcze przynosi efekt. To zwykle kwestia kilku dni. To jest ten jeden moment, w którym ustąpienie zaszkodzi najbardziej." },
+    { "kategoria": "Ignorowanie", "pytanie": "Jak ignorować w sklepie, gdy wszyscy patrzą?", "odpowiedz": "Główną barierą nie jest technika, tylko wstyd rodzica — i warto to sobie nazwać. Praktycznie: przygotuj krótkie zdanie dla siebie („oni za chwilę o mnie zapomną\"), przećwicz najpierw w mniej ludnych miejscach i planuj krótsze wyjścia na czas wdrażania zmiany." },
+    { "kategoria": "Konsekwencje", "pytanie": "Dziecko nie chce iść na przerwę. Mam je zanieść siłą?", "odpowiedz": "Nie. Przerwa, która wymaga siły, przestaje być przerwą, a staje się szarpaniną. Alternatywy: przerwa z rodzicem (siedzicie razem w ciszy), utrata przywileju na krótki czas albo konsekwencja logiczna związana z sytuacją. Wybierz to, co możesz wyegzekwować spokojnie." },
+    { "kategoria": "Konsekwencje", "pytanie": "Zdarzyło mi się uderzyć. Czy zniszczyłam wszystko?", "odpowiedz": "Nie. Jeden trudny moment nie definiuje relacji — definiuje ją to, co zdarza się najczęściej, i to, czy potrafisz wrócić. Napraw: powiedz wprost, że to był Twój błąd, przeproś i utrzymaj zasadę. A potem przyjrzyj się, co poprzedzało — zwykle da się znaleźć moment, w którym dało się jeszcze wyjść." },
+    { "kategoria": "Emocje", "pytanie": "Skąd mam wiedzieć, czy to napad złości, czy manipulacja?", "odpowiedz": "Patrz na trzy rzeczy: czy dziecko sprawdza wzrokiem Twoją reakcję, czy zachowanie kończy się natychmiast po otrzymaniu tego, czego chciało, i czy reaguje na argumenty. Jeśli tak — to zachowanie instrumentalne, trzymaj granicę. Jeśli nie reaguje na nic i kończy się wyczerpaniem — to dysregulacja, bądź obok." },
+    { "kategoria": "Emocje", "pytanie": "Dziecko mówi „nienawidzę cię\". Jak reagować?", "odpowiedz": "Zwykle to znaczy: „jestem tak wściekły, że nie mam innych słów\". Nie odbieraj tego jako informacji o Waszej relacji. Nazwij emocję, nie treść: „Widzę, że jesteś na mnie strasznie zły\". Do treści wróćcie później, gdy oboje możecie myśleć." },
+    { "kategoria": "Rodzic", "pytanie": "Krzyczę codziennie i nienawidzę siebie za to.", "odpowiedz": "To zdanie słyszę bardzo często i zawsze mówię to samo: krzyk zwykle nie jest kwestią charakteru, tylko wyczerpanych zasobów. Zacznij nie od postanowienia „już nigdy\", tylko od rozpoznania własnych wczesnych sygnałów i jednego gotowego kroku na pierwsze dziesięć sekund. I sprawdź, czy nie brakuje Ci snu, wsparcia albo pomocy dla siebie." },
+    { "kategoria": "Rodzic", "pytanie": "Partner nie uczestniczy w programie i robi po swojemu.", "odpowiedz": "Zmiana jednego rodzica też daje efekt — badania to potwierdzają, choć efekt jest mniejszy. Nie próbuj przekonywać przez cytowanie teorii; pokaż konkret, który zadziałał u Was w domu. I ustalcie minimum: te trzy–cztery zasady, które obowiązują niezależnie od tego, kto jest w domu." },
+    { "kategoria": "Organizacja", "pytanie": "Nie zrobiłam pracy domowej z zeszłego tygodnia.", "odpowiedz": "To nie jest problem moralny, tylko informacja. Zwykle za tym stoi coś konkretnego: za duże zadanie, zły moment dnia, wstyd przed zapisywaniem albo po prostu tydzień, który się posypał. Zmniejsz zadanie do najmniejszej wersji, jaką na pewno wykonasz — jedna pochwała dziennie zamiast pięciu też buduje nawyk." },
+    { "kategoria": "Dzieci ze szczególnymi potrzebami", "pytanie": "Moje dziecko ma ADHD. Czy to zadziała?", "odpowiedz": "Tak, ale warto wiedzieć, na co. Trening rodzicielski wyraźnie poprawia współpracę, zachowania opozycyjne i atmosferę w domu. Na rdzeń objawów ADHD — impulsywność, ruchliwość, trudności z uwagą — wpływ jest ograniczony i badania to pokazują wprost. Przy ADHD potrzeba więcej struktury, krótszych poleceń i szybszych wzmocnień." },
+    { "kategoria": "Dzieci ze szczególnymi potrzebami", "pytanie": "Dziecko jest w spektrum autyzmu. Czy stosować ignorowanie?", "odpowiedz": "Bardzo ostrożnie. Zachowanie może pełnić funkcję regulacyjną — służyć poradzeniu sobie z nadmiarem bodźców, a nie zdobyciu uwagi. Wtedy ignorowanie tylko nasili trudność. Skup się na przewidywalności, komunikacji wizualnej i analizie ukrytych „A\", zwłaszcza sensorycznych." },
+    { "kategoria": "O programie", "pytanie": "Jak długo to trwa, zanim coś się zmieni?", "odpowiedz": "Pierwsze drobne zmiany rodzice zwykle zauważają po dwóch–trzech tygodniach regularnego specjalnego czasu i pochwał. Wyraźniejsza zmiana zachowania to zwykle 6–10 tygodni. Zmiany bywają nierówne: dobry tydzień, gorszy tydzień. Dlatego warto zapisywać — pamięć zapamiętuje głównie te trudne dni." }
+  ],
+
+  "kryzys": {
+    "komunikat": "Jeśli w tej chwili dzieje się coś, co Cię przerasta — nie zostawaj z tym sama, sam.",
+    "kontakty": [
+      { "nazwa": "Numer alarmowy", "numer": "112", "opis": "gdy komuś grozi bezpośrednie niebezpieczeństwo" },
+      { "nazwa": "Telefon zaufania dla dzieci i młodzieży", "numer": "116 111", "opis": "dla dzieci i nastolatków, całodobowo" },
+      { "nazwa": "Całodobowe wsparcie dla osób w kryzysie", "numer": "800 70 2222", "opis": "bezpłatnie, przez całą dobę" },
+      { "nazwa": "Niebieska Linia", "numer": "800 12 00 02", "opis": "przemoc w rodzinie" },
+      { "nazwa": "Telefon wsparcia dla rodziców", "numer": "800 100 100", "opis": "dla dorosłych w sprawach dzieci" }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "tytul": "Co naprawdę działa — przegląd badań",
+    "opis": "Dane liczbowe do wykresów w module analizy. Wszystkie wartości pochodzą z opublikowanych metaanaliz. Interpretacja w polu 'jakCzytac'.",
+    "aktualizacja": "2026-09"
+  },
+
+  "jakCzytac": {
+    "wielkoscEfektu": "Wielkość efektu (d) mówi, jak dużą zmianę przynosi metoda. Umownie: 0,2 to zmiana mała, ale realna; 0,5 — umiarkowana; 0,8 — duża. W psychologii wartości powyżej 0,5 przy interwencjach dla całych rodzin są uznawane za bardzo dobre.",
+    "wagaRegresji": "Waga regresji pokazuje, o ile silniejszy jest efekt programu, gdy zawiera on daną technikę. Im wyższa wartość, tym bardziej dany element ciągnie wynik w górę.",
+    "ostrzezenie": "To dane o średnich z setek rodzin, nie prognoza dla konkretnego dziecka. U jednej rodziny zadziała mocniej, u innej słabiej — i obie te sytuacje mieszczą się w tych liczbach."
+  },
+
+  "wykres1_komponenty": {
+    "tytul": "Które elementy ciągną wynik w górę",
+    "podtytul": "Metaanaliza 77 badań programów dla dzieci 0–7 lat (Kaminski i wsp., 2008). Waga regresji dla zachowania dziecka.",
+    "typ": "slupkowy_poziomy",
+    "jednostka": "waga regresji",
+    "dane": [
+      { "etykieta": "Konsekwentne reagowanie rodzica", "wartosc": 0.333, "kierunek": "wzmacnia", "wModule": [8, 11] },
+      { "etykieta": "Pozytywne interakcje i komunikacja emocjonalna", "wartosc": 0.284, "kierunek": "wzmacnia", "wModule": [2, 9] },
+      { "etykieta": "Ćwiczenie umiejętności z własnym dzieckiem", "wartosc": 0.234, "kierunek": "wzmacnia", "wModule": [2, 3, 5] },
+      { "etykieta": "Przerwa (time-out) jako narzędzie", "wartosc": 0.170, "kierunek": "wzmacnia", "wModule": [8] },
+      { "etykieta": "Uczenie rodziców rozwiązywania problemów", "wartosc": -0.150, "kierunek": "oslabia", "wModule": [] },
+      { "etykieta": "Wspieranie umiejętności społecznych dziecka", "wartosc": -0.198, "kierunek": "oslabia", "wModule": [] }
+    ],
+    "wniosek": "Największą różnicę robi nie surowość, tylko przewidywalność — i to, czy rodzic naprawdę ćwiczy nowe umiejętności z własnym dzieckiem, a nie tylko o nich słucha.",
+    "zrodlo": "Kaminski, Valle, Filene, Boyle (2008). A meta-analytic review of components associated with parent training program effectiveness. Journal of Abnormal Child Psychology, 36(4), 567–589."
+  },
+
+  "wykres2_techniki": {
+    "tytul": "Trzy techniki z dwudziestu sześciu",
+    "podtytul": "Metaanaliza 154 badań, 398 wielkości efektu (Leijten i wsp., 2019). Przebadano 26 technik rodzicielskich — tylko te wiązały się z silniejszym efektem.",
+    "typ": "slupkowy_zPrzedzialem",
+    "jednostka": "β (siła związku)",
+    "dane": [
+      { "etykieta": "Pochwała", "wartosc": 0.22, "dolny": 0.02, "gorny": 0.43, "wModule": [3] },
+      { "etykieta": "Naturalne i logiczne konsekwencje", "wartosc": 0.21, "dolny": 0.05, "gorny": 0.38, "wModule": [8] },
+      { "etykieta": "Wzmocnienie pozytywne (szeroko)", "wartosc": 0.20, "dolny": 0.02, "gorny": 0.38, "wModule": [2, 3] }
+    ],
+    "wniosek": "Z dwudziestu sześciu przebadanych technik wygrały trzy — i wszystkie trzy dotyczą tego, co robimy, gdy dziecko zachowuje się dobrze, albo tego, jak stawiamy granice bez przemocy.",
+    "zrodlo": "Leijten, Gardner, Melendez-Torres i wsp. (2019). Meta-analyses: Key parenting program components for disruptive child behavior. JAACAP, 58(2), 180–190."
+  },
+
+  "wykres3_poziomy": {
+    "tytul": "Dla kogo efekt jest największy",
+    "podtytul": "Ta sama metaanaliza. Im większe trudności na starcie, tym większa zmiana.",
+    "typ": "slupkowy",
+    "jednostka": "wielkość efektu d",
+    "dane": [
+      { "etykieta": "Wszyscy rodzice (profilaktyka)", "wartosc": 0.21 },
+      { "etykieta": "Rodziny z podwyższonym ryzykiem", "wartosc": 0.27 },
+      { "etykieta": "Dzieci z wyraźnymi trudnościami", "wartosc": 0.55 },
+      { "etykieta": "Praca z nasilonymi problemami", "wartosc": 0.69 }
+    ],
+    "wniosek": "Jeśli u Was jest naprawdę trudno — to nie znaczy, że jesteście przypadkiem beznadziejnym. To znaczy, że jesteście w grupie, która z takiej pracy zyskuje najwięcej.",
+    "zrodlo": "Leijten i wsp. (2019), JAACAP, 58(2), 180–190."
+  },
+
+  "wykres4_kontekst": {
+    "tytul": "Czy to zadziała u nas?",
+    "podtytul": "Analiza danych indywidualnych z 15 europejskich badań (ok. 1700 dzieci, 2–10 lat). Sprawdzano, czy sytuacja rodziny osłabia efekt.",
+    "typ": "listaWynikow",
+    "dane": [
+      { "etykieta": "Niskie dochody", "wynik": "bez różnicy" },
+      { "etykieta": "Samotne rodzicielstwo", "wynik": "bez różnicy" },
+      { "etykieta": "Bezrobocie w domu", "wynik": "bez różnicy" },
+      { "etykieta": "Niskie wykształcenie rodzica", "wynik": "bez różnicy" },
+      { "etykieta": "Nastoletnie rodzicielstwo", "wynik": "bez różnicy" },
+      { "etykieta": "Przynależność do mniejszości etnicznej", "wynik": "bez różnicy" },
+      { "etykieta": "Poważniejsze trudności dziecka", "wynik": "większa korzyść" },
+      { "etykieta": "Współwystępujące ADHD", "wynik": "bez osłabienia efektu" },
+      { "etykieta": "Depresja matki", "wynik": "większa redukcja trudności dziecka" }
+    ],
+    "wniosek": "To jedno z ważniejszych ustaleń ostatnich lat: dobrze poprowadzona praca z rodzicem działa niezależnie od tego, ile ktoś zarabia, czy wychowuje sam i jakie ma wykształcenie.",
+    "zrodlo": "Gardner, Leijten i wsp., analiza danych indywidualnych uczestników programu Incredible Years w Europie (NIHR Public Health Research)."
+  },
+
+  "wykres5_trwalosc": {
+    "tytul": "Co z trwałością",
+    "podtytul": "Metaanaliza 42 badań z pomiarem odroczonym.",
+    "typ": "komunikat",
+    "trescGlowna": "Żadna z 26 przebadanych technik nie wiązała się sama z siebie z silniejszym efektem długoterminowym.",
+    "wniosek": "To nie znaczy, że efekt znika. To znaczy, że utrzymanie zmiany wymaga świadomego wracania do tego, co się już umie — a nie szukania lepszej metody. Dlatego w programie są sesje podtrzymujące, a w tej aplikacji plan podtrzymania.",
+    "zrodlo": "Leijten i wsp. (2019), metaanaliza 2: 42 badania, 157 wielkości efektu."
+  },
+
+  "obszaryPraktyki": [
+    { "id": "relacja", "nazwa": "Relacja i wspólny czas", "wagaBadawcza": 3, "moduly": [2], "zrodlaWpisow": ["kp-02", "kp-03"], "opisWagi": "jeden z najsilniejszych komponentów; fundament, na którym stoi cała reszta" },
+    { "id": "wzmocnienia", "nazwa": "Pochwała i wzmacnianie", "wagaBadawcza": 3, "moduly": [3], "zrodlaWpisow": ["kp-04", "kp-05"], "opisWagi": "najsilniejsza pojedyncza technika w metaanalizie 26 technik" },
+    { "id": "obserwacja", "nazwa": "Obserwacja i rozumienie zachowania", "wagaBadawcza": 2, "moduly": [1, 4], "zrodlaWpisow": ["kp-01", "kp-06"], "opisWagi": "warunek trafnego doboru pozostałych narzędzi" },
+    { "id": "komunikacja", "nazwa": "Skuteczne polecenia", "wagaBadawcza": 2, "moduly": [5], "zrodlaWpisow": ["kp-07"], "opisWagi": "element ćwiczenia umiejętności z własnym dzieckiem" },
+    { "id": "struktura", "nazwa": "Struktura i przewidywalność", "wagaBadawcza": 3, "moduly": [6], "zrodlaWpisow": ["kp-08", "kp-09"], "opisWagi": "konsekwentne reagowanie to najwyższa waga w metaanalizie Kaminski" },
+    { "id": "granice", "nazwa": "Granice i konsekwencje", "wagaBadawcza": 3, "moduly": [7, 8], "zrodlaWpisow": ["kp-10", "kp-11", "kp-12"], "opisWagi": "naturalne i logiczne konsekwencje — jedna z trzech skutecznych technik" },
+    { "id": "emocje", "nazwa": "Emocje dziecka", "wagaBadawcza": 3, "moduly": [9], "zrodlaWpisow": ["kp-13", "kp-14"], "opisWagi": "komunikacja emocjonalna należy do komponentów o największej wadze" },
+    { "id": "samoregulacja", "nazwa": "Moja własna regulacja", "wagaBadawcza": 2, "moduly": [10], "zrodlaWpisow": ["kp-15", "kp-16"], "opisWagi": "silniejszy efekt tam, gdzie trudności są nasilone" },
+    { "id": "spojnosc", "nazwa": "Spójność dorosłych", "wagaBadawcza": 2, "moduly": [11], "zrodlaWpisow": ["kp-17"], "opisWagi": "spójność reagowania to najwyżej punktowany komponent u Kaminski" },
+    { "id": "utrzymanie", "nazwa": "Utrzymanie zmiany", "wagaBadawcza": 2, "moduly": [12], "zrodlaWpisow": ["kp-18"], "opisWagi": "bez świadomego planu efekt nie utrzymuje się sam" }
+  ],
+
+  "komunikatyZwrotne": {
+    "brakDanych": "Za mało wpisów, żeby cokolwiek rzetelnie pokazać. Wypełnij kilka kart, a ten wykres zacznie coś znaczyć.",
+    "malo": "To dopiero początek. Wykres pokaże więcej, gdy popracujesz jeszcze tydzień lub dwa.",
+    "mocnaStrona": "Tu wkładasz najwięcej pracy. Warto to zauważyć — łatwo widzieć tylko to, czego się nie zrobiło.",
+    "lukaWaznaObszar": "Ten obszar należy do tych, które w badaniach robią największą różnicę, a u Ciebie ma na razie najmniej wpisów. Nie jako zarzut — jako podpowiedź, od czego zacząć w przyszłym tygodniu.",
+    "rownomiernie": "Pracujesz dość równomiernie we wszystkich obszarach. To dobra baza."
+  },
+
+  "notaKoncowa": "Te liczby pochodzą z badań obejmujących łącznie kilkadziesiąt tysięcy rodzin. Żadna z nich nie mówi nic o Twoim dziecku — mówią o tym, gdzie warto włożyć wysiłek, gdy wysiłku jest skończona ilość."
+}
