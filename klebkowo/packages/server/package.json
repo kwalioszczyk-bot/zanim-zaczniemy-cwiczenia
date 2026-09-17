@@ -1,0 +1,14 @@
+{
+  "name": "@klebkowo/server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/main.ts",
+  "dependencies": {
+    "@fastify/static": "^8.0.3",
+    "@klebkowo/engine": "*",
+    "fastify": "^5.2.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": { "@types/qrcode": "^1.5.5" }
+}
