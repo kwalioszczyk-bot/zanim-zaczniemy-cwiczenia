@@ -1,0 +1,35 @@
+{
+  "name": "klebkowo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "KŁĘBKOWO. Sprawa się plącze — gra szkoleniowa (aplikacja + wersja papierowa)",
+  "engines": { "node": ">=20" },
+  "workspaces": [
+    "packages/engine",
+    "packages/server",
+    "packages/web",
+    "packages/print"
+  ],
+  "scripts": {
+    "start": "npm run build:web && node --import tsx packages/server/src/main.ts",
+    "dev": "node --import tsx packages/server/src/main.ts",
+    "dev:web": "npm run dev --workspace @klebkowo/web",
+    "build": "npm run build:web",
+    "build:web": "npm run build --workspace @klebkowo/web",
+    "sprawdz": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "druk": "node --import tsx packages/print/src/druk.ts",
+    "druk:html": "node --import tsx packages/print/src/druk.ts --tylko-html"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "^22.10.2",
+    "playwright": "1.56.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

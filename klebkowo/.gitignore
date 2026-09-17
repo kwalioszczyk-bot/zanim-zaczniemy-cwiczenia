@@ -1,0 +1,7 @@
+node_modules/
+dist/
+druk/*.pdf
+druk/html/
+.sesje/
+test-results/
+playwright-report/
