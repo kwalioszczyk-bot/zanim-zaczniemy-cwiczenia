@@ -62,7 +62,7 @@ interface KontekstProwadzacej {
 
 export function zbudujSerwer(opcje: OpcjeSerwera = {}): FastifyInstance {
   const tresc = opcje.tresc ?? wczytajTrescZPliku();
-  const magazyn = new Magazyn(opcje.katalogSesji ?? join(KORZEN, '.sesje'));
+  const magazyn = new Magazyn(opcje.katalogSesji ?? join(KORZEN, process.env.KATALOG_SESJI ?? '.sesje'));
   const strumienie = new Strumienie();
   const limitProb = new LimitProb();
   /** Token → identyfikator sesji. Token dostaje wyłącznie prowadząca po podaniu PIN-u. */

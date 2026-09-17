@@ -16,11 +16,15 @@ export function Tory({
   liczniki,
   definicje,
   zmiany,
+  kompaktowe = false,
 }: {
   liczniki: Record<string, number>;
   definicje: OpisLicznika[];
   zmiany?: Efekt;
+  /** Wariant na pasek przy dolnej krawędzi ekranu stolika. */
+  kompaktowe?: boolean;
 }) {
+  if (kompaktowe) return <ToryKompaktowe liczniki={liczniki} definicje={definicje} />;
   return (
     <div className="tory">
       {definicje.map((d) => {
@@ -50,6 +54,34 @@ export function Tory({
                   {Math.abs(zmiana)})
                 </span>
               )}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Cztery liczniki w jednym pasku — mieszczą się na telefonie i nie zasłaniają treści. */
+function ToryKompaktowe({ liczniki, definicje }: { liczniki: Record<string, number>; definicje: OpisLicznika[] }) {
+  return (
+    <div className="tory-kompakt">
+      {definicje.map((d) => {
+        const wartosc = liczniki[d.id] ?? 0;
+        return (
+          <div className="kompakt" key={d.id}>
+            <span className="kompakt__nazwa">{d.nazwa}</span>
+            <span className="kompakt__dol">
+              <span className="kompakt__pasek" aria-hidden="true">
+                <span
+                  className={`kompakt__wypelnienie kompakt__wypelnienie--${d.id}`}
+                  style={{ width: `${(wartosc / (d.max || 10)) * 100}%` }}
+                />
+              </span>
+              <span className="kompakt__wartosc">
+                {wartosc}
+                <span className="tylko-dla-czytnika"> na {d.max}</span>
+              </span>
             </span>
           </div>
         );

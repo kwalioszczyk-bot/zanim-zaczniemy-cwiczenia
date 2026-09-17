@@ -182,8 +182,9 @@ export function AplikacjaStolika({ kod }: { kod: string }) {
         )}
 
         <div className="podstawka">
-          <Tory liczniki={stan.stolik.liczniki} definicje={definicje} />
-          <p className="pole__podpowiedz" style={{ marginTop: '0.5rem' }}>
+          <h2 className="tylko-dla-czytnika">Liczniki zespołu</h2>
+          <Tory liczniki={stan.stolik.liczniki} definicje={definicje} kompaktowe />
+          <p className="pole__podpowiedz" style={{ marginTop: '0.35rem', fontSize: '0.8rem' }}>
             Liczniki pokazują koszt decyzji, nie ich ocenę.
           </p>
         </div>

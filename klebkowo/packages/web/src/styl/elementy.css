@@ -64,6 +64,7 @@
 /* --- chmurka z podwójnym obrysem ---------------------------------------- */
 .chmurka {
   position: relative;
+  max-width: 46rem;
   background: var(--papier);
   border: var(--obrys) solid var(--marker);
   border-radius: 42% 58% 55% 45% / 58% 44% 56% 42%;
@@ -109,7 +110,7 @@
 }
 .przycisk:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 rgba(35, 35, 35, 0.25); }
 .przycisk:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 rgba(35, 35, 35, 0.25); }
-.przycisk:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+.przycisk:disabled { opacity: 0.6; cursor: not-allowed; box-shadow: none; }
 .przycisk--glowny { background: var(--pomarancz); }
 .przycisk--drugi { background: var(--zielen-jasna); border-radius: var(--krzywa-2); }
 .przycisk--spokojny { background: var(--blekit); border-radius: var(--krzywa-3); }
@@ -212,7 +213,7 @@
 
 /* --- siatki -------------------------------------------------------------- */
 .siatka { display: grid; gap: 1rem; }
-.siatka--2 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.siatka--2 { grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
 .siatka--3 { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .siatka--4 { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
 
@@ -292,9 +293,46 @@
   bottom: 0;
   background: var(--papier);
   border-top: 3px dashed var(--bez);
-  padding: 0.7rem 0 0.4rem;
+  padding: 0.55rem 0 0.4rem;
   margin-top: 1.5rem;
+  box-shadow: 0 -8px 12px -10px rgba(35, 35, 35, 0.35);
 }
+
+.tory-kompakt {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  padding: 0 0.2rem 0 0;
+  align-items: end;
+}
+.kompakt { display: grid; gap: 0.15rem; min-width: 0; }
+.kompakt__nazwa {
+  font-family: var(--reka);
+  font-size: 0.8rem;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  /* dwa wiersze na etykietę — cztery liczniki zostają wyrównane */
+  min-height: 1.7em;
+}
+.kompakt__dol { display: flex; align-items: center; gap: 0.35rem; }
+.kompakt__pasek {
+  flex: 1;
+  height: 0.85rem;
+  border: 2px solid var(--marker);
+  border-radius: 4px 8px 5px 9px;
+  background: var(--papier);
+  overflow: hidden;
+  min-width: 0;
+}
+.kompakt__wypelnienie { display: block; height: 100%; background: var(--blekit); }
+.kompakt__wypelnienie--obciazenie { background: var(--brzoskwinia); }
+.kompakt__wypelnienie--zaufanie { background: var(--zielen-jasna); }
+.kompakt__wypelnienie--zasieg { background: #ffe9a8; }
+.kompakt__wartosc { font-family: var(--tytul); font-size: 1.15rem; line-height: 1; min-width: 1.1rem; text-align: right; flex: 0 0 auto; }
+
+/* Nagłówek dostaje fokus przy zmianie fazy (dla czytników ekranu), ale nie jest sterowalny
+   klawiaturą — obramowanie fokusu byłoby tu myląca dekoracją. */
+.pasek__tytul:focus, .pasek__tytul:focus-visible { outline: none; }
 
 .etykieta-stolika {
   font-family: var(--tytul);
@@ -333,9 +371,13 @@
   background: #f3f9ea;
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 32rem) {
   .uklad { padding: 0.75rem 0.75rem 3rem; }
   .karteczka { padding: 1.1rem 1rem; }
-  .tor { grid-template-columns: 1fr auto; }
-  .tor__pola { grid-column: 1 / -1; }
+  .tor { grid-template-columns: 1fr auto; row-gap: 0.25rem; }
+  .tor__nazwa { order: 1; }
+  .tor__wartosc { order: 2; }
+  .tor__pola { order: 3; grid-column: 1 / -1; }
+  .tory-kompakt { gap: 0.35rem; }
+  .kompakt__nazwa { font-size: 0.72rem; }
 }
