@@ -137,7 +137,10 @@ export function AplikacjaProjektora() {
       <Karteczka tytul={opisStolika.nazwa} etykieta={`Stolik ${stolik}`} doodle="kartka" ksztalt={2}>
         <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center', marginBottom: '1rem' }}>
           <EtykietaStolika id={stolik} />
-          <Tory liczniki={s.liczniki} definicje={tresc.liczniki.jawne} />
+          {/* tory muszą dostać całą wolną szerokość, inaczej ściskają się do pasków */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <Tory liczniki={s.liczniki} definicje={tresc.liczniki.jawne} />
+          </div>
         </div>
 
         {runda && (
