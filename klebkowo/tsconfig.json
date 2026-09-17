@@ -19,6 +19,7 @@
     "types": ["node"],
     "paths": {
       "@klebkowo/engine": ["./packages/engine/src/index.ts"],
+      "@klebkowo/engine/*": ["./packages/engine/src/*.ts"],
       "@klebkowo/print": ["./packages/print/src/index.ts"]
     },
     "baseUrl": "."

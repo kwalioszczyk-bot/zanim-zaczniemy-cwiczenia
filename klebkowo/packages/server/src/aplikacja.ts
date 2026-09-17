@@ -122,9 +122,12 @@ export function zbudujSerwer(opcje: OpcjeSerwera = {}): FastifyInstance {
   }
 
   function stanDlaStolika(sesja: StanSesji, stolik: IdStolika) {
+    const runda = sesja.faza === 'R1' || sesja.faza === 'R2' || sesja.faza === 'R3' ? sesja.faza : null;
     return {
       sesja: widokSesji(tresc, sesja),
       stolik: widokStolika(tresc, sesja.stoliki[stolik]),
+      // zdarzenia wyłącznie bieżącej rundy — stolik nie wie z góry, co go czeka
+      zdarzeniaRundy: runda ? tresc.kolejnosc_zdarzen[stolik]![runda] : [],
       kronika: sesja.faza === 'F' || sesja.faza === 'Z' ? zbudujKronike(tresc, sesja.stoliki[stolik]) : null,
     };
   }
