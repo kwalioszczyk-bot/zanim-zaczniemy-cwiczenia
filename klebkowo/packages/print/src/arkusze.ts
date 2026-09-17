@@ -4,6 +4,7 @@
  */
 import { ID_ROL, ID_STOLIKOW, type IdRoli, type IdStolika } from '@klebkowo/engine/typy';
 import type { Tresc } from '@klebkowo/engine';
+import { arkuszDlaUczestnikow, kartySciagawki, stronyPelnychZasad } from './zasady.ts';
 import {
   KOT,
   NOZYCZKI,
@@ -46,7 +47,7 @@ const stolikOpis = (t: Tresc, id: IdStolika) => t.stoliki.find((s) => s.id === i
 const instrukcja: Arkusz = {
   plik: '00_instrukcja_prowadzacej',
   tytul: 'Instrukcja prowadzącej',
-  opis: 'Cel, przygotowanie sali, przebieg minutowy, klucz decyzji, zasady Kroniki.',
+  opis: 'Cel, przygotowanie sali, przebieg minutowy, klucz decyzji, zasady Kroniki oraz pełne zasady gry.',
   tylkoDlaProwadzacej: true,
   zbuduj(t, baza) {
     const nazwy = nazwyLicznikow(t);
@@ -173,7 +174,8 @@ const instrukcja: Arkusz = {
         <p>Nagłówek: pierwsza pasująca reguła od góry. Kolejność ma znaczenie.</p>
         ${kronika}
         <p class="cytat">${bezpieczny(t.kronika.podpis)}</p>
-        <div style="text-align:center;margin-top:8mm">${doodle(KOT, 40)}</div>`),
+        <div style="text-align:center;margin-top:8mm">${doodle(KOT, 40)}</div>`) +
+      stronyPelnychZasad(t),
       baza,
     );
   },
@@ -684,6 +686,15 @@ const zetony: Arkusz = {
   },
 };
 
+const zasadyUczestnikow: Arkusz = {
+  ...arkuszDlaUczestnikow,
+  zbuduj: (t, baza) =>
+    arkuszDlaUczestnikow.zbuduj(t, baza).replace(
+      '</body>',
+      arkuszKart(kartySciagawki(t), 4, naglowekArkusza('Ściągawki na stolik — do wycięcia', PODPIS)) + '</body>',
+    ),
+};
+
 export const ARKUSZE: Arkusz[] = [
   instrukcja,
   ...ID_STOLIKOW.map(plansza),
@@ -698,6 +709,7 @@ export const ARKUSZE: Arkusz[] = [
   arkuszProwadzacej,
   szablonKroniki,
   zetony,
+  zasadyUczestnikow,
 ];
 
 export function znajdzArkusz(plik: string): Arkusz | undefined {

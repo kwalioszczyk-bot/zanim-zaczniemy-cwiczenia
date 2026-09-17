@@ -69,10 +69,10 @@ test('podgląd materiałów do druku składa wszystkie arkusze', async ({ page }
   await expect(page.getByRole('heading', { name: 'Instrukcja prowadzącej' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Karty ról' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Żetony i znaczniki' })).toBeVisible();
-  // 1 instrukcja + 4 plansze + role + misje + 4 komplety informacji + koperty
-  // + zdarzenia + skutki + akcje + druki + arkusz śledzenia + Kronika + żetony
+  // 1 instrukcja + 4 plansze + role + misje + 4 komplety informacji + koperty + zdarzenia
+  // + skutki + akcje + druki + arkusz śledzenia + Kronika + żetony + zasady dla uczestników
   const arkusze = await page.locator('button.karteczka--2').count();
-  expect(arkusze).toBe(19);
+  expect(arkusze).toBe(20);
 
   await page.getByRole('heading', { name: /Arkusz śledzenia/ }).click();
   await expect(page.getByText(/Ten arkusz jest wyłącznie dla prowadzącej/)).toBeVisible();
@@ -84,7 +84,7 @@ test('npm run druk tworzy komplet plików PDF', () => {
   execFileSync('npm', ['run', 'druk'], { cwd: process.cwd(), stdio: 'pipe', timeout: 300_000 });
   const katalog = join(process.cwd(), 'druk');
   const pliki = readdirSync(katalog).filter((p) => p.endsWith('.pdf')).sort();
-  expect(pliki).toHaveLength(19);
+  expect(pliki).toHaveLength(20);
   expect(pliki[0]).toBe('00_instrukcja_prowadzacej.pdf');
   for (const p of pliki) expect(statSync(join(katalog, p)).size, p).toBeGreaterThan(10_000);
   for (const wymagany of [

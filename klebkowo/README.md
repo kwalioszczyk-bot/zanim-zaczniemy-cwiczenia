@@ -135,7 +135,7 @@ W katalogu `klebkowo` wpisz:
 npm run druk
 ```
 
-Po chwili w folderze `druk/` pojawi się 19 plików PDF. Możesz też obejrzeć i wydrukować
+Po chwili w folderze `druk/` pojawi się 20 plików PDF. Możesz też obejrzeć i wydrukować
 pojedynczy arkusz z aplikacji: **Druk** na pierwszym ekranie.
 
 Materiały są przygotowane pod zwykłą drukarkę — bez ciemnych, pełnych teł, bez białego tekstu
@@ -145,7 +145,7 @@ na czerni. Drukują się dobrze w kolorze i w czerni.
 
 | Plik | Ile |
 |---|---|
-| `00_instrukcja_prowadzacej` | 1 — **tylko dla Ciebie** |
+| `00_instrukcja_prowadzacej` | 1 — **tylko dla Ciebie**; zawiera też pełne zasady gry |
 | `01_plansza_stolika_A3_[A-D]` | po 1 na stolik (A3 albo dwa A4 sklejone) |
 | `02_karty_rol` | 1 plik = 4 komplety po 5 kart |
 | `03_karty_misji` | 1 plik = 4 karty, po jednej na stolik |
@@ -158,9 +158,24 @@ na czerni. Drukują się dobrze w kolorze i w czerni.
 | `10_arkusz_prowadzacej` | 1 — **tylko dla Ciebie** |
 | `11_kronika_szablon` | po 1 na stolik |
 | `12_zetony` | 1 plik — pionki, znaczniki ochrony, znaczniki wyczerpania |
+| `13_scenariusz_i_zasady_dla_uczestnikow` | po 1 na stolik (albo po 1 na osobę) + ściągawki do wycięcia |
 
 Pliki **00**, **07** i **10** zawierają klucz decyzji i ukryte liczniki. Nie zostawiaj ich
 na stolikach i nie kładź na wspólnym stole z materiałami.
+
+### Dwa dokumenty z zasadami
+
+Zasady są opisane w dwóch miejscach i jest to celowe:
+
+- **`00_instrukcja_prowadzacej.pdf`** — sekcja „Pełne zasady gry” (strony 5–7). Liczniki jawne
+  i ukryte, wyczerpanie, akcje wraz z dokładnym momentem działania ochron, cztery rodzaje zdarzeń,
+  zobowiązania z kostką, decyzje razem z mechanizmem ukrytym, kolejność kroków w rundzie,
+  finał i lista rzeczy, których pilnujesz przez całą grę. To Twój komplet — nie zostawiaj go na stoliku.
+- **`13_scenariusz_i_zasady_dla_uczestnikow.pdf`** — dwie strony A4 do rozdania przy stolikach:
+  fabuła, kto jest przy stole, zasady, opis czterech jawnych liczników, przebieg rundy krok po kroku,
+  cała talia działań z kosztami i zasada sprawdzania zobowiązań. Plus ściągawki A6 do wycięcia.
+  **Nie ma tam ani słowa** o ukrytym ryzyku, o liczbie spotkań ani o tym, że którakolwiek opcja
+  decyzji jest „zgodna z pełną wiedzą” — pilnuje tego osobny test.
 
 ---
 

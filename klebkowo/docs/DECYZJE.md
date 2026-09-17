@@ -117,7 +117,21 @@ zapytań poza własny serwer.
 ## 12. Liczba arkuszy do druku
 
 Prompt wymienia 13 pozycji, z czego dwie są „na stolik” (plansze i karty informacji).
-Po rozwinięciu daje to **19 plików PDF**. Zawartość odpowiada tabeli z sekcji 8.
+Po rozwinięciu daje to 19 plików PDF. Na prośbę prowadzącej doszedł dwudziesty:
+`13_scenariusz_i_zasady_dla_uczestnikow` — arkusz z zasadami do rozdania przy stolikach.
+
+Zasady zostały świadomie rozdzielone na dwa dokumenty o różnym zakresie:
+
+- **pełne zasady** dołączone do `00_instrukcja_prowadzacej` zawierają mechanizm ukryty,
+  klucz decyzji i oba ukryte liczniki;
+- **arkusz dla uczestników** zawiera wyłącznie to, co zespół może wiedzieć w trakcie gry.
+  Nie wspomina o ukrytym ryzyku, o liczbie spotkań ani o istnieniu opcji „zgodnej z pełną wiedzą”.
+  Nie zapowiada też kart skutków — inaczej brak karty w kolejnej rundzie stałby się dla zespołu
+  informacją zwrotną (patrz punkt 6).
+
+Obie wersje powstają z tego samego `content/gra.json`, więc nie mogą się rozjechać ani ze sobą,
+ani z aplikacją. Szczelność arkusza dla uczestników sprawdza test
+`e2e/szczelnosc.spec.ts` → „arkusz dla uczestników nie zdradza mechanizmu ukrytego”.
 
 ## 13. Kroki rundy w aplikacji
 

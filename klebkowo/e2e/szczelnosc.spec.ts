@@ -106,3 +106,29 @@ test('nagłówki bezpieczeństwa są ustawione', async ({ request }) => {
   expect(o.headers()['x-content-type-options']).toBe('nosniff');
   expect(o.headers()['referrer-policy']).toBe('no-referrer');
 });
+
+test('arkusz dla uczestników nie zdradza mechanizmu ukrytego', () => {
+  const html = readFileSync(join(process.cwd(), 'druk', 'html', '13_scenariusz_i_zasady_dla_uczestnikow.html'), 'utf8');
+  // „Spotkanie zespołu” to nazwa akcji A1 i ma prawo tu być — zakazana jest nazwa ukrytego licznika
+  const zakazane = [
+    /ryzyk/i,
+    /liczba spotkań/i,
+    /zgodn\w* z pełną wiedzą/i,
+    /skutek decyzji/i,
+    /ukryt\w/i,
+    /Stasser/i,
+    /arkusz śledzenia/i,
+    /klucz decyzji/i,
+  ];
+  for (const wzorzec of zakazane) expect(html, `arkusz uczestników nie może zawierać ${wzorzec}`).not.toMatch(wzorzec);
+  // a jednocześnie musi zawierać to, czego zespół naprawdę potrzebuje
+  expect(html).toContain('Kart nie pokazujecie');
+  expect(html).toContain('Wasze liczniki');
+  expect(html).toContain('Jak przebiega runda');
+});
+
+test('pełne zasady dla prowadzącej zawierają mechanizm ukryty', () => {
+  const html = readFileSync(join(process.cwd(), 'druk', 'html', '00_instrukcja_prowadzacej.html'), 'utf8');
+  for (const wymagane of ['Pełne zasady gry', 'Ukryte ryzyko', 'Liczba spotkań zespołu', 'od rundy następnej'])
+    expect(html, `instrukcja prowadzącej musi zawierać „${wymagane}”`).toContain(wymagane);
+});
