@@ -5,6 +5,7 @@ import { Chmurka, Karteczka, Komunikat, Przycisk } from '../ui/podstawowe.tsx';
 import { Doodle } from '../ui/Doodle.tsx';
 import { idz } from '../lib/router.ts';
 import { wczytajPelnaTresc } from '../lib/lokalnaGra.ts';
+import { BAZA_FONTOW } from '../lib/tryb.ts';
 
 type Arkusz = typeof import('@klebkowo/print').ARKUSZE[number];
 
@@ -23,7 +24,7 @@ export function AplikacjaDruku({ arkusz }: { arkusz: string }) {
   }, []);
 
   const wybrany = useMemo(() => arkusze?.find((a) => a.plik === arkusz) ?? null, [arkusze, arkusz]);
-  const html = useMemo(() => (wybrany && tresc ? wybrany.zbuduj(tresc, '/fonts') : ''), [wybrany, tresc]);
+  const html = useMemo(() => (wybrany && tresc ? wybrany.zbuduj(tresc, BAZA_FONTOW) : ''), [wybrany, tresc]);
 
   if (blad)
     return (

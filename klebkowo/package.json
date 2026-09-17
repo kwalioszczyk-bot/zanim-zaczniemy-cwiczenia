@@ -24,7 +24,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "druk": "node --import tsx packages/print/src/druk.ts",
-    "druk:html": "node --import tsx packages/print/src/druk.ts --tylko-html"
+    "druk:html": "node --import tsx packages/print/src/druk.ts --tylko-html",
+    "pokaz": "npm run build:pokaz --workspace @klebkowo/web"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

@@ -7,8 +7,10 @@ import { createRoot } from 'react-dom/client';
 import './styl/podstawy.css';
 import './styl/elementy.css';
 import './styl/druk.css';
-import { dopasuj, useSciezka } from './lib/router.ts';
+import { adres, dopasuj, useSciezka } from './lib/router.ts';
+import { POKAZ } from './lib/tryb.ts';
 import { Rozdroze } from './Rozdroze.tsx';
+import { Karteczka } from './ui/podstawowe.tsx';
 import { AplikacjaProwadzacej } from './prowadzaca/Aplikacja.tsx';
 import { AplikacjaEkranu } from './ekran/Aplikacja.tsx';
 import { AplikacjaOmowienia } from './omowienie/Aplikacja.tsx';
@@ -28,11 +30,43 @@ function Wczytywanie() {
   );
 }
 
+/**
+ * W trybie pokazu (aplikacja otwarta bez własnego serwera) widoki wymagające sesji
+ * nie mają skąd wziąć danych. Zamiast pokazywać błąd połączenia, mówimy wprost, o co chodzi.
+ */
+function PotrzebnySerwer({ nazwa }: { nazwa: string }) {
+  return (
+    <main className="uklad">
+      <Karteczka tytul={`${nazwa} — potrzebny własny serwer`} doodle="chmurka" wariant="bez" tasma>
+        <p>
+          Ten widok żyje z sesją gry: kodami stolików, fazami i synchronizacją między urządzeniami. Sesję prowadzi
+          serwer uruchamiany na laptopie prowadzącej poleceniem <strong>npm start</strong>.
+        </p>
+        <p>
+          Tutaj, w pokazie, działają dwie części, które z założenia nie potrzebują serwera:{' '}
+          <strong>tryb projektora</strong> (cała gra na jednym urządzeniu) i <strong>materiały do druku</strong>.
+        </p>
+        <div className="przyciski">
+          <a className="przycisk przycisk--glowny" href={adres('/projektor')}>
+            Tryb projektora
+          </a>
+          <a className="przycisk przycisk--spokojny" href={adres('/druk')}>
+            Materiały do druku
+          </a>
+          <a className="przycisk przycisk--spokojny" href={adres('/')}>
+            ← Rozdroże
+          </a>
+        </div>
+      </Karteczka>
+    </main>
+  );
+}
+
 function Aplikacja() {
   const sciezka = useSciezka();
 
   const ekran = dopasuj('/ekran/:id', sciezka);
-  if (ekran?.id) return <AplikacjaEkranu idSesji={ekran.id} />;
+  if (ekran?.id) return POKAZ ? <PotrzebnySerwer nazwa="Ekran sali" /> : <AplikacjaEkranu idSesji={ekran.id} />;
 
   const druk = dopasuj('/druk/:arkusz', sciezka);
   if (druk?.arkusz)
@@ -44,11 +78,11 @@ function Aplikacja() {
 
   switch (sciezka) {
     case '/prowadzaca':
-      return <AplikacjaProwadzacej />;
+      return POKAZ ? <PotrzebnySerwer nazwa="Widok prowadzącej" /> : <AplikacjaProwadzacej />;
     case '/omowienie':
-      return <AplikacjaOmowienia />;
+      return POKAZ ? <PotrzebnySerwer nazwa="Tryb omówienia" /> : <AplikacjaOmowienia />;
     case '/ekran':
-      return <AplikacjaEkranu idSesji="" />;
+      return POKAZ ? <PotrzebnySerwer nazwa="Ekran sali" /> : <AplikacjaEkranu idSesji="" />;
     case '/projektor':
       return (
         <Suspense fallback={<Wczytywanie />}>
@@ -66,7 +100,8 @@ function Aplikacja() {
   }
 }
 
-wlaczTrybOffline();
+// w trybie pokazu nie ma własnego serwera, więc nie ma też czego buforować
+if (!POKAZ) wlaczTrybOffline();
 
 createRoot(document.getElementById('korzen')!).render(
   <StrictMode>

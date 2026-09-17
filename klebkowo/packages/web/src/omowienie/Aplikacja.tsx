@@ -10,6 +10,7 @@ import { Chmurka, EtykietaStolika, Karteczka, Komunikat, Przycisk, Separator } f
 import { Doodle } from '../ui/Doodle.tsx';
 import { Wykres } from '../ui/Wykres.tsx';
 import { wczytajToken, zapiszToken } from '../lib/token.ts';
+import { adres } from '../lib/router.ts';
 
 interface Dane {
   dzien1: { nazwa: string; pytania: string[]; nie_ujawniac: string[]; powiazania: Record<string, string> };
@@ -431,7 +432,7 @@ function LogowanieDoOmowienia({ ustawToken }: { ustawToken: (t: string) => void 
           <p>Nie widzę żadnej trwającej sesji. Uruchom grę w widoku prowadzącej.</p>
         )}
         <Separator />
-        <a className="przycisk przycisk--spokojny" href="/prowadzaca">
+        <a className="przycisk przycisk--spokojny" href={adres('/prowadzaca')}>
           Wróć do widoku prowadzącej
         </a>
       </Karteczka>

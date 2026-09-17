@@ -251,9 +251,22 @@ klebkowo/
 | `npm test` | testy reguł gry i serwera |
 | `npm run e2e` | testy całej gry w przeglądarce |
 | `npm run sprawdz` | sprawdzenie typów |
+| `npm run pokaz` | buduje wariant do obejrzenia bez serwera (patrz niżej) |
 
 Jest też `Dockerfile`, jeśli gra ma stanąć na własnym serwerze zamiast na laptopie.
 Na sali nie jest potrzebny.
+
+## Wariant „pokaz” — gra bez serwera
+
+`npm run pokaz` buduje tę samą aplikację tak, żeby dało się ją otworzyć z dowolnego adresu
+(albo wprost z pliku) bez uruchamiania serwera. Wynik trafia do `packages/web/pokaz/`.
+
+Działają w nim dwie części, które z założenia nie potrzebują backendu: **tryb projektora**
+i **materiały do druku**. Widok prowadzącej, widok stolika i ekran sali pokazują wtedy
+wyjaśnienie zamiast błędu połączenia — one żyją z sesją, którą prowadzi serwer.
+
+Ten wariant zawiera pełną treść gry, łącznie z kluczem decyzji. Nadaje się do obejrzenia
+i do pracy własnej prowadzącej, **nie do rozesłania uczestnikom**.
 
 Jeśli po zmianie `content/gra.json` aplikacja odmówi startu — to celowe. Wypisze po polsku,
 co dokładnie jest nie tak, i nie pozwoli wejść do sali z niespójną grą.

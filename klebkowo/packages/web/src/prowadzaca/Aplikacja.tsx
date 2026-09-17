@@ -7,7 +7,7 @@ import { Chmurka, EtykietaStolika, Karteczka, Komunikat, Przycisk, Separator } f
 import { Doodle } from '../ui/Doodle.tsx';
 import { Tory } from '../ui/Tory.tsx';
 import { Zegar } from '../ui/Zegar.tsx';
-import { idz } from '../lib/router.ts';
+import { adres, idz } from '../lib/router.ts';
 import { wczytajToken, zapiszToken } from '../lib/token.ts';
 
 interface Stan {
@@ -161,10 +161,10 @@ export function AplikacjaProwadzacej() {
           <a className="przycisk przycisk--spokojny" href={`/ekran/${stan.sesja.id}`}>
             Otwórz ekran sali
           </a>
-          <a className="przycisk przycisk--spokojny" href="/omowienie">
+          <a className="przycisk przycisk--spokojny" href={adres('/omowienie')}>
             Tryb omówienia
           </a>
-          <a className="przycisk przycisk--spokojny" href="/druk">
+          <a className="przycisk przycisk--spokojny" href={adres('/druk')}>
             Materiały do druku
           </a>
         </div>

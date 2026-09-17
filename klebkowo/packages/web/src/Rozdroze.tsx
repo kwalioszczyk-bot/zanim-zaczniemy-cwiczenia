@@ -1,6 +1,8 @@
 /** Rozdroże — pierwszy ekran po wejściu na adres gry. */
 import { Chmurka, Karteczka } from './ui/podstawowe.tsx';
 import { Doodle } from './ui/Doodle.tsx';
+import { adres } from './lib/router.ts';
+import { POKAZ } from './lib/tryb.ts';
 
 const wejscia = [
   { adres: '/prowadzaca', tytul: 'Prowadząca', opis: 'Sesja, kody stolików, sterowanie fazami, zegar, omówienie.', doodle: 'megafon' },
@@ -25,7 +27,7 @@ export function Rozdroze() {
         {wejscia.map((w) => (
           <a
             key={w.adres}
-            href={w.adres}
+            href={adres(w.adres)}
             className="karteczka karteczka--2"
             style={{ display: 'block', textDecoration: 'none', color: 'inherit', margin: 0 }}
           >
@@ -43,10 +45,18 @@ export function Rozdroze() {
           Cała gra na jednym urządzeniu, bez serwera i bez sieci. Stoliki grają na papierze, a prowadząca wprowadza ich
           decyzje.
         </p>
-        <a className="przycisk przycisk--spokojny" href="/projektor">
+        <a className="przycisk przycisk--spokojny" href={adres('/projektor')}>
           Otwórz tryb projektora
         </a>
       </Karteczka>
+
+      {POKAZ && (
+        <Chmurka>
+          To jest pokaz gry, otwarty bez własnego serwera. Klikalne są <strong>tryb projektora</strong> i{' '}
+          <strong>materiały do druku</strong>. Widok prowadzącej, stolika i ekran sali potrzebują sesji, którą prowadzi
+          serwer uruchamiany na laptopie prowadzącej.
+        </Chmurka>
+      )}
 
       <Chmurka wariant="zielen">
         Aplikacja zapisuje stan gry, a nie dane uczestników. Nie ma tu kont, logowania uczestników ani analityki.

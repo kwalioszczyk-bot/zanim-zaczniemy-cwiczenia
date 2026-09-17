@@ -8,6 +8,7 @@ import { api, sluchaj } from '../lib/api.ts';
 import { Karteczka, EtykietaStolika, Chmurka } from '../ui/podstawowe.tsx';
 import { Doodle } from '../ui/Doodle.tsx';
 import { Zegar } from '../ui/Zegar.tsx';
+import { adres } from '../lib/router.ts';
 
 interface Dane {
   tresc: { zasady: string[]; wstep_do_odczytania: string; meta: { tytul: string; podtytul: string } };
@@ -58,7 +59,7 @@ export function AplikacjaEkranu({ idSesji }: { idSesji: string }) {
               <p>Wybierz sesję, którą prowadzisz. Ten ekran pokazuje fazę, zegar, zasady i Kroniki.</p>
               <div className="przyciski">
                 {sesje.map((s) => (
-                  <a key={s.id} className="przycisk przycisk--glowny" href={`/ekran/${s.id}`}>
+                  <a key={s.id} className="przycisk przycisk--glowny" href={adres(`/ekran/${s.id}`)}>
                     {s.id} (faza {s.faza})
                   </a>
                 ))}
@@ -71,7 +72,7 @@ export function AplikacjaEkranu({ idSesji }: { idSesji: string }) {
             Ekran sali nie pokazuje liczników stolików ani żadnych zestawień porównawczych.
           </p>
         </Karteczka>
-        <a className="przycisk przycisk--spokojny" href="/prowadzaca">
+        <a className="przycisk przycisk--spokojny" href={adres('/prowadzaca')}>
           ← Widok prowadzącej
         </a>
       </main>
