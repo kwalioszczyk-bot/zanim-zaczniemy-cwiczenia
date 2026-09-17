@@ -44,7 +44,7 @@ test('żaden widok nie pokazuje rankingu ani porównań', async ({ page, context
 
 test('kolejność stolików nie zmienia się wraz z wartościami liczników', async ({ page, request }) => {
   await nowaSesja(page, '1313');
-  const token = await page.evaluate(() => sessionStorage.getItem('klebkowo:prowadzaca'));
+  const token = await page.evaluate(() => localStorage.getItem('klebkowo:prowadzaca'));
   for (const [stolik, wartosc] of [['A', 1], ['B', 10], ['C', 4], ['D', 8]] as const)
     await request.post('/api/prowadzaca/korekta', {
       headers: { 'x-klebkowo-token': token! },

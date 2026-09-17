@@ -37,6 +37,11 @@ const rolaOpis = (t: Tresc, id: IdRoli) => t.role.find((r) => r.id === id)!;
 const stolikOpis = (t: Tresc, id: IdStolika) => t.stoliki.find((s) => s.id === id)!;
 
 /* ------------------------------------------------- 00. instrukcja prowadzącej */
+/*
+ * TODO: do akceptacji prowadzącej — procedura papierowa, opis przygotowania sali
+ * i podpisy pomocnicze na planszy są tekstami dopisanymi na potrzeby wersji papierowej.
+ * Wszystkie treści fabularne pochodzą dosłownie z content/gra.json.
+ */
 
 const instrukcja: Arkusz = {
   plik: '00_instrukcja_prowadzacej',

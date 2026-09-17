@@ -1,4 +1,9 @@
-/** Przebieg pracy stolika w obrębie fazy — wspólny dla aplikacji i wersji papierowej. */
+/**
+ * Przebieg pracy stolika w obrębie fazy — wspólny dla aplikacji i wersji papierowej.
+ *
+ * TODO: do akceptacji prowadzącej — wskazówki przy krokach (pole `wskazowka`) są tekstami
+ * interfejsu dopisanymi na potrzeby aplikacji. Nie ma ich w content/gra.json.
+ */
 import type { IdFazy } from './typy.ts';
 
 export type IdKroku =

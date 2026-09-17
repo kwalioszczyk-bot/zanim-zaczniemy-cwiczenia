@@ -51,7 +51,7 @@ export function Wykres({ dane, tytul, wysokosc = 260 }: { dane: DaneWykresu; tyt
 
   const szer = 620;
   const wys = wysokosc;
-  const margL = 44;
+  const margL = 40;
   const margR = 16;
   const margG = 16;
   const margD = 38;
@@ -65,17 +65,17 @@ export function Wykres({ dane, tytul, wysokosc = 260 }: { dane: DaneWykresu; tyt
     <figure style={{ margin: '0.5rem 0 0' }}>
       <svg
         viewBox={`0 0 ${szer} ${wys}`}
-        width="100%"
         role="img"
         aria-labelledby={idOpisu}
-        style={{ maxWidth: '100%', height: 'auto' }}
+        preserveAspectRatio="xMidYMid meet"
+        style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: `${szer} / ${wys}` }}
       >
         <title id={idOpisu}>{`${tytul}. ${dane.opis}`}</title>
         {/* siatka pozioma co 2 punkty */}
         {Array.from({ length: Math.floor(maks / 2) + 1 }, (_, i) => i * 2).map((v) => (
           <g key={v}>
             <line x1={margL} y1={y(v)} x2={szer - margR} y2={y(v)} stroke="#e6e0d4" strokeWidth={2} />
-            <text x={margL - 8} y={y(v) + 5} textAnchor="end" fontSize="13" fill="#4a463f" fontFamily="Carlito, sans-serif">
+            <text x={margL - 8} y={y(v) + 5} textAnchor="end" fontSize="15" fill="#4a463f" fontFamily="Carlito, sans-serif">
               {v}
             </text>
           </g>
@@ -84,7 +84,7 @@ export function Wykres({ dane, tytul, wysokosc = 260 }: { dane: DaneWykresu; tyt
         <line x1={margL} y1={margG} x2={margL} y2={margG + h} stroke="#232323" strokeWidth={2.5} strokeLinecap="round" />
         <line x1={margL} y1={margG + h} x2={szer - margR} y2={margG + h} stroke="#232323" strokeWidth={2.5} strokeLinecap="round" />
         {dane.etykiety.map((e, i) => (
-          <text key={e + i} x={x(i)} y={wys - 14} textAnchor="middle" fontSize="15" fill="#232323" fontFamily="'Patrick Hand', cursive">
+          <text key={e + i} x={x(i)} y={wys - 14} textAnchor="middle" fontSize="17" fill="#232323" fontFamily="'Patrick Hand', cursive">
             {e}
           </text>
         ))}
@@ -103,13 +103,13 @@ export function Wykres({ dane, tytul, wysokosc = 260 }: { dane: DaneWykresu; tyt
       </svg>
 
       <figcaption>
-        <ul className="fakty" style={{ gridAutoFlow: 'column', gridTemplateColumns: 'repeat(auto-fit, minmax(9rem, 1fr))', marginTop: '0.4rem' }}>
+        <ul className="legenda-wykresu">
           {dane.serie.map((s) => (
-            <li key={s.licznik} style={{ alignItems: 'center' }}>
+            <li key={s.licznik}>
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style={{ flex: '0 0 auto' }}>
                 <Znacznik x={10} y={10} ksztalt={KSZTALTY[s.licznik] ?? 'kolo'} kolor={BARWY[s.licznik] ?? '#232323'} />
               </svg>
-              <span style={{ fontFamily: "'Patrick Hand', cursive" }}>{s.nazwa}</span>
+              <span>{s.nazwa}</span>
             </li>
           ))}
         </ul>

@@ -9,6 +9,7 @@ import { BladApi, api } from '../lib/api.ts';
 import { Chmurka, EtykietaStolika, Karteczka, Komunikat, Przycisk, Separator } from '../ui/podstawowe.tsx';
 import { Doodle } from '../ui/Doodle.tsx';
 import { Wykres } from '../ui/Wykres.tsx';
+import { wczytajToken, zapiszToken } from '../lib/token.ts';
 
 interface Dane {
   dzien1: { nazwa: string; pytania: string[]; nie_ujawniac: string[]; powiazania: Record<string, string> };
@@ -18,13 +19,7 @@ interface Dane {
 }
 
 export function AplikacjaOmowienia() {
-  const [token, ustawToken] = useState(() => {
-    try {
-      return sessionStorage.getItem('klebkowo:prowadzaca') ?? '';
-    } catch {
-      return '';
-    }
-  });
+  const [token, ustawToken] = useState(wczytajToken);
   const [dane, ustawDane] = useState<Dane | null>(null);
   const [zakladka, ustawZakladke] = useState<'dzien1' | 'dzien2'>('dzien1');
   const [blad, ustawBlad] = useState<string | null>(null);
@@ -34,7 +29,10 @@ export function AplikacjaOmowienia() {
     try {
       ustawDane(await api.get<Dane>('/api/omowienie', token));
     } catch (b) {
-      if (b instanceof BladApi && b.status === 401) ustawToken('');
+      if (b instanceof BladApi && b.status === 401) {
+        zapiszToken('');
+        ustawToken('');
+      }
       else ustawBlad('Nie udało się pobrać danych omówienia.');
     }
   }, [token]);
@@ -45,14 +43,12 @@ export function AplikacjaOmowienia() {
 
   if (!token)
     return (
-      <main className="uklad">
-        <Karteczka tytul="Tryb omówienia" doodle="kartka">
-          <p>Wejdź najpierw do widoku prowadzącej i podaj PIN — tryb omówienia otworzy się w tej samej przeglądarce.</p>
-          <a className="przycisk przycisk--glowny" href="/prowadzaca">
-            Przejdź do widoku prowadzącej
-          </a>
-        </Karteczka>
-      </main>
+      <LogowanieDoOmowienia
+        ustawToken={(t) => {
+          zapiszToken(t);
+          ustawToken(t);
+        }}
+      />
     );
 
   if (!dane)
@@ -365,5 +361,80 @@ function SpotkaniaARyzyko({ spotkania, ryzyko }: { spotkania: number; ryzyko: nu
         które zespół już miał.
       </p>
     </>
+  );
+}
+
+/** Wejście do omówienia wprost z PIN-u — bez konieczności wracania do widoku prowadzącej. */
+function LogowanieDoOmowienia({ ustawToken }: { ustawToken: (t: string) => void }) {
+  const [pin, ustawPin] = useState('');
+  const [idSesji, ustawIdSesji] = useState('');
+  const [sesje, ustawSesje] = useState<{ id: string; faza: string }[]>([]);
+  const [blad, ustawBlad] = useState<string | null>(null);
+
+  useEffect(() => {
+    void api.get<{ sesje: { id: string; faza: string }[] }>('/api/sesje').then((d) => {
+      ustawSesje(d.sesje);
+      if (d.sesje[0]) ustawIdSesji(d.sesje[0].id);
+    });
+  }, []);
+
+  return (
+    <main className="uklad">
+      <h1>Tryb omówienia</h1>
+      {blad && (
+        <Komunikat wariant="blad" rola="alert">
+          {blad}
+        </Komunikat>
+      )}
+      <Karteczka tytul="Podaj PIN prowadzącej" doodle="kartka" tasma>
+        <p>Omówienie pokazuje dane, których stoliki nie widzą. Dlatego chroni je ten sam PIN, co sterowanie grą.</p>
+        {sesje.length > 0 ? (
+          <>
+            <div className="pole">
+              <label className="pole__etykieta" htmlFor="sesja-omowienie">
+                Sesja
+              </label>
+              <select id="sesja-omowienie" value={idSesji} onChange={(e) => ustawIdSesji(e.target.value)}>
+                {sesje.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.id} (faza {s.faza})
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="pole">
+              <label className="pole__etykieta" htmlFor="pin-omowienie">
+                PIN prowadzącej
+              </label>
+              <input
+                id="pin-omowienie"
+                inputMode="numeric"
+                maxLength={6}
+                value={pin}
+                onChange={(e) => ustawPin(e.target.value.replace(/\D/g, ''))}
+              />
+            </div>
+            <Przycisk
+              wariant="glowny"
+              disabled={pin.length < 4}
+              onClick={() => {
+                void api
+                  .post<{ token: string }>(`/api/sesja/${encodeURIComponent(idSesji)}/pin`, { pin })
+                  .then((d) => ustawToken(d.token))
+                  .catch((b: unknown) => ustawBlad(b instanceof BladApi ? b.message : 'Nie udało się wejść do omówienia.'));
+              }}
+            >
+              Otwórz omówienie
+            </Przycisk>
+          </>
+        ) : (
+          <p>Nie widzę żadnej trwającej sesji. Uruchom grę w widoku prowadzącej.</p>
+        )}
+        <Separator />
+        <a className="przycisk przycisk--spokojny" href="/prowadzaca">
+          Wróć do widoku prowadzącej
+        </a>
+      </Karteczka>
+    </main>
   );
 }

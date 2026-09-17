@@ -26,7 +26,7 @@ test('tryb projektora działa bez backendu', async ({ page, context }) => {
 
 test('tryb podawania urządzenia pokazuje karty pojedynczo', async ({ page, request }) => {
   const kody = await nowaSesja(page, '2323');
-  const token = await page.evaluate(() => sessionStorage.getItem('klebkowo:prowadzaca'));
+  const token = await page.evaluate(() => localStorage.getItem('klebkowo:prowadzaca'));
   // wyłączamy wariant papierowy, żeby sprawdzić tryb podawania urządzenia
   await request.post('/api/prowadzaca/ustawienia', {
     headers: { 'x-klebkowo-token': token! },

@@ -381,3 +381,16 @@
   .tory-kompakt { gap: 0.35rem; }
   .kompakt__nazwa { font-size: 0.72rem; }
 }
+
+/* --- legenda wykresu ----------------------------------------------------- */
+.legenda-wykresu {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-family: var(--reka);
+  font-size: 0.98rem;
+}
+.legenda-wykresu li { display: flex; align-items: center; gap: 0.35rem; }

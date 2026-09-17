@@ -10,6 +10,7 @@ import '../styl/elementy.css';
 import { AplikacjaStolika } from './Aplikacja.tsx';
 import { Karteczka, Przycisk } from '../ui/podstawowe.tsx';
 import { Doodle } from '../ui/Doodle.tsx';
+import { wlaczTrybOffline } from '../lib/offline.ts';
 import { useState } from 'react';
 
 function kodZeSciezki(): string {
@@ -61,6 +62,8 @@ function Start() {
   const kod = kodZeSciezki();
   return kod ? <AplikacjaStolika kod={kod} /> : <Wejscie />;
 }
+
+wlaczTrybOffline();
 
 createRoot(document.getElementById('korzen')!).render(
   <StrictMode>

@@ -193,6 +193,7 @@ export function AplikacjaStolika({ kod }: { kod: string }) {
   );
 }
 
+/** TODO: do akceptacji prowadzącej — tekst ekranu oczekiwania nie pochodzi z content/gra.json. */
 function EkranOczekiwania({ nazwaFazy }: { nazwaFazy: string }) {
   return (
     <Karteczka tytul="Runda zamknięta" doodle="kot" wariant="zielen" tasma>

@@ -84,7 +84,7 @@ test.describe('pełna sesja z czterema stolikami', () => {
     const kody = await nowaSesja(page, '6666');
     await nastepnaFaza(page);
     const kod = kody.B!;
-    const token = await page.evaluate(() => sessionStorage.getItem('klebkowo:prowadzaca'));
+    const token = await page.evaluate(() => localStorage.getItem('klebkowo:prowadzaca'));
 
     await request.post('/api/prowadzaca/korekta', {
       headers: { 'x-klebkowo-token': token! },

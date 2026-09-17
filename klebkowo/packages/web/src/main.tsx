@@ -12,6 +12,7 @@ import { Rozdroze } from './Rozdroze.tsx';
 import { AplikacjaProwadzacej } from './prowadzaca/Aplikacja.tsx';
 import { AplikacjaEkranu } from './ekran/Aplikacja.tsx';
 import { AplikacjaOmowienia } from './omowienie/Aplikacja.tsx';
+import { wlaczTrybOffline } from './lib/offline.ts';
 
 // tryb projektora i materiały do druku ładują pełną treść gry — osobne paczki, ładowane na żądanie
 const AplikacjaProjektora = lazy(() =>
@@ -64,6 +65,8 @@ function Aplikacja() {
       return <Rozdroze />;
   }
 }
+
+wlaczTrybOffline();
 
 createRoot(document.getElementById('korzen')!).render(
   <StrictMode>

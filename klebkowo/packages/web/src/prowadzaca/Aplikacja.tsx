@@ -8,8 +8,7 @@ import { Doodle } from '../ui/Doodle.tsx';
 import { Tory } from '../ui/Tory.tsx';
 import { Zegar } from '../ui/Zegar.tsx';
 import { idz } from '../lib/router.ts';
-
-const KLUCZ_TOKENU = 'klebkowo:prowadzaca';
+import { wczytajToken, zapiszToken } from '../lib/token.ts';
 
 interface Stan {
   sesja: { id: string; faza: IdFazy; nazwaFazy: string; minutyFazy: number; sekundyFazy: number; zegarDziala: boolean };
@@ -17,21 +16,6 @@ interface Stan {
   status: { id: string; zatwierdzony: boolean; kroki: number }[];
   stoliki: { id: string; nazwa: string; liczniki: Record<string, number>; zobowiazania: unknown[] }[];
   ustawienia: { kartyPrywatneNaPapierze: boolean; trybProjektora: boolean };
-}
-
-function zapiszToken(token: string) {
-  try {
-    sessionStorage.setItem(KLUCZ_TOKENU, token);
-  } catch {
-    /* prywatne okno przeglądarki — prowadząca poda PIN ponownie */
-  }
-}
-function wczytajToken(): string {
-  try {
-    return sessionStorage.getItem(KLUCZ_TOKENU) ?? '';
-  } catch {
-    return '';
-  }
 }
 
 export function AplikacjaProwadzacej() {

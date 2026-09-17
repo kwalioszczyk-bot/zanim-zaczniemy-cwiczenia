@@ -344,6 +344,8 @@ function KrokPoczty({ stan, runda, karty, zapamietaj, wykonaj }: PropsPanelu) {
       />
     );
 
+  // TODO: do akceptacji prowadzącej — neutralny tekst, gdy żadna karta skutku nie przychodzi.
+  // Krok wygląda tak samo u wszystkich stolików; patrz docs/DECYZJE.md, punkt 6.
   return (
     <Karteczka tytul="Poczta dzielnicowa" doodle="koperta" wariant="cicho" ksztalt={2}>
       <p>Dziś bez pilnych wiadomości. Praca toczy się dalej.</p>
@@ -828,6 +830,7 @@ function KrokWykresu({ stan }: PropsPanelu) {
   );
 }
 
+/** TODO: do akceptacji prowadzącej — treść wyjścia z ról nie pochodzi z content/gra.json. */
 function KrokWyjscia({ stan }: PropsPanelu) {
   return (
     <Karteczka tytul="Wychodzimy z ról" doodle="ludzie" wariant="zielen" tasma>
