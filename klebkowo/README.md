@@ -237,5 +237,8 @@ klebkowo/
 | `npm run e2e` | testy całej gry w przeglądarce |
 | `npm run sprawdz` | sprawdzenie typów |
 
+Jest też `Dockerfile`, jeśli gra ma stanąć na własnym serwerze zamiast na laptopie.
+Na sali nie jest potrzebny.
+
 Jeśli po zmianie `content/gra.json` aplikacja odmówi startu — to celowe. Wypisze po polsku,
 co dokładnie jest nie tak, i nie pozwoli wejść do sali z niespójną grą.

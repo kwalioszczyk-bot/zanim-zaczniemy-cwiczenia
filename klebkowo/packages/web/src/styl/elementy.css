@@ -67,8 +67,8 @@
   max-width: 46rem;
   background: var(--papier);
   border: var(--obrys) solid var(--marker);
-  border-radius: 42% 58% 55% 45% / 58% 44% 56% 42%;
-  padding: 1.3rem 1.6rem;
+  border-radius: 2.6rem 3.4rem 2.8rem 3.2rem / 3rem 2.4rem 3.4rem 2.6rem;
+  padding: 1.25rem 1.8rem;
   margin: 0.9rem 0 1.4rem;
   font-family: var(--reka);
   font-size: 1.15rem;
@@ -78,8 +78,8 @@
   position: absolute;
   inset: 6px;
   border: 1.5px solid var(--marker);
-  border-radius: 46% 54% 50% 50% / 54% 48% 52% 46%;
-  opacity: 0.55;
+  border-radius: 2.3rem 3.1rem 2.5rem 2.9rem / 2.7rem 2.1rem 3.1rem 2.3rem;
+  opacity: 0.5;
   pointer-events: none;
 }
 .chmurka--zielen { background: #f3f9ea; }
@@ -216,6 +216,7 @@
 .siatka--2 { grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
 .siatka--3 { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .siatka--4 { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.siatka--pary { grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr)); }
 
 /* --- kroki rundy --------------------------------------------------------- */
 .kroki { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0 0 1.2rem; padding: 0; }

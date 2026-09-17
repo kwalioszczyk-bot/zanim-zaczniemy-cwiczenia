@@ -19,8 +19,15 @@ interface Dane {
 export function AplikacjaEkranu({ idSesji }: { idSesji: string }) {
   const [dane, ustawDane] = useState<Dane | null>(null);
   const [blad, ustawBlad] = useState<string | null>(null);
+  const [sesje, ustawSesje] = useState<{ id: string; faza: string }[]>([]);
+
+  useEffect(() => {
+    if (idSesji) return;
+    void api.get<{ sesje: { id: string; faza: string }[] }>('/api/sesje').then((d) => ustawSesje(d.sesje));
+  }, [idSesji]);
 
   const pobierz = useCallback(async () => {
+    if (!idSesji) return;
     try {
       ustawDane(await api.get<Dane>(`/api/ekran/${encodeURIComponent(idSesji)}`));
       ustawBlad(null);
@@ -33,9 +40,42 @@ export function AplikacjaEkranu({ idSesji }: { idSesji: string }) {
     void pobierz();
   }, [pobierz]);
   useEffect(() => {
+    if (!idSesji) return;
     const p = sluchaj(idSesji, () => void pobierz());
     return () => p.rozlacz();
   }, [idSesji, pobierz]);
+
+  if (!idSesji)
+    return (
+      <main className="uklad">
+        <header style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <Doodle nazwa="ekran" rozmiar={80} kolor="#f07a2b" />
+          <h1>Ekran sali</h1>
+        </header>
+        <Karteczka tytul="Którą sesję pokazać?" doodle="kartka" tasma>
+          {sesje.length ? (
+            <>
+              <p>Wybierz sesję, którą prowadzisz. Ten ekran pokazuje fazę, zegar, zasady i Kroniki.</p>
+              <div className="przyciski">
+                {sesje.map((s) => (
+                  <a key={s.id} className="przycisk przycisk--glowny" href={`/ekran/${s.id}`}>
+                    {s.id} (faza {s.faza})
+                  </a>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p>Nie widzę żadnej trwającej sesji. Najpierw utwórz ją w widoku prowadzącej.</p>
+          )}
+          <p className="pole__podpowiedz" style={{ marginTop: '0.8rem' }}>
+            Ekran sali nie pokazuje liczników stolików ani żadnych zestawień porównawczych.
+          </p>
+        </Karteczka>
+        <a className="przycisk przycisk--spokojny" href="/prowadzaca">
+          ← Widok prowadzącej
+        </a>
+      </main>
+    );
 
   if (blad)
     return (
@@ -68,7 +108,7 @@ export function AplikacjaEkranu({ idSesji }: { idSesji: string }) {
       )}
 
       {finał ? (
-        <div className="siatka siatka--2">
+        <div className="siatka siatka--pary">
           {dane.kroniki.map((k) => (
             <Karteczka key={k.stolik} tytul={k.tytul} etykieta={`Stolik ${k.stolik}`} doodle="kartka" wariant="bez" ksztalt={2} tasma>
               <h3 style={{ fontFamily: "'Caveat Brush', cursive", fontSize: '1.7rem', lineHeight: 1.15 }}>{k.naglowek}</h3>
