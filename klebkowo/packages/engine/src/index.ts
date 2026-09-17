@@ -10,3 +10,4 @@ export * from './reguly.ts';
 export * from './kronika.ts';
 export * from './sesja.ts';
 export * from './omowienie.ts';
+export * from './projekcja.ts';
