@@ -1,0 +1,12 @@
+{
+  "name": "KŁĘBKOWO. Sprawa się plącze",
+  "short_name": "Kłębkowo",
+  "description": "Gra szkoleniowa o współpracy międzyinstytucjonalnej.",
+  "lang": "pl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FCFBF7",
+  "theme_color": "#F07A2B",
+  "icons": [{ "src": "/ikona.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

@@ -1,0 +1,204 @@
+/* ==========================================================================
+   „Flipchart trenerki” — podstawy: barwy, kroje, papier, typografia.
+   Wszystko lokalnie: żadnych czcionek ani arkuszy z zewnątrz.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Caveat Brush';
+  src: url('/fonts/CaveatBrush-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Caveat Brush';
+  src: url('/fonts/CaveatBrush-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Patrick Hand';
+  src: url('/fonts/PatrickHand-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Patrick Hand';
+  src: url('/fonts/PatrickHand-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-700-latin-ext.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+/* Krój humanistyczny do dłuższych tekstów — czytelność ponad dekorację. */
+@font-face {
+  font-family: 'Carlito';
+  src: url('/fonts/Carlito-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Carlito';
+  src: url('/fonts/Carlito-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Carlito';
+  src: url('/fonts/Carlito-700-latin-ext.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Carlito';
+  src: url('/fonts/Carlito-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --marker: #232323;
+  --pomarancz: #f07a2b;
+  --pomarancz-ciemny: #c85c15;
+  --zielen: #7db83a;
+  --zielen-ciemna: #4e7a17;
+  --blekit: #bfe2ec;
+  --papier: #fcfbf7;
+  --bez: #e6e0d4;
+  --zielen-jasna: #cfe7b0;
+  --brzoskwinia: #f9c9a3;
+  --tasma: #f5e6c8;
+
+  --tytul: 'Caveat Brush', 'Segoe Print', 'Ink Free', cursive;
+  --reka: 'Patrick Hand', 'Segoe Print', 'Ink Free', cursive;
+  --cytat: 'Caveat', 'Segoe Print', 'Ink Free', cursive;
+  --tekst: 'Carlito', 'Segoe UI', system-ui, sans-serif;
+
+  --obrys: 2.5px;
+  --krzywa-1: 255px 18px 225px 15px / 15px 225px 18px 255px;
+  --krzywa-2: 18px 225px 15px 255px / 225px 15px 255px 18px;
+  --krzywa-3: 12px 200px 20px 180px / 180px 16px 200px 14px;
+  --cien: 3px 3px 0 var(--marker);
+  --odstep: 1rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--tekst);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--marker);
+  background-color: var(--papier);
+  /* delikatna kratka jak na papierze do flipchartu */
+  background-image:
+    linear-gradient(var(--bez) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bez) 1px, transparent 1px);
+  background-size: 34px 34px;
+  background-position: -1px -1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  /* lekkie przetarcie papieru — nigdy nie przeszkadza w czytaniu */
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background: radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.9), transparent 60%),
+    radial-gradient(ellipse at 85% 85%, rgba(230, 224, 212, 0.55), transparent 55%);
+  z-index: 0;
+}
+
+#korzen { position: relative; z-index: 1; }
+
+h1, h2, h3 {
+  font-family: var(--tytul);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin: 0 0 0.4em;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--pomarancz);
+  text-shadow: var(--cien);
+}
+
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); font-family: var(--reka); }
+
+p { margin: 0 0 0.8em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--pomarancz-ciemny); text-underline-offset: 3px; }
+
+small { font-size: 0.85rem; }
+
+/* --- zakreślacz --------------------------------------------------------- */
+.zakreslacz {
+  background-image: linear-gradient(100deg, transparent 2%, var(--zielen-jasna) 2%, var(--zielen-jasna) 97%, transparent 97%);
+  background-repeat: no-repeat;
+  background-size: 100% 62%;
+  background-position: 0 78%;
+  padding: 0 0.15em;
+}
+
+/* --- widoczny fokus ----------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--pomarancz-ciemny);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.tylko-dla-czytnika {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pomin-do-tresci {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--papier);
+  border: var(--obrys) solid var(--marker);
+  padding: 0.6rem 1rem;
+  font-family: var(--reka);
+  z-index: 99;
+}
+.pomin-do-tresci:focus { left: 0.5rem; top: 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
