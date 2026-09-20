@@ -109,3 +109,22 @@ test.describe('pełna sesja z czterema stolikami', () => {
     await expect(page.getByText('Przerwa na kawę i sernik')).toBeVisible();
   });
 });
+
+test('kody QR prowadzą na adres w sieci lokalnej, nie na localhost', async ({ page, request }) => {
+  const { adresy } = await (await request.get('/api/adresy')).json();
+  test.skip(!adresy.length, 'ten komputer nie ma adresu w sieci lokalnej');
+
+  // prowadząca wchodzi przez localhost — tak otwiera przeglądarkę plik startowy
+  await nowaSesja(page, '1919');
+  const zrodla = await page
+    .locator('img[alt*="Kod QR"]')
+    .evaluateAll((obrazki) => obrazki.map((i) => decodeURIComponent((i as HTMLImageElement).src.split('tekst=')[1] ?? '')));
+
+  expect(zrodla).toHaveLength(4);
+  for (const adres of zrodla) {
+    expect(adres, 'kod QR nie może wskazywać na komputer prowadzącej').not.toMatch(/localhost|127\.0\.0\.1/);
+    expect(adres).toContain(adresy[0]);
+    expect(adres).toMatch(/\/stolik\/[A-Z0-9]{4}$/);
+  }
+  await expect(page.getByText(`Adres dla stolików: ${adresy[0]}/stolik`)).toBeVisible();
+});

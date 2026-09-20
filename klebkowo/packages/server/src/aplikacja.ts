@@ -32,6 +32,7 @@ import {
   type Tresc,
 } from '@klebkowo/engine';
 import { Magazyn } from './magazyn.ts';
+import { adresyWSieciLokalnej } from './siec.ts';
 import { LimitProb, poprawnyFormatPin, sprawdzPin, zahashujPin } from './pin.ts';
 import { Strumienie } from './strumien.ts';
 
@@ -379,6 +380,16 @@ export function zbudujSerwer(opcje: OpcjeSerwera = {}): FastifyInstance {
     for (const sciezka of ['/', '/prowadzaca', '/ekran', '/ekran/*', '/omowienie', '/druk', '/druk/*', '/projektor'])
       app.get(sciezka, wyslij('index.html'));
   }
+
+  /**
+   * Adresy, pod którymi serwer jest widoczny dla telefonów stolików.
+   * Kody QR muszą powstawać z tego adresu, a nie z tego, pod którym prowadząca
+   * ma otwartą przeglądarkę — inaczej „localhost” trafiłby na kody stolików.
+   */
+  app.get('/api/adresy', async (zadanie) => {
+    const port = Number((zadanie.headers.host ?? '').split(':')[1] ?? process.env.PORT ?? 4173);
+    return { adresy: adresyWSieciLokalnej(port), port };
+  });
 
   app.get('/api/zdrowie', async () => ({ dziala: true, sesje: magazyn.wszystkie().length, sluchacze: strumienie.liczba }));
 

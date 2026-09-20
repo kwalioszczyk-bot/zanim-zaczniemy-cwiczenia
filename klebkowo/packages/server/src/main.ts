@@ -1,18 +1,10 @@
 /** Uruchomienie serwera na laptopie prowadzącej. */
-import { networkInterfaces } from 'node:os';
 import { BladTresci } from '@klebkowo/engine';
 import { zbudujSerwer } from './aplikacja.ts';
+import { adresyWSieciLokalnej } from './siec.ts';
 
 const PORT = Number(process.env.PORT ?? 4173);
 const HOST = process.env.HOST ?? '0.0.0.0';
-
-export function adresyWSieciLokalnej(port: number): string[] {
-  const adresy: string[] = [];
-  for (const karty of Object.values(networkInterfaces()))
-    for (const karta of karty ?? [])
-      if (karta.family === 'IPv4' && !karta.internal) adresy.push(`http://${karta.address}:${port}`);
-  return adresy;
-}
 
 async function start() {
   let app;

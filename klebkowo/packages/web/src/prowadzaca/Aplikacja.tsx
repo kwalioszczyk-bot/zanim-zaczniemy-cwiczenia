@@ -208,13 +208,57 @@ async function pobierzPlik(url: string, token: string) {
 }
 
 function KodyStolikow({ kody }: { kody: Record<string, string> }) {
-  const adres = `${window.location.protocol}//${window.location.host}`;
+  const [adresy, ustawAdresy] = useState<string[]>([]);
+  const [wybrany, ustawWybrany] = useState('');
+
+  useEffect(() => {
+    void api
+      .get<{ adresy: string[] }>('/api/adresy')
+      .then((d) => {
+        ustawAdresy(d.adresy);
+        // jeśli prowadząca weszła już adresem z sieci lokalnej, zostajemy przy nim —
+        // jest sprawdzony; w przeciwnym razie bierzemy pierwszy adres z serwera
+        const wlasny = `${window.location.protocol}//${window.location.host}`;
+        ustawWybrany(d.adresy.includes(wlasny) ? wlasny : (d.adresy[0] ?? wlasny));
+      })
+      .catch(() => ustawWybrany(`${window.location.protocol}//${window.location.host}`));
+  }, []);
+
+  const adres = wybrany || `${window.location.protocol}//${window.location.host}`;
+  const lokalny = /\/\/(localhost|127\.|\[::1\])/.test(adres);
   const pary = Object.entries(kody).sort((a, b) => a[1].localeCompare(b[1]));
+
   return (
     <Karteczka tytul="Kody stolików" doodle="kartka" wariant="zielen" tasma>
       <p>
         Adres dla stolików: <strong>{adres}/stolik</strong>. Kod QR prowadzi prosto do właściwego stolika.
       </p>
+
+      {adresy.length > 1 && (
+        <div className="pole">
+          <label className="pole__etykieta" htmlFor="adres-sali">
+            Sieć, w której są telefony stolików
+          </label>
+          <select id="adres-sali" value={wybrany} onChange={(e) => ustawWybrany(e.target.value)}>
+            {adresy.map((a) => (
+              <option key={a} value={a}>
+                {a}
+              </option>
+            ))}
+          </select>
+          <span className="pole__podpowiedz">
+            Laptop bywa w kilku sieciach naraz. Jeśli stoliki nie mogą wejść — wybierz inny adres, kody QR zmienią się
+            od razu.
+          </span>
+        </div>
+      )}
+
+      {lokalny && (
+        <Komunikat wariant="uwaga" doodle="megafon">
+          Ten adres działa tylko na tym komputerze. Telefony stolików go nie znajdą. Podłącz laptop do sieci Wi-Fi sali
+          i odśwież stronę — pojawi się adres widoczny dla innych urządzeń.
+        </Komunikat>
+      )}
       <div className="siatka siatka--4">
         {pary.map(([kod, stolik]) => (
           <div key={kod} style={{ textAlign: 'center' }}>

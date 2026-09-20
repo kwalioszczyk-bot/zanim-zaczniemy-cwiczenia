@@ -82,6 +82,11 @@ Robisz to **raz**, najlepiej dzień przed szkoleniem.
 - Jeśli aparat nie chce skanować: wpiszcie w przeglądarce adres z punktu 3, wybierzcie
   **Stolik** i wpiszcie czteroznakowy kod.
 
+Kody QR zawsze prowadzą na adres serwera w sieci lokalnej — nawet jeśli Ty masz aplikację
+otwartą przez `localhost`. Jeśli laptop jest w kilku sieciach naraz (Wi-Fi, kabel, VirtualBox),
+nad kodami pojawi się lista do wyboru: **„Sieć, w której są telefony stolików"**. Zmiana adresu
+od razu przerysowuje kody QR.
+
 ### Ekran sali
 
 Na projektorze otwórz **Ekran sali** (przycisk w widoku prowadzącej). Widać tam nazwę fazy,
