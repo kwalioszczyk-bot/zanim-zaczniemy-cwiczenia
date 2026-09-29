@@ -1,0 +1,7 @@
+node_modules
+dist
+druk
+.sesje
+.sesje-e2e
+test-results
+playwright-report

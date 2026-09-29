@@ -1,0 +1,1026 @@
+{
+  "meta": {
+    "tytul": "KŁĘBKOWO. Sprawa się plącze",
+    "podtytul": "Symulacja współpracy międzyinstytucjonalnej",
+    "czas_min": 60,
+    "liczba_stolikow": 4,
+    "osob_przy_stoliku": 5,
+    "zrodlo_prawdy": "Ten plik jest jedynym źródłem treści dla aplikacji i wersji papierowej."
+  },
+  "wstep_do_odczytania": "Witamy w Kłębkowie — mieście, w którym wszystko jest ze sobą powiązane, a czasem nawet splątane. W dzielnicy Nowe Podwórko działa Dom Pomocy Społecznej „Przystań”, a w jego budynku ma siedzibę Stowarzyszenie „Razem Raźniej”. Tuż obok: Szkoła Podstawowa nr 3 im. Wynalazców, Dom Kultury „Iskra” i Rada Dzielnicy, która ma zdanie na każdy temat — podobnie jak pan Zdzisław, osiedlowy aktywista z kosiarką. Dzielnica dostała szansę: cztery wspólne przedsięwzięcia, które mają połączyć mieszkańców „Przystani” i sąsiadów. Każdy stolik to zespół międzyinstytucjonalny odpowiedzialny za jedno z nich. Macie wspólny cel, pięć instytucji, ograniczony czas i… kilka niespodzianek po drodze. Nie ma tu zwycięzców ani rankingu. Liczniki pokazują, ile kosztują Wasze decyzje — nie to, kto jest lepszy. Aplikacja zapisuje stan gry, a nie dane uczestników. Instytucje, postaci i sytuacje są fikcyjne; nie odgrywamy własnego zawodu ani własnej instytucji. Każda osoba może w dowolnym momencie zakończyć udział w symulacji bez podawania przyczyny. Powodzenia — i uwaga na kota Kierownika.",
+  "zasady": [
+    "Instytucje, postaci i sytuacje są fikcyjne. Nie przywołujemy realnych osób ani spraw.",
+    "Uczestnicy nie odgrywają własnego zawodu ani własnej instytucji.",
+    "Symulacja nie przewiduje zwycięzców ani rankingu. Liczniki pokazują koszt decyzji, nie ich ocenę.",
+    "Każda osoba może zakończyć udział w dowolnym momencie bez podawania przyczyny.",
+    "Informacje z kart prywatnych można przekazywać ustnie. Kart nie pokazuje się innym osobom.",
+    "Aplikacja zapisuje stan gry, a nie dane uczestników."
+  ],
+  "instytucje": {
+    "przystan": "Dom Pomocy Społecznej „Przystań”",
+    "razem": "Stowarzyszenie „Razem Raźniej” (siedziba w budynku „Przystani”)",
+    "szkola": "Szkoła Podstawowa nr 3 im. Wynalazców",
+    "rada": "Rada Dzielnicy Nowe Podwórko",
+    "iskra": "Dom Kultury „Iskra”",
+    "zacisze": "Spółdzielnia Mieszkaniowa „Zacisze” (nie jest przy stole)",
+    "chrupka": "Piekarnia „Chrupka” pani Haliny (nie jest przy stole)"
+  },
+  "role": [
+    {
+      "id": "R1",
+      "instytucja": "przystan",
+      "nazwa": "Koordynator / Koordynatorka ds. aktywizacji w „Przystani”",
+      "sektor_wykluczony": "placowka",
+      "slowo_klucz": "IPW",
+      "slowo_klucz_opis": "Używaj skrótu „IPW” (indywidualny plan wsparcia) co najmniej raz w rundzie. Wyjaśnij go tylko wtedy, gdy ktoś zapyta.",
+      "motywacja": "Chcesz, żeby mieszkańcy „Przystani” wreszcie byli gospodarzami, a nie gośćmi.",
+      "wiadomosc_od_przelozonego": "Dyrekcja „Przystani”: w lipcu żadnych dodatkowych dyżurów. Wydarzenia z udziałem mieszkańców tylko w dni robocze i do godziny 19:30.",
+      "druga_rola": null
+    },
+    {
+      "id": "R2",
+      "instytucja": "razem",
+      "nazwa": "Członek / Członkini zarządu stowarzyszenia „Razem Raźniej”",
+      "sektor_wykluczony": "organizacja",
+      "slowo_klucz": "rezultat twardy",
+      "slowo_klucz_opis": "Używaj wyrażenia „rezultat twardy” co najmniej raz w rundzie. Wyjaśnij je tylko wtedy, gdy ktoś zapyta.",
+      "motywacja": "Marzysz o nowych wolontariuszach — i o tym, żeby nie robić wszystkiego samodzielnie (po raz kolejny).",
+      "wiadomosc_od_przelozonego": "Grantodawca: w rozliczeniu musi się znaleźć co najmniej 60 uczestników z dzielnicy, potwierdzonych listą obecności.",
+      "druga_rola": "Pracujesz także w „Przystani” jako instruktor / instruktorka terapii zajęciowej. Sąsiedzi często nie wiedzą, w jakiej roli z Tobą rozmawiają."
+    },
+    {
+      "id": "R3",
+      "instytucja": "szkola",
+      "nazwa": "Pedagog / Pedagożka w Szkole Podstawowej nr 3",
+      "sektor_wykluczony": "szkola",
+      "slowo_klucz": "SKW",
+      "slowo_klucz_opis": "Używaj skrótu „SKW” (Szkolne Koło Wolontariatu) co najmniej raz w rundzie. Wyjaśnij go tylko wtedy, gdy ktoś zapyta.",
+      "motywacja": "Szukasz projektu, który pokaże uczniom, że pomaganie to coś więcej niż zbiórka nakrętek.",
+      "wiadomosc_od_przelozonego": "Dyrektorka szkoły: uczniowie mogą uczestniczyć wyłącznie w ramach wolontariatu szkolnego, na podstawie pisemnych zgód rodziców zebranych do piątku.",
+      "druga_rola": null
+    },
+    {
+      "id": "R4",
+      "instytucja": "rada",
+      "nazwa": "Radny / Radna Dzielnicy Nowe Podwórko",
+      "sektor_wykluczony": "samorzad",
+      "slowo_klucz": "pula dzielnicowa",
+      "slowo_klucz_opis": "Używaj wyrażenia „środki z puli dzielnicowej” co najmniej raz w rundzie. Wyjaśnij je tylko wtedy, gdy ktoś zapyta.",
+      "motywacja": "Chcesz, żeby o dzielnicy mówiono dobrze — najlepiej na pierwszej stronie „Kuriera Kłębkowskiego”.",
+      "wiadomosc_od_przelozonego": "Przewodniczący rady: na wszystkich materiałach musi się znaleźć logo rady, a wydarzenie ma się odbyć przed sesją budżetu obywatelskiego.",
+      "druga_rola": null
+    },
+    {
+      "id": "R5",
+      "instytucja": "iskra",
+      "nazwa": "Animator / Animatorka kultury w Domu Kultury „Iskra”",
+      "sektor_wykluczony": "kultura",
+      "slowo_klucz": "rider techniczny",
+      "slowo_klucz_opis": "Używaj wyrażenia „rider techniczny” co najmniej raz w rundzie. Wyjaśnij je tylko wtedy, gdy ktoś zapyta.",
+      "motywacja": "Masz dość wydarzeń, na które przychodzą wciąż te same cztery osoby i pan Zdzisław.",
+      "wiadomosc_od_przelozonego": "Kierowniczka „Iskry”: sprzęt i salę udostępniamy wyłącznie wtedy, gdy dom kultury jest wymieniony jako współorganizator na wszystkich plakatach.",
+      "druga_rola": null
+    }
+  ],
+  "sektory_uczestnikow": [
+    {
+      "id": "placowka",
+      "etykieta": "Placówka pomocy społecznej"
+    },
+    {
+      "id": "organizacja",
+      "etykieta": "Organizacja pozarządowa"
+    },
+    {
+      "id": "szkola",
+      "etykieta": "Oświata"
+    },
+    {
+      "id": "samorzad",
+      "etykieta": "Samorząd lub administracja"
+    },
+    {
+      "id": "kultura",
+      "etykieta": "Kultura"
+    },
+    {
+      "id": "inny",
+      "etykieta": "Inny obszar"
+    }
+  ],
+  "liczniki": {
+    "jawne": [
+      {
+        "id": "czas",
+        "nazwa": "Czas",
+        "opis": "Pula czasu do dnia otwarcia.",
+        "start": 10,
+        "min": 0,
+        "max": 10
+      },
+      {
+        "id": "obciazenie",
+        "nazwa": "Obciążenie zespołu",
+        "opis": "Koszt działań po stronie ludzi.",
+        "start": 3,
+        "min": 0,
+        "max": 10
+      },
+      {
+        "id": "zaufanie",
+        "nazwa": "Zaufanie",
+        "opis": "Na ile partnerzy mogą na sobie polegać.",
+        "start": 5,
+        "min": 0,
+        "max": 10
+      },
+      {
+        "id": "zasieg",
+        "nazwa": "Współtworzenie",
+        "opis": "Na ile mieszkańcy i sąsiedzi współtworzą przedsięwzięcie.",
+        "start": 2,
+        "min": 0,
+        "max": 10
+      }
+    ],
+    "ukryte": [
+      {
+        "id": "ryzyko",
+        "nazwa": "Ukryte ryzyko",
+        "opis": "Rośnie, gdy decyzja nie uwzględnia informacji dostępnych w zespole. Niewidoczne dla stolików do czasu omówienia.",
+        "start": 0,
+        "min": 0,
+        "max": 10
+      },
+      {
+        "id": "spotkania",
+        "nazwa": "Liczba spotkań zespołu",
+        "opis": "Zliczana na potrzeby omówienia. Nie wpływa na ryzyko.",
+        "start": 0,
+        "min": 0,
+        "max": 99
+      }
+    ],
+    "wyczerpanie": {
+      "prog_obciazenia": 8,
+      "skutek": "Zespół może wybrać tylko 1 akcję w rundzie i nie może wybierać akcji oznaczonych jako „duże”. Zespół pozostaje w grze.",
+      "komunikat": "Zespół jest przeciążony. W tej rundzie możecie podjąć tylko jedno, niewielkie działanie. Przerwa na kawę zmniejsza obciążenie."
+    }
+  },
+  "akcje": [
+    {
+      "id": "A1",
+      "nazwa": "Spotkanie zespołu",
+      "opis": "Zbieracie się, aby jeszcze raz wszystko wspólnie omówić.",
+      "duza": true,
+      "efekt": {
+        "czas": -1,
+        "obciazenie": 1
+      },
+      "ukryty_efekt": {
+        "spotkania": 1
+      },
+      "uwaga_dla_omowienia": "Nie zmniejsza ukrytego ryzyka."
+    },
+    {
+      "id": "A2",
+      "nazwa": "Mapa ról",
+      "opis": "Ustalacie, kto decyduje, kto wykonuje, kogo pytacie i kogo informujecie — także w czyim imieniu występujecie.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": 1
+      },
+      "chroni_przed": [
+        "E2",
+        "E11"
+      ],
+      "odblokowuje": [
+        "A9"
+      ]
+    },
+    {
+      "id": "A3",
+      "nazwa": "Rozmowa o celach",
+      "opis": "Każda instytucja mówi otwarcie, czego potrzebuje od tego przedsięwzięcia.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": 1,
+        "zaufanie": 1
+      },
+      "chroni_przed": [
+        "E3"
+      ]
+    },
+    {
+      "id": "A4",
+      "nazwa": "Wspólny kanał komunikacji",
+      "opis": "Ustalacie jeden kanał, osoby kontaktowe i zasadę: każda wiadomość zawiera prośbę i termin.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": 1
+      },
+      "chroni_przed": [
+        "E1",
+        "E4"
+      ]
+    },
+    {
+      "id": "A5",
+      "nazwa": "Plan awaryjny",
+      "opis": "Przygotowujecie wariant zapasowy: miejsce, termin, osoby.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": 1
+      },
+      "chroni_przed": [
+        "E10"
+      ],
+      "lagodzi_zwrot_akcji": 1
+    },
+    {
+      "id": "A6",
+      "nazwa": "Mieszkańcy jako współtwórcy",
+      "opis": "Zapraszacie mieszkańców „Przystani” i sąsiadów do współprojektowania, a nie tylko do udziału.",
+      "duza": true,
+      "efekt": {
+        "obciazenie": 2,
+        "zasieg": 2
+      }
+    },
+    {
+      "id": "A7",
+      "nazwa": "Promocja w dzielnicy",
+      "opis": "Plakaty, ogłoszenia, rozmowy przy piekarni.",
+      "duza": false,
+      "efekt": {
+        "czas": -1,
+        "zasieg": 1
+      }
+    },
+    {
+      "id": "A8",
+      "nazwa": "Przerwa na kawę i sernik",
+      "opis": "Nikt nie wie, kto przyniósł sernik. Wszyscy są wdzięczni.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": -2
+      }
+    },
+    {
+      "id": "A9",
+      "nazwa": "Delegowanie zadań",
+      "opis": "Przekazujecie część zadań osobom spoza zespołu, z jasnym zakresem i terminem.",
+      "duza": false,
+      "efekt": {
+        "obciazenie": -1
+      },
+      "wymaga": "A2",
+      "efekt_bez_wymogu": {
+        "zaufanie": -1
+      },
+      "komunikat_bez_wymogu": "Zadania zostały przekazane, ale nikt nie wie, kto co przejął. Zaufanie spada."
+    }
+  ],
+  "limit_akcji_na_runde": 3,
+  "zobowiazania": {
+    "limit_na_runde": 2,
+    "pola": [
+      "Kto (rola)",
+      "Co",
+      "Do kiedy (runda)"
+    ],
+    "zasada": "Na początku kolejnej rundy sprawdzacie zobowiązania. Jeśli Obciążenie wynosi 7 lub więcej, dla każdego zobowiązania rzućcie kostką: 1–3 — niezrealizowane (Zaufanie −1), 4–6 — zrealizowane (Zaufanie +1). Jeśli Obciążenie jest niższe niż 7, zobowiązanie jest zrealizowane (Zaufanie +1).",
+    "prog_obciazenia": 7
+  },
+  "zdarzenia": [
+    {
+      "id": "E1",
+      "tytul": "„Odpowiedz wszystkim”",
+      "tekst": "Wątek mailowy w sprawie koloru baneru liczy już 47 wiadomości. Nikt nie pamięta, jaki kolor ustalono.",
+      "efekt": {
+        "obciazenie": 2
+      },
+      "ochrona": "A4",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Wspólny kanał i jasne prośby zadziałały — wątek zakończył się po trzech wiadomościach."
+    },
+    {
+      "id": "E2",
+      "tytul": "Urlop w najmniej oczekiwanym momencie",
+      "tekst": "Osoba w roli R1 wyjeżdża na dwa tygodnie. W tej rundzie nie może podejmować zobowiązań.",
+      "efekt": {
+        "czas": -1,
+        "zaufanie": -1
+      },
+      "ochrona": "A2",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Mapa ról wskazała zastępstwo — prace toczą się dalej."
+    },
+    {
+      "id": "E3",
+      "tytul": "Grantodawca dzwoni",
+      "tekst": "Grantodawca pyta, ilu uczestników z dzielnicy weźmie udział. Okazuje się, że nie wszyscy znali ten wymóg.",
+      "efekt": {
+        "obciazenie": 1,
+        "zaufanie": -1
+      },
+      "ochrona": "A3",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Cele instytucji były znane wcześniej — odpowiedź zajęła pięć minut."
+    },
+    {
+      "id": "E4",
+      "tytul": "Słowo „pilne”",
+      "tekst": "Osoba w roli R4 napisała do osoby w roli R5: „Pilne!”. Dla jednej strony oznaczało to „dziś”, dla drugiej — „w tym miesiącu”.",
+      "efekt": {
+        "czas": -1
+      },
+      "ochrona": "A4",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Wiadomość zawierała prośbę i konkretny termin — nieporozumienia nie było."
+    },
+    {
+      "id": "E5",
+      "tytul": "Pan Zdzisław i jego kosiarka",
+      "tekst": "Osiedlowy aktywista oferuje pomoc — po swojemu i od razu. Zespół decyduje, co zrobić.",
+      "wybor": [
+        {
+          "etykieta": "Włączamy go jako współtwórcę z jasno określonym zadaniem",
+          "efekt": {
+            "zasieg": 1,
+            "obciazenie": 1
+          }
+        },
+        {
+          "etykieta": "Dziękujemy i proponujemy udział w kolejnym etapie",
+          "efekt": {}
+        },
+        {
+          "etykieta": "Nie odpowiadamy",
+          "efekt": {
+            "zaufanie": -1
+          },
+          "komentarz": "Pan Zdzisław opowiada sąsiadom, że „nikt go nie słucha”."
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "tytul": "Drukarka odmawia współpracy",
+      "tekst": "Plakaty miały być gotowe wczoraj. Drukarka ma inne plany.",
+      "efekt": {
+        "czas": -1
+      },
+      "ochrona_warunek": "R3 wymieniona w zobowiązaniu tej lub poprzedniej rundy",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Szkolna pracownia wydrukowała plakaty na przerwie."
+    },
+    {
+      "id": "E7",
+      "tytul": "Plotka na osiedlu",
+      "tekst": "Na klatkach schodowych krąży informacja, że wydarzenie „potrwa do rana i będzie bardzo głośne”.",
+      "warunek": {
+        "licznik": "zaufanie",
+        "prog": 6,
+        "efekt_gdy_ponizej": {
+          "obciazenie": 1,
+          "zasieg": -1
+        },
+        "efekt_gdy_rowny_lub_powyzej": {},
+        "komentarz_gdy_powyzej": "Partnerzy szybko uzgodnili wspólny komunikat — plotka ucichła."
+      }
+    },
+    {
+      "id": "E8",
+      "tytul": "Zdanie przy stole",
+      "tekst": "Na spotkaniu pada zdanie: „Wy zawsze wszystko robicie na ostatnią chwilę!”. Zespół wybiera reakcję.",
+      "wybor": [
+        {
+          "etykieta": "Odpowiadamy w podobnym tonie",
+          "efekt": {
+            "zaufanie": -2
+          }
+        },
+        {
+          "etykieta": "Opisujemy fakty, nazywamy potrzebę i formułujemy prośbę",
+          "efekt": {
+            "czas": -1,
+            "zaufanie": 1
+          }
+        },
+        {
+          "etykieta": "Przemilczamy sprawę",
+          "efekt": {
+            "zaufanie": -1
+          },
+          "ukryty_efekt": {
+            "ryzyko": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "tytul": "Nieoczekiwany sojusznik",
+      "tekst": "Pani Halina z piekarni „Chrupka” proponuje drożdżówki dla uczestników i ogłoszenie w witrynie.",
+      "efekt": {
+        "zasieg": 1,
+        "zaufanie": 1
+      }
+    },
+    {
+      "id": "E10",
+      "tytul": "Deszczowa prognoza",
+      "tekst": "Synoptycy zapowiadają ulewę na dzień wydarzenia. Parasole w dzielnicy: trzy.",
+      "efekt": {
+        "czas": -1
+      },
+      "ochrona": "A5",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Plan awaryjny był gotowy — wydarzenie przenosi się pod dach."
+    },
+    {
+      "id": "E11",
+      "tytul": "Dwie role",
+      "tekst": "Sąsiadka zatrzymuje osobę w roli R2 na korytarzu „Przystani”: „Pani/Pan tu przecież wszystko może załatwić — to proszę o zgodę na próbę chóru w świetlicy”.",
+      "efekt": {
+        "zaufanie": -1
+      },
+      "ochrona": "A2",
+      "efekt_z_ochrona": {},
+      "komentarz_z_ochrona": "Dzięki mapie ról wiadomo, w czyim imieniu udzielić odpowiedzi i do kogo skierować prośbę."
+    },
+    {
+      "id": "E12",
+      "tytul": "Kot Kierownik",
+      "tekst": "Osiedlowy kot zamieszkał w miejscu przedsięwzięcia. Mieszkańcy „Przystani” i sąsiedzi są zachwyceni. „Kurier Kłębkowski” robi zdjęcie.",
+      "efekt": {
+        "zasieg": 1
+      }
+    }
+  ],
+  "kolejnosc_zdarzen": {
+    "A": {
+      "R1": [
+        "E1"
+      ],
+      "R2": [
+        "E3",
+        "E8"
+      ],
+      "R3": [
+        "E11"
+      ]
+    },
+    "B": {
+      "R1": [
+        "E4"
+      ],
+      "R2": [
+        "E2",
+        "E5"
+      ],
+      "R3": [
+        "E7"
+      ]
+    },
+    "C": {
+      "R1": [
+        "E6"
+      ],
+      "R2": [
+        "E8",
+        "E9"
+      ],
+      "R3": [
+        "E10"
+      ]
+    },
+    "D": {
+      "R1": [
+        "E11"
+      ],
+      "R2": [
+        "E3",
+        "E12"
+      ],
+      "R3": [
+        "E1"
+      ]
+    }
+  },
+  "struktura_rundy": [
+    {
+      "id": "R0",
+      "nazwa": "Wprowadzenie",
+      "minuty": 7,
+      "kroki": [
+        "Odczytanie wstępu",
+        "Losowanie ról",
+        "Zapoznanie się z kartą roli i kartą misji"
+      ]
+    },
+    {
+      "id": "R1",
+      "nazwa": "Runda 1. Plan",
+      "minuty": 13,
+      "kroki": [
+        "Zdarzenie rundy",
+        "Karty informacji — runda 1",
+        "Decyzja rundy",
+        "Wybór do 3 akcji",
+        "Do 2 zobowiązań",
+        "Zatwierdzenie"
+      ]
+    },
+    {
+      "id": "R2",
+      "nazwa": "Runda 2. Realizacja",
+      "minuty": 15,
+      "kroki": [
+        "Sprawdzenie zobowiązań",
+        "Skutek decyzji z rundy 1 (jeśli wystąpi)",
+        "Koperty: wiadomości od przełożonych",
+        "Zdarzenia rundy (2)",
+        "Wybór do 3 akcji",
+        "Do 2 zobowiązań",
+        "Zatwierdzenie"
+      ]
+    },
+    {
+      "id": "R3",
+      "nazwa": "Runda 3. Zwrot akcji",
+      "minuty": 15,
+      "kroki": [
+        "Sprawdzenie zobowiązań",
+        "Zdarzenie rundy",
+        "Zwrot akcji i karty informacji — runda 3",
+        "Decyzja rundy",
+        "Wybór do 3 akcji",
+        "Zatwierdzenie"
+      ]
+    },
+    {
+      "id": "F",
+      "nazwa": "Finał. Dzień otwarcia",
+      "minuty": 8,
+      "kroki": [
+        "Skutek decyzji z rundy 3 (jeśli wystąpi)",
+        "Kronika Kłębkowa dla każdego stolika",
+        "Przegląd kosztów na wykresie"
+      ]
+    },
+    {
+      "id": "Z",
+      "nazwa": "Zakończenie",
+      "minuty": 2,
+      "kroki": [
+        "Wyjście z ról",
+        "Przejście do omówienia"
+      ]
+    }
+  ],
+  "stoliki": [
+    {
+      "id": "A",
+      "nazwa": "Ogród Wszystkich",
+      "misja": "Założyć ogród społeczny, w którym mieszkańcy „Przystani” i sąsiedzi wspólnie uprawiają warzywa i zioła.",
+      "decyzja_r1": {
+        "pytanie": "Gdzie założyć ogród?",
+        "opcje": {
+          "A": "Trawnik od strony ulicy Słonecznej",
+          "B": "Plac przy wejściu bocznym „Przystani”",
+          "C": "Skwer przy szkole"
+        },
+        "informacje_wspolne": [
+          "Trawnik od ulicy Słonecznej jest najbardziej nasłoneczniony i widoczny z ulicy — „reklama zrobi się sama”.",
+          "Plac przy wejściu bocznym jest po południu zacieniony.",
+          "Skwer przy szkole jest oddalony od „Przystani” o 15 minut spacerem."
+        ],
+        "informacje_unikalne": {
+          "R1": "Przy wejściu bocznym jest podjazd i dostępna toaleta. Od strony ulicy Słonecznej prowadzą wyłącznie schody.",
+          "R2": "Stowarzyszenie ma już pisemną zgodę zarządcy na zagospodarowanie placu przy wejściu bocznym.",
+          "R3": "Na trawniku od ulicy Słonecznej w przyszłym miesiącu stanie rusztowanie — zaplanowano remont elewacji.",
+          "R4": "Rada może sfinansować ławki tylko na terenie przy budynku; trawnik od ulicy to pas drogowy.",
+          "R5": "„Iskra” może użyczyć podwyższonych skrzyń na grządki. Zmieszczą się tylko na utwardzonym placu."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Rusztowanie zamiast grządek",
+            "tekst": "Remont elewacji zasłonił grządki. Trzeba przenosić ziemię i sadzonki.",
+            "efekt": {
+              "czas": -2,
+              "obciazenie": 2
+            }
+          },
+          "C": {
+            "tytul": "Za daleko na codzienną pielęgnację",
+            "tekst": "Mieszkańcy „Przystani” rzadko docierają na skwer — ogród pielęgnują głównie uczniowie.",
+            "efekt": {
+              "zasieg": -2
+            }
+          }
+        }
+      },
+      "zwrot_akcji": {
+        "tytul": "Czyj to trawnik?",
+        "tekst": "Z mapy geodezyjnej wynika, że część placu należy do Spółdzielni „Zacisze”."
+      },
+      "decyzja_r3": {
+        "pytanie": "Co robicie z terenem spółdzielni?",
+        "opcje": {
+          "A": "Zmniejszamy ogród do części należącej do „Przystani”",
+          "B": "Składamy wniosek do spółdzielni i czekamy na decyzję",
+          "C": "Zapraszamy spółdzielnię do partnerstwa"
+        },
+        "informacje_wspolne": [
+          "Spółdzielnia rozpatruje wnioski na posiedzeniu raz na kwartał.",
+          "Po zmniejszeniu ogród będzie o połowę mniejszy."
+        ],
+        "informacje_unikalne": {
+          "R1": "Regulamin „Przystani” pozwala gościć partnerów zewnętrznych na terenie placówki po wcześniejszym zgłoszeniu.",
+          "R2": "Prezes spółdzielni jest członkiem stowarzyszenia i chętnie mówi o zieleni na osiedlu.",
+          "R3": "Uczniowie mogą przygotować tablicę z logotypami wszystkich partnerów na zajęciach technicznych.",
+          "R4": "Rada Dzielnicy ma podpisane ze spółdzielnią porozumienie o wspólnych działaniach na terenach zielonych.",
+          "R5": "Spółdzielnia szuka miejsca na swój piknik jubileuszowy."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "C",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Mały ogród, duże oczekiwania",
+            "tekst": "Chętnych jest więcej niż grządek. Powstaje lista oczekujących.",
+            "efekt": {
+              "zasieg": -1,
+              "zaufanie": -1
+            }
+          },
+          "B": {
+            "tytul": "Posiedzenie za trzy miesiące",
+            "tekst": "Sezon mija, zanim spółdzielnia rozpatrzy wniosek.",
+            "efekt": {
+              "czas": -3
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "B",
+      "nazwa": "Kino na Podwórku",
+      "misja": "Zorganizować letni pokaz filmowy na świeżym powietrzu dla mieszkańców „Przystani” i sąsiadów.",
+      "decyzja_r1": {
+        "pytanie": "Kiedy zorganizować pokaz?",
+        "opcje": {
+          "A": "Piątek, 20:00",
+          "B": "Sobota, 18:00",
+          "C": "Środa, 21:00"
+        },
+        "informacje_wspolne": [
+          "W piątek wieczorem chęć udziału deklaruje najwięcej dorosłych.",
+          "W środę w mieście odbywa się najmniej innych wydarzeń.",
+          "W sobotę o 18:00 jest jeszcze jasno — ekran może być słabo widoczny."
+        ],
+        "informacje_unikalne": {
+          "R1": "Po 19:30 w „Przystani” pracuje obsada nocna — mieszkańcy mogą uczestniczyć w wydarzeniach tylko do tej godziny.",
+          "R2": "Wypożyczalnia oferuje stowarzyszeniu ekran LED, dobrze widoczny także za dnia.",
+          "R3": "W piątek w szkole odbywa się zabawa na zakończenie roku — uczniowie-wolontariusze będą zajęci.",
+          "R4": "Od 22:00 obowiązuje cisza nocna, a rada otrzymała już skargi na hałas z podwórka.",
+          "R5": "„Iskra” ma wolnego technika dźwięku tylko w sobotę."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Seans bez gospodarzy",
+            "tekst": "Mieszkańcy „Przystani” musieli wrócić przed końcem filmu. Brakuje też wolontariuszy.",
+            "efekt": {
+              "zasieg": -2,
+              "obciazenie": 1
+            }
+          },
+          "C": {
+            "tytul": "Cisza nocna",
+            "tekst": "Film skończył się po 22:00. Sąsiedzi złożyli skargę do rady.",
+            "efekt": {
+              "zaufanie": -2
+            }
+          }
+        }
+      },
+      "zwrot_akcji": {
+        "tytul": "A licencja?",
+        "tekst": "Wypożyczalnia przypomina, że publiczny pokaz filmu wymaga licencji."
+      },
+      "decyzja_r3": {
+        "pytanie": "Jak rozwiązać kwestię licencji?",
+        "opcje": {
+          "A": "Organizujemy pokaz „dla znajomych” bez licencji",
+          "B": "Kupujemy licencję na najnowszy przebój kinowy",
+          "C": "Wybieramy film z katalogu objętego licencją jednego z partnerów"
+        },
+        "informacje_wspolne": [
+          "Licencja na przebój kinowy przekracza budżet przedsięwzięcia.",
+          "Ktoś przy stole przekonuje, że „nikt nie będzie sprawdzał”."
+        ],
+        "informacje_unikalne": {
+          "R1": "Mieszkańcy „Przystani” głosowali na komedię z lat 80., która znajduje się w katalogu dystrybutora współpracującego z „Iskrą”.",
+          "R2": "Grantodawca sprawdza licencje w rozliczeniu projektu.",
+          "R3": "Uczniowie przygotowali listę ulubionych filmów z tego samego katalogu.",
+          "R4": "Regulamin puli dzielnicowej wymaga, aby wszystkie działania były zgodne z prawem — w przeciwnym razie środki podlegają zwrotowi.",
+          "R5": "„Iskra” ma roczną licencję na pokazy z katalogu dystrybutora. Obejmuje ona wydarzenia, których dom kultury jest współorganizatorem."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "C",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Pismo od dystrybutora",
+            "tekst": "Dystrybutor zauważył plakat. Trzeba wyjaśniać sprawę i zwrócić część środków.",
+            "efekt": {
+              "zaufanie": -2,
+              "obciazenie": 2
+            }
+          },
+          "B": {
+            "tytul": "Budżet na minusie",
+            "tekst": "Na licencję poszły środki przeznaczone na koce i popcorn.",
+            "efekt": {
+              "zasieg": -1,
+              "obciazenie": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "C",
+      "nazwa": "Pokolenia przy Stole",
+      "misja": "Przygotować cykl warsztatów kulinarnych, w których mieszkańcy „Przystani” i uczniowie gotują według dawnych przepisów.",
+      "decyzja_r1": {
+        "pytanie": "Gdzie odbędą się warsztaty?",
+        "opcje": {
+          "A": "Kuchnia szkolna",
+          "B": "Sala „Iskry” z aneksem kuchennym",
+          "C": "Kuchnia „Przystani”"
+        },
+        "informacje_wspolne": [
+          "Kuchnia szkolna jest największa.",
+          "Kuchnia „Przystani” jest na miejscu — mieszkańcy nie muszą nigdzie jechać.",
+          "Aneks w „Iskrze” wydaje się niewielki."
+        ],
+        "informacje_unikalne": {
+          "R1": "Kuchnia „Przystani” działa według procedur bezpieczeństwa żywności — osoby z zewnątrz nie mogą z niej korzystać.",
+          "R2": "Stowarzyszenie ma bus z rampą — dowiezie mieszkańców do „Iskry” w pięć minut.",
+          "R3": "Kuchnia szkolna w wakacje jest wyłączona z użytkowania ze względu na przegląd techniczny.",
+          "R4": "Rada sfinansuje fartuchy i produkty, jeśli warsztaty będą otwarte dla mieszkańców dzielnicy.",
+          "R5": "„Iskra” otrzymała nowe wyposażenie: cztery stanowiska z płytami indukcyjnymi dla 16 osób."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Kuchnia zamknięta",
+            "tekst": "W wakacje trwa przegląd techniczny. Trzeba szukać nowego miejsca.",
+            "efekt": {
+              "czas": -2,
+              "obciazenie": 1
+            }
+          },
+          "C": {
+            "tytul": "Wstęp tylko dla personelu",
+            "tekst": "Procedury nie pozwalają wpuścić uczniów do kuchni. Warsztaty tracą sens międzypokoleniowy.",
+            "efekt": {
+              "zasieg": -2
+            }
+          }
+        }
+      },
+      "zwrot_akcji": {
+        "tytul": "Skąd te produkty?",
+        "tekst": "Zgodnie z regulaminem sali produkty muszą pochodzić z udokumentowanego źródła, a potrawy — być spożywane na miejscu."
+      },
+      "decyzja_r3": {
+        "pytanie": "Jak zorganizować produkty i poczęstunek?",
+        "opcje": {
+          "A": "Każdy przynosi coś z domu",
+          "B": "Zakupy z dokumentem zakupu i wspólny posiłek na miejscu",
+          "C": "Gotujemy i rozdajemy porcje sąsiadom na wynos"
+        },
+        "informacje_wspolne": [
+          "Przynoszenie produktów z domu jest najtańsze i „najbardziej sąsiedzkie”.",
+          "Porcje na wynos pozwolą dotrzeć do większej liczby osób."
+        ],
+        "informacje_unikalne": {
+          "R1": "Mieszkańcy chcą przygotować zupę według własnego przepisu — potrzebują tylko listy zakupów.",
+          "R2": "Pani Halina z piekarni „Chrupka” oferuje produkty z fakturą wystawioną na stowarzyszenie.",
+          "R3": "Rodzice zgodzą się na udział dzieci, jeśli skład potraw będzie znany wcześniej.",
+          "R4": "Rada zwróci koszty wyłącznie na podstawie dokumentów zakupu.",
+          "R5": "Umowa użyczenia sali „Iskry” zakazuje wynoszenia jedzenia poza budynek."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Nieznany skład",
+            "tekst": "Nikt nie wie, co jest w potrawach. Część rodziców wycofuje zgody.",
+            "efekt": {
+              "zasieg": -2,
+              "zaufanie": -1
+            }
+          },
+          "C": {
+            "tytul": "Naruszenie umowy użyczenia",
+            "tekst": "Kierowniczka „Iskry” wstrzymuje kolejne warsztaty do wyjaśnienia sprawy.",
+            "efekt": {
+              "czas": -2,
+              "zaufanie": -1
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "D",
+      "nazwa": "Trasa Bez Barier",
+      "misja": "Wyznaczyć i oznakować dostępną trasę spacerową z „Przystani” do parku, z miejscami do odpoczynku.",
+      "decyzja_r1": {
+        "pytanie": "Którędy poprowadzić trasę?",
+        "opcje": {
+          "A": "Najkrócej — ulicą Kręgielną",
+          "B": "Przez osiedle „Zacisze”, obok szkoły",
+          "C": "Wzdłuż nasypu kolejowego"
+        },
+        "informacje_wspolne": [
+          "Trasa ulicą Kręgielną jest najkrótsza — 600 metrów.",
+          "Trasa wzdłuż nasypu ma najładniejsze widoki.",
+          "Trasa przez osiedle jest dłuższa o 300 metrów."
+        ],
+        "informacje_unikalne": {
+          "R1": "Na ulicy Kręgielnej są wysokie krawężniki bez obniżeń — wózek nie przejedzie.",
+          "R2": "Wolontariusze sprawdzili trasę przez osiedle razem z mieszkańcami — brakuje tylko jednej ławki w połowie drogi.",
+          "R3": "Przy szkole jest przejście dla pieszych z sygnalizacją dźwiękową.",
+          "R4": "Remont chodników na ulicy Kręgielnej zaplanowano dopiero za trzy lata.",
+          "R5": "Wzdłuż nasypu nie ma oświetlenia, a teren należy do kolei."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Krawężnik nie do pokonania",
+            "tekst": "Na próbnym spacerze trasa okazała się niedostępna. Trzeba ją wyznaczać od nowa.",
+            "efekt": {
+              "czas": -2,
+              "zaufanie": -1
+            }
+          },
+          "C": {
+            "tytul": "Teren prywatny",
+            "tekst": "Zarządca terenu kolejowego nie zgadza się na oznakowanie. Wraca temat wyboru trasy.",
+            "efekt": {
+              "czas": -2,
+              "obciazenie": 1
+            }
+          }
+        }
+      },
+      "zwrot_akcji": {
+        "tytul": "Remont!",
+        "tekst": "Miasto ogłasza, że za dwa tygodnie rozpocznie miesięczny remont chodnika przy szkole — na odcinku trasy."
+      },
+      "decyzja_r3": {
+        "pytanie": "Co robicie z remontem na trasie?",
+        "opcje": {
+          "A": "Przesuwamy otwarcie o miesiąc",
+          "B": "Wyznaczamy dostępny objazd tymczasowy",
+          "C": "Otwieramy trasę zgodnie z planem, bez zmian"
+        },
+        "informacje_wspolne": [
+          "Przesunięcie o miesiąc wydaje się najbezpieczniejsze.",
+          "Termin otwarcia ogłosił już „Kurier Kłębkowski”."
+        ],
+        "informacje_unikalne": {
+          "R1": "Mieszkańcy „Przystani” spacerują najczęściej w wakacje — przesunięcie o miesiąc oznacza koniec lata.",
+          "R2": "Spółdzielnia „Zacisze” zgodziła się na przejście wewnętrzną alejką osiedlową — bez krawężników.",
+          "R3": "Uczniowie mogą przygotować tymczasowe oznakowanie objazdu na zajęciach plastycznych.",
+          "R4": "Wykonawca remontu musi zapewnić dostępne przejście tymczasowe, jeśli ktoś zgłosi taką potrzebę w ciągu 7 dni.",
+          "R5": "„Iskra” może bez kosztów przesunąć koncert towarzyszący otwarciu."
+        },
+        "opcja_zgodna_z_pelna_wiedza": "B",
+        "skutki_opcji": {
+          "A": {
+            "tytul": "Koniec lata",
+            "tekst": "Trasa zostaje otwarta we wrześniu. Na spacery jest już chłodno.",
+            "efekt": {
+              "zasieg": -1,
+              "czas": -1
+            }
+          },
+          "C": {
+            "tytul": "Otwarcie na placu budowy",
+            "tekst": "Uczestnicy otwarcia utknęli przed wykopem. „Kurier” publikuje zdjęcie.",
+            "efekt": {
+              "zaufanie": -2,
+              "zasieg": -1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "decyzje_zasady": {
+    "opis": "Każda decyzja ma opcję zgodną z pełną wiedzą zespołu. Informacje wspólne sugerują inną opcję. Informacje unikalne, rozproszone między rolami, wskazują opcję zgodną z pełną wiedzą.",
+    "gdy_zgodna": {
+      "jawny_efekt": {},
+      "komunikat": "Decyzja zapisana."
+    },
+    "gdy_niezgodna": {
+      "jawny_efekt": {},
+      "ukryty_efekt": {
+        "ryzyko": 2
+      },
+      "komunikat": "Decyzja zapisana.",
+      "skutek": "W kolejnej fazie zespół otrzymuje zdarzenie „Skutek decyzji” przypisane do wybranej opcji."
+    },
+    "uwaga": "Po zatwierdzeniu decyzji zespół nie dowiaduje się, czy była zgodna z pełną wiedzą. Informacja pojawia się dopiero w trybie omówienia."
+  },
+  "kronika": {
+    "tytul": "Kurier Kłębkowski — wydanie specjalne",
+    "reguly_naglowka": [
+      {
+        "warunek": "czas == 0",
+        "tekst": "„{nazwa}”: otwarcie przesunięte. Mieszkańcy czekają cierpliwie, kot Kierownik — mniej."
+      },
+      {
+        "warunek": "zasieg >= 7 && obciazenie >= 8",
+        "tekst": "Tłumy na otwarciu „{nazwa}”! Organizatorzy proszą o… herbatę i chwilę ciszy."
+      },
+      {
+        "warunek": "zasieg >= 7",
+        "tekst": "Nowe Podwórko świętuje! „{nazwa}” otwarte, a sąsiedzi już planują kolejne spotkanie."
+      },
+      {
+        "warunek": "zasieg <= 3",
+        "tekst": "„{nazwa}” otwarte. Frekwencja kameralna, kot Kierownik obecny."
+      },
+      {
+        "warunek": "else",
+        "tekst": "„{nazwa}” otwarte. Dzielnica przygląda się z zainteresowaniem."
+      }
+    ],
+    "zdania_dodatkowe": [
+      {
+        "warunek": "zaufanie >= 8",
+        "tekst": "Partnerzy zapowiadają kolejne wspólne przedsięwzięcie."
+      },
+      {
+        "warunek": "zaufanie <= 3",
+        "tekst": "Podczas otwarcia każdy z partnerów przemawiał osobno."
+      },
+      {
+        "warunek": "obciazenie >= 8",
+        "tekst": "Zespół organizacyjny prosi, aby przez tydzień nie dzwonić w sprawie kolejnych pomysłów."
+      },
+      {
+        "warunek": "obciazenie <= 4",
+        "tekst": "Organizatorzy wyglądają na wypoczętych — co w Kłębkowie zdarza się rzadko."
+      },
+      {
+        "warunek": "ryzyko >= 4",
+        "tekst": "Niespodzianka dnia: w ostatniej chwili wyszła na jaw sprawa, o której część zespołu wiedziała od początku."
+      }
+    ],
+    "podpis": "Liczniki pokazują koszty decyzji, a nie ich ocenę. Kronika nie porównuje stolików."
+  },
+  "omowienie": {
+    "dzien_1": {
+      "nazwa": "Omówienie symulacji (dzień 1)",
+      "pytania": [
+        "Jaki był przebieg symulacji? Wskażcie jedną sytuację istotną z perspektywy zespołu.",
+        "Jakie trudności wiązały się z przydzieloną rolą?",
+        "Które elementy odzwierciedlały codzienną współpracę z innymi instytucjami?",
+        "Jakie decyzje podjęlibyście inaczej przy ponownej realizacji?",
+        "Które rozwiązanie zamierzacie przetestować w praktyce zawodowej?"
+      ],
+      "nie_ujawniac": [
+        "informacji, która opcja była zgodna z pełną wiedzą",
+        "licznika ukrytego ryzyka",
+        "braku wpływu spotkań na ryzyko"
+      ],
+      "powiazania": {
+        "M1": "Wiadomości od przełożonych — trzy poziomy celów.",
+        "M2": "Zdarzenia „Dwie role” i „Urlop” — mapa ról.",
+        "M3": "Zobowiązania, obciążenie i zaufanie — dowody rzetelności."
+      }
+    },
+    "dzien_2_mechanizm": {
+      "nazwa": "Mechanizm ukryty (dzień 2, moduł 5)",
+      "ujawnienie": [
+        "W każdej decyzji informacje wspólne wskazywały inną opcję niż pełna wiedza zespołu.",
+        "Informacje rozstrzygające były rozproszone — każda rola znała inny fragment.",
+        "Ukryte ryzyko rosło wyłącznie wtedy, gdy decyzja nie uwzględniała tych informacji.",
+        "Liczba spotkań zespołu nie miała żadnego wpływu na ukryte ryzyko."
+      ],
+      "odniesienie": "Stasser i Titus (1985); Lu, Yuan i McLeod (2012) — mechanizm ukrytego profilu.",
+      "powiazania": {
+        "M4": "Słowa-klucze i zdarzenie „Pilne” — język instytucji.",
+        "M6": "Zdarzenie „Zdanie przy stole” — konflikt zadaniowy i relacyjny.",
+        "M7": "Licznik współtworzenia — mieszkańcy jako współtwórcy, a nie widownia."
+      }
+    }
+  }
+}

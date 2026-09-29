@@ -1,0 +1,20 @@
+/* Zachowanie przy drukowaniu widoków aplikacji (nie mylić ze stylami arkuszy papierowych). */
+@media print {
+  .pasek,
+  .kroki,
+  .podstawka,
+  .przyciski,
+  .pomin-do-tresci {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+    background-image: none;
+  }
+  body::before { display: none; }
+  .karteczka {
+    box-shadow: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

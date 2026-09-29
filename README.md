@@ -25,6 +25,18 @@ przeglądarce. Jeśli w przyszłości ktoś doda funkcję wymagającą wysłania
 to jest świadoma zmiana architektury, nie drobna poprawka. Miejsce na to zostało oznaczone
 komentarzem `// TODO: wymaga decyzji o przetwarzaniu danych` w `src/lib/assistant.ts`.
 
+---
+
+## Druga aplikacja w tym repozytorium: gra „KŁĘBKOWO. Sprawa się plącze”
+
+W katalogu [`klebkowo/`](klebkowo/README.md) mieszka osobny, samodzielny projekt — gra
+szkoleniowa o współpracy międzyinstytucjonalnej (aplikacja webowa + pełna wersja papierowa
+do druku). Nie ma żadnego połączenia z aplikacją opisaną wyżej: ma własne zależności,
+własny serwer i własne testy.
+
+Instrukcja dla prowadzącej: [`klebkowo/README.md`](klebkowo/README.md).
+
+
 ## Wymagania
 
 - Node.js 18+ i npm
