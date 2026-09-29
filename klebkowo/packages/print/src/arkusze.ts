@@ -4,6 +4,7 @@
  */
 import { ID_ROL, ID_STOLIKOW, type IdRoli, type IdStolika } from '@klebkowo/engine/typy';
 import type { Tresc } from '@klebkowo/engine';
+import { karteczkiDoLosowania, tabliczkiStolikow } from './litery.ts';
 import { arkuszDlaUczestnikow, kartySciagawki, stronyPelnychZasad } from './zasady.ts';
 import {
   KOT,
@@ -695,6 +696,20 @@ const zasadyUczestnikow: Arkusz = {
     ),
 };
 
+const literyNaStoliki: Arkusz = {
+  plik: '14_litery_na_stoliki',
+  tytul: 'Litery na stoliki',
+  opis: 'Cztery kartki A4: A, B, C, D — sama litera, w stylu flipchartu.',
+  zbuduj: (_t, baza) => tabliczkiStolikow(baza),
+};
+
+const literyDoLosowania: Arkusz = {
+  plik: '15_litery_do_losowania',
+  tytul: 'Litery do losowania miejsc',
+  opis: '20 karteczek: 5 × A, 5 × B, 5 × C, 5 × D. Do wycięcia, zwinięcia i wylosowania.',
+  zbuduj: (_t, baza) => karteczkiDoLosowania(baza),
+};
+
 export const ARKUSZE: Arkusz[] = [
   instrukcja,
   ...ID_STOLIKOW.map(plansza),
@@ -710,6 +725,8 @@ export const ARKUSZE: Arkusz[] = [
   szablonKroniki,
   zetony,
   zasadyUczestnikow,
+  literyNaStoliki,
+  literyDoLosowania,
 ];
 
 export function znajdzArkusz(plik: string): Arkusz | undefined {

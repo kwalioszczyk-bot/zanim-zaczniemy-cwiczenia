@@ -140,7 +140,7 @@ W katalogu `klebkowo` wpisz:
 npm run druk
 ```
 
-Po chwili w folderze `druk/` pojawi się 20 plików PDF. Możesz też obejrzeć i wydrukować
+Po chwili w folderze `druk/` pojawi się 22 pliki PDF. Możesz też obejrzeć i wydrukować
 pojedynczy arkusz z aplikacji: **Druk** na pierwszym ekranie.
 
 Materiały są przygotowane pod zwykłą drukarkę — bez ciemnych, pełnych teł, bez białego tekstu
@@ -164,6 +164,8 @@ na czerni. Drukują się dobrze w kolorze i w czerni.
 | `11_kronika_szablon` | po 1 na stolik |
 | `12_zetony` | 1 plik — pionki, znaczniki ochrony, znaczniki wyczerpania |
 | `13_scenariusz_i_zasady_dla_uczestnikow` | po 1 na stolik (albo po 1 na osobę) + ściągawki do wycięcia |
+| `14_litery_na_stoliki` | 1 plik = 4 kartki A4 (A, B, C, D) — stawiacie na stolikach |
+| `15_litery_do_losowania` | 1 plik = 20 karteczek (5 × każda litera); wytnij, zwiń, wrzuć do torebki — uczestnicy losują stolik |
 
 Pliki **00**, **07** i **10** zawierają klucz decyzji i ukryte liczniki. Nie zostawiaj ich
 na stolikach i nie kładź na wspólnym stole z materiałami.
